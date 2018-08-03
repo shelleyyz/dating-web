@@ -1,0 +1,10 @@
+<h1>Log In</h1>
+
+<div class="user">
+<%= form_tag login_path, :class => "form" do %>
+<div class="alert"><p><%= flash[:error] %><p></div>
+<%= email_field_tag :email,"", :class => "form__input", :placeholder => "email address"%>
+<%= password_field_tag :password,"", :class => "form__input", :placeholder =>"password"%>
+<%= submit_tag "Log in", :class => "btn" %>
+<% end %>
+</div>
