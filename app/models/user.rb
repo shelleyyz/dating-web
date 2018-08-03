@@ -19,4 +19,12 @@
 #
 
 class User < ApplicationRecord
+
+  #password
+#validations
+has_secure_password
+validates :email, :presence => true, :uniqueness => true #user can only have account if they enter an email address AND it is not already an email address in the DB
+
+
+
 end

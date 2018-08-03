@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'session/new'
-  get 'mailboxes/index'
-  get 'mailboxes/new'
-  get 'mailboxes/show'
-  get 'relationships/index'
-  get 'relationships/show'
-  get 'relationships/new'
-  get 'users/index'
-  get 'users/new'
-  get 'users/edit'
-  get 'users/show'
+  root :to => 'pages#home'
+    get "/" => 'pages#home'
+    get '/users/profile' => 'users#profile'
+  resources :users, :only => [:index, :new, :create]
+  resources :relationships
+  resources :mailboxes
+
+  get '/login' => 'session#new' #login form
+  post '/login' => 'session#create' #perform the login
+  delete '/login' => 'session#destroy' #perform signout/'delete' the signin
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
