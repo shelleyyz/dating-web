@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2018_08_03_034459) do
   create_table "relationships_users", id: false, force: :cascade do |t|
     t.integer "relationship_id"
     t.integer "user_id"
-
   end
 
   create_table "users", force: :cascade do |t|
