@@ -43,12 +43,12 @@ user3 = User.create(
 user4 = User.create(
   :first_name => "EJ",
   :last_name => "Willard",
-  :interests => "edit these!",
+  :interests => "Japan", "People who aren't shit", "Cats & Tats",
   :email => "ej@ga.co",
   :gender => "female",
   :dob => '1987-01-15',
   :location => "Sydney",
-  :language => "Edit this",
-  :bio => "Edit this",
+  :language => "SassCSS",
+  :bio => "Don't worry - I'm not crazy about me either.",
   :admin => true
 )
