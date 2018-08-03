@@ -32,13 +32,9 @@ ActiveRecord::Schema.define(version: 2018_08_03_034459) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-  create_table "relationships_users", force: :cascade do |t|
-=======
   create_table "relationships_users", id: false, force: :cascade do |t|
     t.integer "relationship_id"
     t.integer "user_id"
->>>>>>> 92a74b92a0438277ceb5f04a1f7ecdea69acc1c2
   end
 
   create_table "users", force: :cascade do |t|
