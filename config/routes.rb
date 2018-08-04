@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
     get "/" => 'pages#home'
     get '/users/profile' => 'users#profile'
-  resources :users
+  resources :users, :only => [:index, :show, :new, :create, :edit, :update, :delete]
   resources :relationships
   resources :mailboxes
 
