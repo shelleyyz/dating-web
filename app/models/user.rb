@@ -27,10 +27,15 @@ class User < ApplicationRecord
   validates :last_name, :presence => true
   validates :image, :presence => true
   validates :gender, :presence => true
-  validates :location, :presense => true
+  validates :location, :presence => true
 
   has_many :relationships
   has_many :mailboxes
   enum language: [:javascript, :ruby, :python, :golang, :C, :php, :java]
 
+  has_many :active_relationships, class_name: "Relationship",
+                                  foreign_key: "liker_id",
+                                  dependent: :destroy
+
+  has_many :liking, through: :active_relationships, source: :likee
 end

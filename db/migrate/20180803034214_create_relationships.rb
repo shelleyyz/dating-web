@@ -7,5 +7,9 @@ class CreateRelationships < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+      add_index :relationships, :liker_id
+      add_index :relationships, :likee_id
+      add_index :relationships, [:liker_id, :likee_id], unique: true
   end
 end
