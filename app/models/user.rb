@@ -27,7 +27,7 @@ class User < ApplicationRecord
   validates :last_name, :presence => true
   validates :image, :presence => true
   validates :gender, :presence => true
-  validates :location, :presense => true
+  validates :location, :presence => true
 
   has_many :relationships
   has_many :mailboxes
