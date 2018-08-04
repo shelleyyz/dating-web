@@ -1,0 +1,15 @@
+<div class="signup-edit-form">
+
+
+  <%= form_for @user do |f| %>
+
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, :required => true %>
+  <br />
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, :required => true %>
+  <br />
+
+  <%= f.label :interests %>
+  <%= f.text_field :interests %>

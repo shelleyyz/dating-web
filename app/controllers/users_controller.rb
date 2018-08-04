@@ -11,10 +11,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new user_params
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to root_path
+            #TODO change above redirect so user is redirected to their 'dashboard' once they create their account
     else
       render :new
     end
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find params[:id]
+    user.update user_params
   end
 
   def update
@@ -41,5 +43,5 @@ end
 
 private
 def user_params
-  params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :email, :interests)
+  params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name)
 end
