@@ -4,18 +4,16 @@ class SessionController < ApplicationController
 
     def create
       #get use with this email address:
-      user = User.find_by :username => params[:username]
+      user = User.find_by :email => params[:email]
       #if passwords match (encrypted ones)
       if user.present? && user.authenticate(params[:password])
-        #remember this user in the session hash
-        session[:user_id] = user.id
-        #and redirect them to home page #NOTE CHANGE THIS TO DASH PAGE!
-        redirect_to users_profile_path
-        #else if the passwords dont match, redirect them to the login
-      else
-        #flash is different to session in that it only stores date for one refresh, session stores it until you tell it not to anymore (with destroy method)
-        flash[:error] = "Invalid username or password entered"
-        redirect_to login_path
+      #remember this user in the session
+      session[:user_id] = user.id
+      redirect_to user_path(user)
+    else
+      flash[:error] = "Invalid email or password"
+      #send them to the login page again with the above error message
+      redirect_to login_path
       end
     end
 
