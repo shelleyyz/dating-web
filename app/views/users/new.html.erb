@@ -1,31 +1,6 @@
-<h1>Sign Up!</h1>
+<div class="user_form">
 
-<%= form_for @user do |f| %>
+  <h1>Sign Up!</h1>
 
-<%= f.label :email, :autofocus => true%>
-<%= f.email_field :email, :placeholder => "shelley@ga.co" %>
-
-<%= f.label :password %>
-<%= f.password_field :password %>
-
-<%= f.label "Confirm your password" %>
-<%= f.password_field :password_confirmation %>
-
-<%= f.label :first_name %>
-<%= f.text_field :first_name, :placeholder => "Shelley" %>
-
-<%= f.label :last_name %>
-<%= f.text_field :last_name, :placeholder => "Zhang" %>
-
-<%= f.label "Date of Birth" %>
-<%= f.date_field :dob %>
-
-<%= f.label :bio %>
-<%= f.text_area :bio %>
-
-<%= f.label :admin %>
-<%= f.check_box :admin %>
-
-<%= f.submit %>
-
-<% end %>
+  <%= render :partial => 'form' %>
+</div>
