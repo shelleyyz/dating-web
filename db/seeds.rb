@@ -51,3 +51,14 @@ user4 = User.create(
   # :bio => "Don't worry - I'm not crazy about me either.",
 
 )
+
+Conversation.destroy_all
+
+message1 = Conversation.create(
+  :sender_id => 1,
+  :receiver_id => 2
+)
+message2 = Conversation.create(
+  :sender_id => 2,
+  :receiver_id => 1
+)

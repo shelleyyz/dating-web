@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-
   root :to => 'pages#home'
     get "/" => 'pages#home'
     get '/users/profile' => 'users#profile'
   resources :users, :only => [:index, :show, :new, :create, :edit, :update, :delete]
   resources :relationships
   resources :mailboxes
+  resources :conversations
 
   get '/login' => 'session#new' #login form
   post '/login' => 'session#create' #perform the login

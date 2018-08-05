@@ -1,0 +1,5 @@
+<h1>Conversations#index</h1>
+<% @conversations.each do |conversation| %>
+  <p><%= conversation.sender_id %>, <%= conversation.receiver_id %></p>
+
+<% end %>

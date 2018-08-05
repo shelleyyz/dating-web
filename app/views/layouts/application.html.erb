@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <nav>
+<ul class="topnav">
+<li>  <%= link_to 'Home', root_path, :class => "active" %>
+<li>  <%= link_to 'new mail' , new_conversation_path %>
+
+<% if @current_user.present? %>
+<li>  <%= link_to 'current Users' , users_path %>
+<li><%= link_to "Sign out #{@current_user.email}", login_path, :method => "delete", :class =>"logins"%>
+
+<% else %>
+<li>  <%= link_to 'Sign up', new_user_path, :class =>"logins" %>
+<li>  <%= link_to 'Sign in', login_path, :class =>"logins" %>
+<% end %>
+</ul>
+</nav>
     <%= yield %>
   </body>
 </html>
