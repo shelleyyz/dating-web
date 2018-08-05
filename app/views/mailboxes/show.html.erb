@@ -1,2 +1,6 @@
 <h1>Mailboxes#show</h1>
 <p>Find me in app/views/mailboxes/show.html.erb</p>
+<% @mailboxes.each do |mailbox| %>
+  <p>sender_id: <%= mailbox.sender_id %>, content: <%= mailbox.content %>, Convo id: <%= mailbox.conversation_id %></p>
+
+<% end %>

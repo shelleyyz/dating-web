@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
   def index
-    @conversations = Conversation.where(:sender_id => 1)
+    @conversations = Conversation.where(:sender_id => @current_user.id)
   end
 
   def new

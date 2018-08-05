@@ -1,5 +1,5 @@
 <h1>Conversations#index</h1>
 <% @conversations.each do |conversation| %>
-  <p><%= conversation.sender_id %>, <%= conversation.receiver_id %></p>
+  <p><%= link_to "#{conversation.sender_id}" , mailbox_path(conversation.id)%>, <%= conversation.receiver_id %></p>
 
 <% end %>

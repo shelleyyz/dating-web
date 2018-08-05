@@ -1,12 +1,14 @@
 class MailboxesController < ApplicationController
   def index
-#.or(Conversation.where(:receiver_id =>1))
-     #change to @current_user later
+    @mailboxes = Mailbox.where(:conversation_id => 1)
+
   end
 
   def new
   end
 
   def show
+    @mailboxes = Mailbox.where(:conversation_id => 1)
+
   end
 end
