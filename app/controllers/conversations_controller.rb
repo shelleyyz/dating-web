@@ -20,6 +20,12 @@ class ConversationsController < ApplicationController
   def edit
   end
 
+  def destroy
+  @conversation =  Conversation.find params[:id]
+  @conversation.destroy
+  redirect_to conversations_path
+
+end
 
 
   private
