@@ -1,6 +1,26 @@
 <h1>Welcome to your Mailbox</h1>
 
-<% @mailboxes.each do |mailbox| %>
-  <p>sender_id: <%= mailbox.sender_id %>, content: <%= mailbox.content %>, Convo id: <%= mailbox.conversation_id %></p>
+<table>
+<thead>
+  <tr><td>sender_id </td>
+<td>Content </td>
+<td> Date/Time </td>
+<td> Delete Mail </td>
 
-<% end %>
+</tr>
+</thead>
+<tbody>
+  <% @mailboxes.each do |mailbox| %>
+<tr>
+  <td><%= mailbox.sender_id %></td>
+    <td><%= mailbox.content%></td>
+        <td> <%= mailbox.created_at %>
+    <td>  <%= button_to 'Delete mail', mailbox_path(mailbox.id), :method => 'delete' %>
+
+
+</tr>
+  <% end %>
+
+</tbody>
+
+</table>
