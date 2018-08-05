@@ -29,13 +29,17 @@ class User < ApplicationRecord
   # validates :gender, :presence => true
   # validates :location, :presence => true
 
-  has_many :relationships
+  has_many :active_relationships, class_name:  "Relationship",
+                                  foreign_key: [:liker_id, :likee_id],
+                                  dependent:   :destroy
+
+  has_many :liking, through: :active_relationships, source: :likee
+  has_many :likers, through: :active_relationships, source: :liker
+
+
+
   has_many :mailboxes
   # enum language: [:javascript, :ruby, :python, :golang, :C, :php, :java]
 
-  has_many :active_relationships, class_name: "Relationship",
-                                  foreign_key: "liker_id",
-                                  dependent: :destroy
 
-  has_many :liking, through: :active_relationships, source: :likee
 end

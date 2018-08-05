@@ -6,9 +6,12 @@
     <%= user.first_name  %>
     <%= user.last_name %>
     <%= user.id %>
+    <%= @current_user %>
+
+    <%= button_to "Like", action: "index", :class => "btn btn-default" %>
 
 
-    <%= button_to 'Like', '/relationship/new?userid=1&likee=<%@user.id%>', :method => 'get', :class => "btn btn-dark", form: {style: 'display:inline-block;'} %>
+
 
   </p>
 <% end %>
