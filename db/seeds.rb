@@ -56,10 +56,10 @@ Conversation.destroy_all
 
 message1 = Conversation.create(
   :sender_id => 1,
-  :receiver_id => 2
+  :receiver_id => 3
 )
 message2 = Conversation.create(
-  :sender_id => 2,
+  :sender_id => 3,
   :receiver_id => 1
 )
 
@@ -72,7 +72,7 @@ mailbox1 = Mailbox.create(
 )
 
 mailbox2 = Mailbox.create(
-  :sender_id => 2,
+  :sender_id => 3,
   :content => "Me too",
   :conversation_id => message1.id
 )

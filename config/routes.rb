@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :users, :only => [:index, :show, :new, :create, :edit, :update, :delete]
   resources :relationships
   resources :mailboxes
+  get '/mailboxes/new/:id' => 'mailboxes#new'
   resources :conversations
+
 
   get '/login' => 'session#new' #login form
   post '/login' => 'session#create' #perform the login

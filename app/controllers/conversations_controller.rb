@@ -1,10 +1,12 @@
 class ConversationsController < ApplicationController
   def index
-    @conversations = Conversation.where(:sender_id => @current_user.id)
+
+    @conversations = Conversation.where(:sender_id => @current_user.id).or(Conversation.where(:receiver_id => @current_user.id))
   end
 
   def new
     @conversation = Conversation.new
+    @receiver = User.where(:id => params[:id]).first
   end
 
   def create

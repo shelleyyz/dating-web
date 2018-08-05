@@ -1,6 +1,9 @@
 <h1>Add new Mail</h1>
 
 <%= form_for @conversation do |f| %>
-<%= f.text_field :receiver_id %>
-<%= f.submit 'New Mail'%>
+
+<%= @receiver.first_name %>
+<%= f.text_field :content%>
+
+<%= f.submit 'Send Mail'%>
 <% end %>

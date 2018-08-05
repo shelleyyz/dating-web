@@ -1,2 +1,10 @@
 <h1>Mailboxes#new</h1>
 <p>Find me in app/views/mailboxes/new.html.erb</p>
+
+<%= form_for @mailbox do |f| %>
+
+<%= @receiver.first_name %>
+<%= f.text_field :content %>
+
+<%= f.submit 'Send Mail'%>
+<% end %>
