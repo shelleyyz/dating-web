@@ -1,6 +1,42 @@
-<div class="user_form">
+<div class="signup-form">
 
   <h1>Sign Up!</h1>
 
-  <%= render :partial => 'form' %>
-</div>
+  <% if @user.errors.any? %>
+    <ol>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ol>
+    <% end %>
+
+    <%= form_for @user do |f| %>
+    <div class="signup">
+
+
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, :required => true, :placeholder => "Jane" %>
+    <br />
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, :required => true, :placeholder => "Smith" %>
+    <br />
+
+    <%= f.label "Email Address" %>
+    <%= f.email_field :email, :required => true, :placeholder => "janesmith@ga.co" %>
+    <br />
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br />
+
+    <%= f.label "Confirm password" %>
+    <%= f.password_field :password_confirmation, :required => true %>
+
+    <!-- # <%#f.label :image %>
+    # <%# f.url_field :image %> -->
+    <br />
+    <%= f.submit "Sign me up!", :class => "submit-btn" %>
+    </div>
+    <% end %>
+  </div>
