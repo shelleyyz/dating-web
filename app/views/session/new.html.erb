@@ -1,10 +1,20 @@
-<h1>Log In</h1>
+<div class="login-page">
 
-<div class="user">
-<%= form_tag login_path, :class => "form" do %>
-<div class="alert"><p><%= flash[:error] %><p></div>
-<%= email_field_tag :email,"", :class => "form__input", :placeholder => "email address"%>
-<%= password_field_tag :password,"", :class => "form__input", :placeholder =>"password"%>
-<%= submit_tag "Log in", :class => "btn" %>
-<% end %>
+  <h1>Log In</h1>
+
+  <%= form_tag login_path do %>
+
+    <div class="alert"><p><%= flash[:error] %><p></div>
+
+
+    <%= email_field_tag :email, nil,  :placeholder => "email address"%>
+    <br />
+
+    <%= password_field_tag :password, nil, :class => "form_input", :placeholder =>"password"%>
+    <br />
+
+    <%= submit_tag "Log in", :class => "submit-btn" %>
+
+  <% end %>
+
 </div>
