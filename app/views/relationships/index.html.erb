@@ -8,11 +8,17 @@
     <%= user.id %>
     <%= @current_user %>
 
-    <%= button_to "Like", relationships_path(:user_id => user.id), :class => "btn btn-default" %>
 
-
+    <%= button_to "Like", relationships_path(:user_id => user.id),  :class => "btn btn-default" %>
 
 
   </p>
-<% end %>
+  <% end %>
+
+  <% @match.each do |user| %>
+    <p>
+      <%= user.likee_id %>
+    </p>
+
+  <% end %>
 </div>
