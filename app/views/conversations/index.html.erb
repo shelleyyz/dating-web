@@ -5,7 +5,7 @@
 
 
 <% @conversations.each do |conversation| %>
-  <p>Sender:<%= link_to "#{conversation.user_id.first_name + " " + conversation.user_id.last_name }" , mailbox_path(conversation.id)%>, Receiver:<%= conversation.receiver_id %></p>
+  <p>Sender:<%= link_to "#{conversation.user_id.first_name + " " + conversation.user_id.last_name }" , mailbox_path(conversation.id)%>, Receiver:<%= conversation.receiver_id %>, convo_id: <%= conversation.id %></p>
 
   <%= button_to 'Delete conversation', conversation_path(conversation.id), :method => 'delete' %>
 

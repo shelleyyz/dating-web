@@ -40,8 +40,6 @@ gem 'pry-rails'
 
 gem 'jquery-rails'
 
-gem 'better_errors'
-
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'cloudinary'
