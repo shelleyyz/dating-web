@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :relationships
   resources :mailboxes
   get '/mailboxes/new/:id' => 'mailboxes#new'
+  post '/mailboxes/mail/:id' => 'mailboxes#mail'
+
   resources :conversations
 
 

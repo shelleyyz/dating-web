@@ -3,15 +3,28 @@
 
 <table>
 <thead>
+  <tr><td>sender_id </td>
+<td>Content </td>
+<td> Date/Time </td>
+<td> Delete Mail </td>
+</tr>
 </thead>
 <tbody>
   <% @mailboxes.each do |mailbox| %>
 <tr>
-  <td>sender_id: <%= mailbox.sender_id %>, content: <%= mailbox.content%></td>
+  <td> <%= mailbox.sender_id %></td>
+    <td>  <%= mailbox.content%></td>
+    <td><%= mailbox.created_at %></td>
+    <td><%= button_to 'Delete mail', mailbox_path(mailbox.id), :method => 'delete' %></td>
 </tr>
+
   <% end %>
 
 </tbody>
-
 </table>
-  <%= button_to 'Delete Mail', mailbox_path(mailbox.id), :method => 'delete' %>
+
+
+<%= form_tag "/mailboxes/mail/#{params[:id]}" do %>
+  <%= text_field_tag :content %>
+  <%= submit_tag "Send" %>
+<% end %>

@@ -12,5 +12,6 @@
 
 class Mailbox < ApplicationRecord
   belongs_to :user, :optional => true
+  belongs_to :user_id, :class_name => "User", :foreign_key => :sender_id
   has_many :conversations
 end
