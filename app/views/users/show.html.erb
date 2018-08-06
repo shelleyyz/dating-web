@@ -3,18 +3,72 @@
 <br>
 <br>
 
-  <%= link_to 'Edit Profile', edit_user_path(@user) %>
   <% if @current_user.admin? %>
-  <%= link_to 'Delete Profile', user_path(@user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+    <%= link_to 'ADMIN: Delete Profile', user_path(@user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
   <% end %>
 
+  <% if @user === @current_user %>
+    <%= link_to 'Edit Profile', edit_user_path(@user) %>
+    <%= link_to 'Delete Profile', user_path(@user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+  <% end %>
+  <br />
+
+  <% if @user.image.present? %>
+    <%= image_tag @user.image, :class => "user-image", :alt => @user.first_name %>
+  <% end %>
 
 <br>
 <br>
 
-  <h3>Name: <%= @user.first_name %> <%= @user.last_name%></h3>
+  <h3>Name: <%= @user.first_name %>
+  <%= @user.last_name%></h3>
+
+  <% if @user.interests.present? %>
   <h4>Interests: <%= @user.interests %></h4>
+  <% end %>
+
+  <% if @user.bio.present? %>
+  <h4>A Little About Me: <%= @user.bio %> </h4>
+  <% end %>
+
+  <% if @user.gender.present? %>
   <h4>Gender: <%= @user.gender %></h4>
+  <% end %>
+
+  <% if @user.dob.present? %>
   <h4>Date of Birth: <%= @user.dob %></h4>
+  <% end %>
+
   <h4>Location: <%= @user.location %></h4>
+<<<<<<< HEAD
+
+  <% if @user.language.present? %>
+  <h4>Favourite Language: <%= @user.language %></h4>
+  <% end %>
+=======
   <h4>Languages: <%= @user.language %></h4>
+
+
+  <% if @user.location.present? %>
+  <div id="map"></div> <!--need predefined height to display content, otherwise it won't expand-->
+
+<% end %>
+
+  <script>
+      var myLatLng = {lat: <%= @latitude %>, lng: <%= @longitude %>};
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          zoom: 15
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+        })
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOqObQluS3qUNuRCtLudvPZvx4SOeYHc0&callback=initMap"
+    async defer></script>
+>>>>>>> 5357e63c0ab4f4a314ba83a0b1ce0bba308616d1

@@ -1,3 +1,57 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.nav-item {
+  list-style-type: none;
+  display: inline;
+
+}
+
+
+.blue {
+  background-color: blue;
+  color: white;
+  display: block;
+  width: 30%;
+
+}
+
+.you {
+  display: block;
+  margin: 0 auto;
+
+
+}
+
+.white{
+  background-color: grey;
+  color:white;
+  display: block;
+  width: 30%;
+}
+
+#map {
+  height: 90vh;
+  width: 80%;
+  margin: 0 auto;
+  border: red solid 2px;
+}
+
+
+
+//STYLING: USER INDEX
+.potential-matches-container {
+  max-width: 860px;
+  text-align: center;
+  .index-image img {
+    max-width: 22vw;
+  }
+}
+
+.matches-index-grid {
+  display: inline-block;
+  width: 24vw;
+}
+
+
+//STYLING: USER SHOW/PROFILE
+.user-image {
+  max-width: 40vw;
+}

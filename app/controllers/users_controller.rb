@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # before_action :check_for_admin, :only => [:index]
 
   def index
-    @users = User.all
+    @users = User.all.order(:first_name)
   end
 
   def new
@@ -12,17 +12,32 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
+    if params["user"]["image"]
+      cloudinary =
+      Cloudinary::Uploader.upload( params["user"]["image"] )
+      @user.image = cloudinary["url"]
+    end
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to user_path(@user)
             #TODO change above redirect so user is redirected to their 'dashboard' once they create their account
     else
       render :new
     end
   end
 
+  # def age(dob)
+  #   dob = @user.dob
+  #   now = Time.now.utc.to_date
+  #   now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+  # end
+
   def show
     @user = User.find params[:id]
+    results = Geocoder.search("#{@user.location}")
+    coordinates = results.first.coordinates
+    @latitude = coordinates.first
+    @longitude = coordinates.last
   end
 
   def edit
@@ -31,14 +46,24 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find params[:id]
-    # @user.update user_params
-    binding.pry
-    if @user.update (user_params)
-    flash[:success] = "Profile updated"
-    redirect_to @user
-  else
-    render 'edit'
+
+    if params["user"]["location"]
+      results = Geocoder.search("#{@user.location}")
+      coordinates = results.first.coordinates
+      @latitude = coordinates.first
+      @longitude = coordinates.last
+
+    end
+
+    @user.update user_params
+
+    if params["user"]["image"]
+    cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+    @user.image = cloudinary["url"]
   end
+    @user.save
+
+    redirect_to @user
   end
 
   def destroy

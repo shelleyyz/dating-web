@@ -22,12 +22,15 @@
 class User < ApplicationRecord
   has_secure_password
   validates :email, :presence => true, :uniqueness => true
+  validates :location, :presence => true
+  geocoded_by :location
+  after_validation :geocode, if :location_changed?
   # validates :dob
   # validates :first_name, :presence => true
   # validates :last_name, :presence => true
   # # validates :image
   # # validates :gender
-  # validates :location, :presence => true
+
 
 
   # TODO: add dependent destroy to liking and likers
@@ -36,9 +39,10 @@ class User < ApplicationRecord
 
   # has_many :active_relationships, ->(user) { where("relationships.liker_id = :user_id OR relationships.likee_id = :user_id", user_id: user.id) }
 
-  has_many :mailboxes
-  has_many :conversations, :through => :mailbox
+  has_many :mailboxes, :through =>:conversation
+  has_many :conversations
   # enum language: [:javascript, :ruby, :python, :golang, :C, :php, :java]
 
+end
 
 end

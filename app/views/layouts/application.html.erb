@@ -10,6 +10,49 @@
   </head>
 
   <body>
+    <nav>
+
+      <ul>
+
+        <% if @current_user.present? %>
+          <%= link_to 'Home', root_path, :class=> "nav-link" %>
+
+          <%= link_to 'My Profile', user_path(@current_user), :class => "nav-link" %>
+
+          <li class="nav-item">
+            <%= link_to "Find Matches!", users_path, :class => "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <a href='#'>My Matches</a>
+          </li>
+
+          <li class="nav-item"></div>
+              <a href="/conversations">My Conversations</a>
+          </li>
+
+
+          <li class="nav-item"></div>
+              <a href="#">Fun stuff</a>
+          </li>
+
+
+          <li class="nav-item">
+            <%= link_to "Sign Out #{@current_user.first_name.capitalize} ", login_path, :method => 'delete', :class => "nav-link" %>
+          </li>
+
+          <%= link_to 'Admin Area', users_path if @current_user.admin? %>
+
+        <% else %>
+
+          <%= link_to 'Log In', login_path, :class => "nav-link" %>
+          <%= link_to 'Sign Up', new_user_path, :class => "nav-link" %>
+        <% end %>
+      </ul>
+
+    </nav>
+
     <%= yield %>
+
   </body>
 </html>

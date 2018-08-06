@@ -7,6 +7,7 @@ class MailboxesController < ApplicationController
   def new
     @mailbox = Mailbox.new
     @receiver = User.where(:id => params[:id]).first
+    @conversations = Conversation.where(:id => params[:id])
   end
 
   def create
@@ -19,13 +20,26 @@ class MailboxesController < ApplicationController
     mailbox.content = mailbox_params[:content]
     mailbox.sender_id = @current_user.id
     mailbox.save
-
-    redirect_to mailboxes_path
+    redirect_to mailbox_path(mailbox.conversation_id)
 
   end
 
   def show
-    @mailboxes = Mailbox.where(:sender_id => @current_user.id)
+    @mailboxes = Mailbox.where(:conversation_id => params[:id])
+    @conversations = Conversation.where(:id => params[:id])
+      @receiver = @conversations.first.receiver_id
+      @receiver_id = User.where(:id => @receiver.to_i)
+  end
+
+  def mail
+    mailbox = Mailbox.new
+    mailbox.conversation_id = params[:id]
+    mailbox.content = params[:content]
+    mailbox.sender_id = @current_user.id
+    mailbox.save
+
+  redirect_back :fallback_location => root_path
+
   end
 
   def destroy
