@@ -3,7 +3,9 @@ class RelationshipsController < ApplicationController
     @users = User.all
     # @current_user = session[:user_id]
     @likers = Relationship.where(:liker_id => @current_user.id)
+    @user_likees = Relationship.where(:likee_id => @current_user.id)
     @match = Relationship.where(:liker_id => @likers.first.likee_id)
+    
     # @create_relationship = user.active_relationships.create(likee.id: other_user.id)
   end
 

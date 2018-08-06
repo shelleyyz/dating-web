@@ -29,9 +29,6 @@ class User < ApplicationRecord
   # # validates :gender
   # validates :location, :presence => true
 
-  # has_many :active_relationships, class_name:  "Relationship",
-  #                                 foreign_key: #[:liker_id, :likee_id],
-  #                                 dependent:   :destroy
 
   # TODO: add dependent destroy to liking and likers
   has_many :liking, class_name: "Relationship", foreign_key: :likee_id, dependent: :destroy

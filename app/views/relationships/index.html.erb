@@ -6,8 +6,7 @@
     <%= user.first_name  %>
     <%= user.last_name %>
     <%= user.id %>
-    <%= @current_user %>
-
+    Current_user:<%= @current_user.id %>
 
     <%= button_to "Like", relationships_path(:user_id => user.id),  :class => "btn btn-default" %>
 
@@ -15,10 +14,21 @@
   </p>
   <% end %>
 
-  <% @match.each do |user| %>
+  <% @user_likees.each do |user| %>
     <p>
-      <%= user.likee_id %>
+      Current user likes <%= user.liker_id %>
     </p>
 
   <% end %>
+
+  <% @likers.each do |user| %>
+  <p>
+    Who like current User<%= user.likee_id  %>
+  </p>
+  <% end %>
+<!--
+  <%# if user.liker_id == user.likee_id %>
+    <p>You Matched! </p>
+
+  <%# end %> -->
 </div>

@@ -86,33 +86,33 @@ mailbox3 = Mailbox.create(
   :conversation_id => message2.id
 )
 
-# p "Relationships"
+p "Relationships"
 Relationship.destroy_all
-# relationship1 = Relationship.create(
-#   :liker_id => user1.id,
-#   :likee_id => user2.id
-# )
-#
-# relationship2 = Relationship.create(
-#   :liker_id => user2.id,
-#   :likee_id => user1.id
-# )
-#
-# relationship3 = Relationship.create(
-#   :liker_id => user3.id,
-#   :likee_id => user4.id
-# )
-#
-# relationship4 = Relationship.create(
-#   :liker_id => user4.id,
-#   :likee_id => user1.id
-# )
-#
-# relationship5 = Relationship.create(
-#   :liker_id => user1.id,
-#   :likee_id => user3.id
-# )
-#
+relationship1 = Relationship.create(
+  :liker_id => user1.id,
+  :likee_id => user2.id
+)
+
+relationship2 = Relationship.create(
+  :liker_id => user2.id,
+  :likee_id => user1.id
+)
+
+relationship3 = Relationship.create(
+  :liker_id => user1.id,
+  :likee_id => user4.id
+)
+
+relationship4 = Relationship.create(
+  :liker_id => user4.id,
+  :likee_id => user2.id
+)
+
+relationship5 = Relationship.create(
+  :liker_id => user2.id,
+  :likee_id => user3.id
+)
+
 # relationship6 = Relationship.create(
 #   :liker_id => user4.id,
 #   :likee_id => user3.id
