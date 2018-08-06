@@ -51,3 +51,34 @@ user4 = User.create(
   # :bio => "Don't worry - I'm not crazy about me either.",
 
 )
+
+Conversation.destroy_all
+
+message1 = Conversation.create(
+  :sender_id => 1,
+  :receiver_id => 3
+)
+message2 = Conversation.create(
+  :sender_id => 3,
+  :receiver_id => 1
+)
+
+Mailbox.destroy_all
+
+mailbox1 = Mailbox.create(
+  :sender_id => 1,
+  :content => "Love you bb",
+  :conversation_id => message1.id
+)
+
+mailbox2 = Mailbox.create(
+  :sender_id => 3,
+  :content => "Me too",
+  :conversation_id => message1.id
+)
+
+mailbox3 = Mailbox.create(
+  :sender_id => 3,
+  :content => "hello dude",
+  :conversation_id => message2.id
+)

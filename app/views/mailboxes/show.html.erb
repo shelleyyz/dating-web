@@ -1,2 +1,17 @@
 <h1>Mailboxes#show</h1>
 <p>Find me in app/views/mailboxes/show.html.erb</p>
+
+<table>
+<thead>
+</thead>
+<tbody>
+  <% @mailboxes.each do |mailbox| %>
+<tr>
+  <td>sender_id: <%= mailbox.sender_id %>, content: <%= mailbox.content%></td>
+</tr>
+  <% end %>
+
+</tbody>
+
+</table>
+  <%= button_to 'Delete Mail', mailbox_path(mailbox.id), :method => 'delete' %>

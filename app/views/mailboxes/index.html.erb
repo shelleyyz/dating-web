@@ -1,2 +1,26 @@
-<h1>Mailboxes#index</h1>
-<p>Find me in app/views/mailboxes/index.html.erb</p>
+<h1>Welcome to your Mailbox</h1>
+
+<table>
+<thead>
+  <tr><td>sender_id </td>
+<td>Content </td>
+<td> Date/Time </td>
+<td> Delete Mail </td>
+
+</tr>
+</thead>
+<tbody>
+  <% @mailboxes.each do |mailbox| %>
+<tr>
+  <td><%= mailbox.sender_id %></td>
+    <td><%= mailbox.content%></td>
+        <td> <%= mailbox.created_at %>
+    <td>  <%= button_to 'Delete mail', mailbox_path(mailbox.id), :method => 'delete' %>
+
+
+</tr>
+  <% end %>
+
+</tbody>
+
+</table>
