@@ -79,6 +79,8 @@ GEM
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -109,6 +111,7 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.4)
     multi_json (1.13.1)
+    multi_xml (0.6.0)
     netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.8.4)
@@ -157,6 +160,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redis (4.0.1)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -218,6 +222,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.2)
   geocoder
+  httparty
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
@@ -225,7 +230,11 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.0)
+<<<<<<< HEAD
+  redis (~> 4.0)
+=======
   rails_12factor
+>>>>>>> 7d45bb605f283350166b0459add00c2f0f96f9a8
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

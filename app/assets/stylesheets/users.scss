@@ -5,26 +5,21 @@
 }
 
 
-.blue {
-  background-color: blue;
-  color: white;
-  display: block;
-  width: 30%;
-
-}
-
-.you {
-  display: block;
+.convo-list {
+  width: 40%;
+  text-align: center;
   margin: 0 auto;
-
-
+  background-color: blue;
 }
 
-.white{
-  background-color: grey;
-  color:white;
-  display: block;
-  width: 30%;
+.convo-list a {
+  text-decoration: none;
+  color: white;
+
+}
+.convo-list a:hover {
+  text-decoration: underline;
+  color: white;
 }
 
 #map {

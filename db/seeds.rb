@@ -86,6 +86,7 @@ mailbox3 = Mailbox.create(
   :conversation_id => message2.id
 )
 
+<<<<<<< HEAD
 p "Relationships"
 Relationship.destroy_all
 relationship1 = Relationship.create(
@@ -117,3 +118,103 @@ relationship5 = Relationship.create(
 #   :liker_id => user4.id,
 #   :likee_id => user3.id
 # )
+=======
+Question.destroy_all
+
+q1 = Question.create(
+  :category_id => 9,
+  :category => "General Knowledge"
+)
+q2 = Question.create(
+  :category_id => 10,
+  :category => "Entertainment: Books"
+)
+q3 = Question.create(
+  :category_id => 11,
+  :category => "Entertainment: Films"
+)
+q4 = Question.create(
+  :category_id => 12,
+  :category => "Entertainment: Music"
+)
+q5 = Question.create(
+  :category_id => 13,
+  :category => "Entertainment: Musicals & Theatres"
+)
+q6 = Question.create(
+  :category_id => 14,
+  :category => "Television"
+)
+q7 = Question.create(
+  :category_id => 15,
+  :category => "Video Games"
+)
+q8 = Question.create(
+  :category_id => 16,
+  :category => "Board Games"
+)
+q9 = Question.create(
+  :category_id => 17,
+  :category => "Science & Nature"
+)
+q10 = Question.create(
+  :category_id => 18,
+  :category => "Science: Computers"
+)
+q11 = Question.create(
+  :category_id => 19,
+  :category => "Science: Mathematics"
+)
+q12 = Question.create(
+  :category_id => 20,
+  :category => "Mythology"
+)
+q13 = Question.create(
+  :category_id => 21,
+  :category => "Sports"
+)
+q14 = Question.create(
+  :category_id => 22,
+  :category => "Geography"
+)
+q15 = Question.create(
+  :category_id => 23,
+  :category => "History"
+)
+q16 = Question.create(
+  :category_id => 24,
+  :category => "Politics"
+)
+q17 = Question.create(
+  :category_id => 25,
+  :category => "Arts"
+)
+q18 = Question.create(
+  :category_id => 26,
+  :category => "Celebrities"
+)
+q19 = Question.create(
+  :category_id => 27,
+  :category => "Animals"
+)
+q20 = Question.create(
+  :category_id => 28,
+  :category => "Vehicles"
+)
+q21 = Question.create(
+  :category_id => 29,
+  :category => "Entertainment: Comics"
+)
+q22 = Question.create(
+  :category_id => 30,
+  :category => "Science: Gadgets"
+)
+q23 = Question.create(
+  :category_id => 31,
+  :category => "Entertainment: Japanese Anime & Manga"
+)
+q13 = Question.create(
+  :category_id => 32,
+  :category => "Entertainment: Cartoon and Animations"
+)
+>>>>>>> 42ec87679685db59109141bc9bbeba5dc06ec9e7

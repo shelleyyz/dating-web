@@ -15,4 +15,4 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require activestorage
-//= require_tree .
+//= require_tree 
