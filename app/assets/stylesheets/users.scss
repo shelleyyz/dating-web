@@ -5,26 +5,21 @@
 }
 
 
-.blue {
-  background-color: blue;
-  color: white;
-  display: block;
-  width: 30%;
-
-}
-
-.you {
-  display: block;
+.convo-list {
+  width: 40%;
+  text-align: center;
   margin: 0 auto;
-
-
+  background-color: blue;
 }
 
-.white{
-  background-color: grey;
-  color:white;
-  display: block;
-  width: 30%;
+.convo-list a {
+  text-decoration: none;
+  color: white;
+
+}
+.convo-list a:hover {
+  text-decoration: underline;
+  color: white;
 }
 
 #map {
@@ -32,4 +27,26 @@
   width: 80%;
   margin: 0 auto;
   border: red solid 2px;
+}
+
+
+
+//STYLING: USER INDEX
+.potential-matches-container {
+  max-width: 860px;
+  text-align: center;
+  .index-image img {
+    max-width: 22vw;
+  }
+}
+
+.matches-index-grid {
+  display: inline-block;
+  width: 24vw;
+}
+
+
+//STYLING: USER SHOW/PROFILE
+.user-image {
+  max-width: 40vw;
 }
