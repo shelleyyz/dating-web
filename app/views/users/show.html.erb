@@ -23,56 +23,25 @@
   <h4>Languages: <%= @user.language %></h4>
 
 
-  <%= content_tag :div, id: "map", data: {places: @locations} do %>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA&callback=initMap">
-      </script>
+  <% if @user.location.present? %>
+  <div id="map"></div> <!--need predefined height to display content, otherwise it won't expand-->
 
-      <script>
+<% end %>
 
+  <script>
+      var myLatLng = {lat: <%= @latitude %>, lng: <%= @longitude %>};
 
-      // let state = {lat: -33.87, lng: 151.20}
-      let state = {lat: 0, lng: 0}
-
-      let map;
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: state.lat, lng: state.lng},
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
           zoom: 15
         });
 
-
-        console.log($('#map').data('places') )
-
-        let placeList = $('#map').data('places')
-
-        for (var i = 0; i < placeList.length; i++) {
-          console.log( placeList[i] )
-          marker = new google.maps.Marker ({
-            position: {lat: placeList[i].latitude, lng: placeList[i].longitude},
-            map: map,
-            label: placeList[i].address
-          })
-        }
-
-        console.log("state", state)
-
-        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-        marker = new google.maps.Marker ({
-          position: {lat: state.lat, lng: state.lng},
+        var marker = new google.maps.Marker({
+          position: myLatLng,
           map: map,
-          label: "This is me",
-          icon: image
         })
-
       }
-
-      navigator.geolocation.getCurrentPosition( function(results)
-        {
-          console.log(results.coords.latitude, results.coords.longitude)
-          state = {lat: results.coords.latitude, lng: results.coords.longitude}
-          initMap()
-        })
-
-      </script>
-
-   <% end %>
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOqObQluS3qUNuRCtLudvPZvx4SOeYHc0&callback=initMap"
+    async defer></script>

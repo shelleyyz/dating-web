@@ -1,7 +1,7 @@
 <h1>all users: <%= number_to_human User.count %></h1>
 <% @users.each do |user| %>
 <p>
-  <%= user.email %>
+  <%= link_to user.first_name, user_path(user) %>
 </p>
 
 <%= link_to 'Delete User', user_path(user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
