@@ -36,7 +36,6 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'pry-rails'
 
 gem 'geocoder'
 
@@ -54,6 +53,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry-rails'
+  
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
