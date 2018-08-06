@@ -40,14 +40,12 @@ ActiveRecord::Schema.define(version: 2018_08_04_052933) do
   create_table "relationships", force: :cascade do |t|
     t.integer "liker_id"
     t.integer "likee_id"
-    t.boolean "active"
+    t.text "relationship_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "relationships_users", id: false, force: :cascade do |t|
-    t.integer "relationship_id"
-    t.integer "user_id"
+    t.index ["likee_id"], name: "index_relationships_on_likee_id"
+    t.index ["liker_id", "likee_id"], name: "index_relationships_on_liker_id_and_likee_id", unique: true
+    t.index ["liker_id"], name: "index_relationships_on_liker_id"
   end
 
   create_table "users", force: :cascade do |t|

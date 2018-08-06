@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/login' => 'session#new' #login form
   post '/login' => 'session#create' #perform the login
-  delete '/login' => 'session#destroy' #perform signout/'delete' the signin
+  delete '/login' => 'session#destroy' #perform signout/'delete' the signinß
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
