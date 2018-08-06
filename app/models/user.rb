@@ -38,8 +38,8 @@ class User < ApplicationRecord
 
 
 
-  has_many :mailboxes
-  has_many :conversations, :through => :mailbox
+  has_many :mailboxes, :through =>:conversation
+  has_many :conversations
   # enum language: [:javascript, :ruby, :python, :golang, :C, :php, :java]
 
 
