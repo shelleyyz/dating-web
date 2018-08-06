@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 <!-- <h1>all users: <%= number_to_human User.count %></h1> -->
 <h1>Find your perfect match</h1>
-=======
 <h1>all users: <%= number_to_human User.count %></h1>
 <% @users.each do |user| %>
 <p>
   <%= link_to user.first_name, user_path(user) %>
 </p>
->>>>>>> 5357e63c0ab4f4a314ba83a0b1ce0bba308616d1
 
 <div class="potential-matches-container">
 
