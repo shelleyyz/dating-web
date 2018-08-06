@@ -8,9 +8,9 @@
   <%= link_to 'Delete Profile', user_path(@user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
   <% end %>
 
-  
-  <% if @user.image.present? && @user.image.length != 0 %>
+  <% if @user.image.present? %>
     <%= image_tag @user.image, :alt => @user.first_name %>
+      <%= @user.image  %>
   <% end %>
 
 <br>
