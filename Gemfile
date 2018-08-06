@@ -38,6 +38,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'pry-rails'
 
+gem 'geocoder'
+
 gem 'jquery-rails'
 
 gem 'bcrypt', '~> 3.1.7'
