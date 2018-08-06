@@ -1,2 +1,12 @@
 <h1>Relationships#new</h1>
 <p>Find me in app/views/relationships/new.html.erb</p>
+
+<div>
+  <% @users.each do |user| %>
+  <p>
+    <%= user.first_name  %>
+    <%= user.last_name %>
+
+    </p>
+  <% end %>
+  </div>

@@ -11,8 +11,8 @@
 #
 
 class Relationship < ApplicationRecord
-  belongs_to :liker, :optional => true
-  belongs_to :likee, :optional => true
+  belongs_to :liker, :optional => true, class_name: "User"
+  belongs_to :likee, :optional => true, class_name: "User"
   validates :liker_id, presence: true
   validates :likee_id, presence: true
 end

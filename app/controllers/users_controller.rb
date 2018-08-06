@@ -12,6 +12,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
+    if params["user"]["image"]
+      cloudinary =
+      Cloudinary::Uploader.upload( params["user"]["image"] )
+      @user.image = cloudinary["url"]
+    end
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path
@@ -31,7 +36,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find params[:id]
-    user.update user_params
+    @user.update user_params
+
+    if params["user"]["image"]
+    cloudinary = Cloudinary::Uploader.upload( params[ "user" ][ "image" ] )
+    @user.image = cloudinary["url"]
+  end
+    @user.save
+
+    redirect_to @user
   end
 
   def destroy
@@ -49,7 +62,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name)
+    params.require(:user).permit(:first_name, :last_name, :interests, :email, :password, :password_confirmation, :image, :gender, :dob, :location, :language, :bio, :admin)
   end
 
 

@@ -1,6 +1,3 @@
-<div class="signup-edit-form">
-
-
   <%= form_for @user do |f| %>
 
   <div>
@@ -34,7 +31,7 @@
   <div>
   <%= f.label "Confirm your password" %>
   <br />
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation, :required => true %>
   </div>
   <br />
 
@@ -49,7 +46,6 @@
   <%= f.label :image %>
   <br />
   <%= f.file_field :image %>
-  <%= image_tag @user.image, :class => 'avatar' if @user.image.present? %>
   </div>
   <br />
 
