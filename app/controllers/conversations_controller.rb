@@ -2,6 +2,8 @@ class ConversationsController < ApplicationController
   def index
 
     @conversations = Conversation.where(:sender_id => @current_user.id).or(Conversation.where(:receiver_id => @current_user.id))
+
+
   end
 
   def new
@@ -20,6 +22,12 @@ class ConversationsController < ApplicationController
   def edit
   end
 
+  def destroy
+  @conversation =  Conversation.find params[:id]
+  @conversation.destroy
+  redirect_to conversations_path
+
+end
 
 
   private

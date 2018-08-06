@@ -28,6 +28,13 @@ class MailboxesController < ApplicationController
     @mailboxes = Mailbox.where(:sender_id => @current_user.id)
   end
 
+  def destroy
+  @mailbox =  Mailbox.find params[:id]
+  @mailbox.destroy
+  redirect_to mailboxes_path
+
+end
+
   private
   def mailbox_params
     params.require(:mailbox).permit(:content, :sender_id, :conversation_id)
