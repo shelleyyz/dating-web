@@ -8,7 +8,7 @@
     <%= user.id %>
     <%= @current_user %>
 
-    <%= button_to "Like", action: "index", :class => "btn btn-default" %>
+    <%= button_to "Like", relationships_path(:user_id => user.id), :class => "btn btn-default" %>
 
 
 

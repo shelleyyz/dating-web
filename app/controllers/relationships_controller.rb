@@ -28,24 +28,31 @@ class RelationshipsController < ApplicationController
       # end
     # check the relationships already exist - error msg if its exist
     # Create new relationships - asked http status code and error return from controller
-    @users = User.all
-    @liker = active_relationship.liker
-    @likee = active_relationship.likee
-    @create_relationship = user.active_relationships.create(likee_id: user.id)
-    @build_relationship = user.active_relationships.build(likee_id: user.id)
 
-      def like(user)
-        active_relationships.create(likee_id: other_user.id)
-      end
-
-      def unlike(user)
-        active_relationships.find_by(likee_id: other_user.id).destroy
-      end
-
-      def like?(user)
-        liking.include?(user)
-
-      end
+    # relationship = Relationship.new
+    # relationship.likee_id = params[:user_id]
+    # relationship.save
+    #
+    # @current_user.active_relationships << relationship
+    #
+    # @users = User.all
+    # @liker = active_relationship.liker
+    # @likee = active_relationship.likee
+    # @create_relationship = user.active_relationships.create(likee_id: user.id)
+    # @build_relationship = user.active_relationships.build(likee_id: user.id)
+    #
+    #   def like(user)
+    #     active_relationships.create(likee_id: other_user.id)
+    #   end
+    #
+    #   def unlike(user)
+    #     active_relationships.find_by(likee_id: other_user.id).destroy
+    #   end
+    #
+    #   def like?(user)
+    #     liking.include?(user)
+    #
+    #   end
 
 
     #TODO
