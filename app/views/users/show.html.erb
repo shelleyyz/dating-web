@@ -1,2 +1,20 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.first_name %>'s Profile</h1>
+
+<br>
+<br>
+
+  <%= link_to 'Edit Profile', edit_user_path(@user) %>
+  <% if @current_user.admin? %>
+  <%= link_to 'Delete Profile', user_path(@user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+  <% end %>
+
+
+<br>
+<br>
+
+  <h3>Name: <%= @user.first_name %> <%= @user.last_name%></h3>
+  <h4>Interests: <%= @user.interests %></h4>
+  <h4>Gender: <%= @user.gender %></h4>
+  <h4>Date of Birth: <%= @user.dob %></h4>
+  <h4>Location: <%= @user.location %></h4>
+  <h4>Languages: <%= @user.language %></h4>

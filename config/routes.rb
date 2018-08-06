@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root :to => 'pages#home'
-    get "/" => 'pages#home'
-    get '/users/profile' => 'users#profile'
-  resources :users, :only => [:index, :show, :new, :create, :edit, :update, :delete]
+  root :to => 'session#new'
+    # get "/" => 'pages#home'
+    # get '/users/profile' => 'users#profile'
+  resources :users
   resources :relationships
   resources :mailboxes
   get '/mailboxes/new/:id' => 'mailboxes#new'

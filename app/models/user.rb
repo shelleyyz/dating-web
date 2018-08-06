@@ -20,14 +20,13 @@
 #
 
 class User < ApplicationRecord
-
   has_secure_password
   validates :email, :presence => true, :uniqueness => true
-  # validates :dob, :presence => true
-  validates :first_name, :presence => true
-  validates :last_name, :presence => true
-  # validates :image, :presence => true
-  # validates :gender, :presence => true
+  # validates :dob
+  # validates :first_name, :presence => true
+  # validates :last_name, :presence => true
+  # # validates :image
+  # # validates :gender
   # validates :location, :presence => true
 
   has_many :relationships
