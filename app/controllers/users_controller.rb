@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     end
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to user_path(@user)
             #TODO change above redirect so user is redirected to their 'dashboard' once they create their account
     else
       render :new
