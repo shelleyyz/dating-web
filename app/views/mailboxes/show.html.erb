@@ -5,13 +5,8 @@
 
   <p>   <%= mailbox.content%></td>
   <%= mailbox.created_at.strftime("%H:%M") %></p>
-
-
-
+  <%=  %>
   <% end %>
-
-
-
 
 <%= form_tag "/mailboxes/mail/#{params[:id]}" do %>
   <%= text_field_tag :content %>

@@ -1,4 +1,5 @@
 class MailboxesController < ApplicationController
+
   def index
     @mailboxes = Mailbox.where(:sender_id => @current_user.id)
 
