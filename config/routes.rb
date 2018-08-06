@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root :to => 'session#new'
+  root :to => 'pages#home'
+  # root :to => 'session#new'
     # get "/" => 'pages#home'
     # get '/users/profile' => 'users#profile'
   resources :users
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
 
   get '/login' => 'session#new' #login form
   post '/login' => 'session#create' #perform the login
-  delete '/login' => 'session#destroy' #perform signout/'delete' the signinß
+  delete '/login' => 'session#destroy' #perform signout/'delete' the signin
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
