@@ -1,11 +1,17 @@
 <h1>Conversations</h1>
 
-<%= link_to 'New Mail', controller: "mailboxes", action: "new", id: 2 %>
+<%= link_to 'New Mail', controller: "mailboxes", action: "new", id: 14 %>
 
 
 
 <% @conversations.each do |conversation| %>
-  <p>Sender:<%= link_to "#{conversation.sender.first_name + " " + conversation.sender.last_name }" , mailbox_path(conversation.id)%>, Receiver: <%= conversation.receiver.first_name + " " + conversation.receiver.last_name %>, convo_id: <%= conversation.id %></p>
+  <p>
+  <% if conversation.sender_id != @current_user.id %>
+    <%= link_to "#{conversation.sender.first_name + " " + conversation.sender.last_name }" , mailbox_path(conversation.id)%></p>
+    <% else %>
+    <p>    <%= link_to "#{conversation.receiver.first_name}" + " " + "#{conversation.receiver.last_name}", mailbox_path(conversation.id) %> </p>
+  <% end %>
+
 
   <%= button_to 'Delete conversation', conversation_path(conversation.id), :method => 'delete' %>
 

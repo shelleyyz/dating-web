@@ -1,27 +1,16 @@
-<h1>Mailboxes#show</h1>
-<p>Find me in app/views/mailboxes/show.html.erb</p>
+<h1>Conversation with <%= @receiver_id.first.first_name + " " + @receiver_id.first.last_name%></h1>
 
-<table>
-<thead>
-  <tr><td>sender_id </td>
-<td>Content </td>
-<td> Date/Time </td>
-<td> Delete Mail </td>
-</tr>
-</thead>
-<tbody>
+
   <% @mailboxes.each do |mailbox| %>
-<tr>
-  <td> <%= mailbox.sender_id %></td>
-    <td>  <%= mailbox.content%></td>
-    <td><%= mailbox.created_at %></td>
-    <td><%= button_to 'Delete mail', mailbox_path(mailbox.id), :method => 'delete' %></td>
-</tr>
+
+  <p>   <%= mailbox.content%></td>
+  <%= mailbox.created_at.strftime("%H:%M") %></p>
+
+
 
   <% end %>
 
-</tbody>
-</table>
+
 
 
 <%= form_tag "/mailboxes/mail/#{params[:id]}" do %>

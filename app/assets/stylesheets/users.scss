@@ -3,3 +3,33 @@
   display: inline;
 
 }
+
+
+.blue {
+  background-color: blue;
+  color: white;
+  display: block;
+  width: 30%;
+
+}
+
+.you {
+  display: block;
+  margin: 0 auto;
+
+
+}
+
+.white{
+  background-color: grey;
+  color:white;
+  display: block;
+  width: 30%;
+}
+
+#map {
+  height: 90vh;
+  width: 80%;
+  margin: 0 auto;
+  border: red solid 2px;
+}

@@ -34,6 +34,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    results = Geocoder.search("#{@user.location}")
+    coordinates = results.first.coordinates
+    @latitude = coordinates.first
+    @longitude = coordinates.last
   end
 
   def edit
@@ -42,6 +46,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find params[:id]
+
+    if params["user"]["location"]
+      results = Geocoder.search("#{@user.location}")
+      coordinates = results.first.coordinates
+      @latitude = coordinates.first
+      @longitude = coordinates.last
+
+    end
+
     @user.update user_params
 
     if params["user"]["image"]

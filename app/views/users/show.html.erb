@@ -40,7 +40,35 @@
   <% end %>
 
   <h4>Location: <%= @user.location %></h4>
+<<<<<<< HEAD
 
   <% if @user.language.present? %>
   <h4>Favourite Language: <%= @user.language %></h4>
   <% end %>
+=======
+  <h4>Languages: <%= @user.language %></h4>
+
+
+  <% if @user.location.present? %>
+  <div id="map"></div> <!--need predefined height to display content, otherwise it won't expand-->
+
+<% end %>
+
+  <script>
+      var myLatLng = {lat: <%= @latitude %>, lng: <%= @longitude %>};
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          zoom: 15
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+        })
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOqObQluS3qUNuRCtLudvPZvx4SOeYHc0&callback=initMap"
+    async defer></script>
+>>>>>>> 5357e63c0ab4f4a314ba83a0b1ce0bba308616d1

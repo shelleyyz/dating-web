@@ -27,7 +27,8 @@ class MailboxesController < ApplicationController
   def show
     @mailboxes = Mailbox.where(:conversation_id => params[:id])
     @conversations = Conversation.where(:id => params[:id])
-
+      @receiver = @conversations.first.receiver_id
+      @receiver_id = User.where(:id => @receiver.to_i)
   end
 
   def mail
