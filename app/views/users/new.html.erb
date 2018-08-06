@@ -2,18 +2,41 @@
 
   <h1>Sign Up!</h1>
 
-  <%= form_tag login_path do %>
+  <% if @user.errors.any? %>
+    <ol>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ol>
+    <% end %>
 
-    <div class="alert"><p><%= flash[:error] %><p></div>
+    <%= form_for @user do |f| %>
+    <div class="signup">
 
 
-    <%= email_field_tag :email, nil,  :placeholder => "email address"%>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, :required => true, :placeholder => "Jane" %>
     <br />
 
-    <%= password_field_tag :password, nil, :class => "form_input", :placeholder =>"password"%>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, :required => true, :placeholder => "Smith" %>
     <br />
 
-    <%= submit_tag "Log in", :class => "submit-btn" %>
+    <%= f.label "Email Address" %>
+    <%= f.email_field :email, :required => true, :placeholder => "janesmith@ga.co" %>
+    <br />
 
-  <% end %>
-</div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br />
+
+    <%= f.label "Confirm password" %>
+    <%= f.password_field :password_confirmation, :required => true %>
+
+    <!-- # <%#f.label :image %>
+    # <%# f.url_field :image %> -->
+    <br />
+    <%= f.submit "Sign me up!", :class => "submit-btn" %>
+    </div>
+    <% end %>
+  </div>
