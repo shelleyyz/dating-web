@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # before_action :check_for_admin, :only => [:index]
 
   def index
-    @users = User.all
+    @users = User.all.order(:first_name)
   end
 
   def new
@@ -25,6 +25,12 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  # def age(dob)
+  #   dob = @user.dob
+  #   now = Time.now.utc.to_date
+  #   now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+  # end
 
   def show
     @user = User.find params[:id]
