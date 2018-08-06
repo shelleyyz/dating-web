@@ -32,7 +32,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find params[:id]
     # @user.update user_params
-    binding.pry
     if @user.update (user_params)
     flash[:success] = "Profile updated"
     redirect_to @user
