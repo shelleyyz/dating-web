@@ -54,10 +54,62 @@ $("div.9 input").on('click', function(event){
   }})
 
   $(".questions button").on('click', function(){
-    console.log(score)
+    let url_array = window.location.href.split("/")
     $.post(window.location.href, {
       score: score,
       _method: 'put'
-    })
+    }).done(()=> window.location.replace(`/categories/results/${url_array[url_array.length - 1]}`))
   })
+let current_messages = [];
+$('.send-box').hide();
+
+const showMessages = function(results){
+  results.messages.filter((record, index)=> {
+      // console.log("new")
+      if (!current_messages[index]) {return true};
+          // console.log(record.data.id);
+          // console.log(current_messages[index].data.id)
+    return record.data.id !== current_messages[index].data.id
+
+  }).map((record)=> {
+      $(".messages").append(`<p>${record.sender_first_name + ":" + record.data.content}<p>`)
+  })
+
+    current_messages = results.messages
+}
+
+const api_call = function(){
+  return $.getJSON(`http://localhost:3000/api/mailboxes/${current}`,{
+    format: 'json'
+  }).done(showMessages)
+}
+
+let current = null;
+const setInt = function(){
+  setInterval(function() { api_call()},2000)
+}
+
+$(".convo-list a").on('click', (e) => {
+  e.preventDefault();
+  current = e.target.id;
+  clearInterval(setInt)
+  current_messages = [];
+  $(".messages").empty();
+  $('.send-box').show();
+
+  api_call().done(()=> setInt())
+})
+
+
+$(".send-box form").on('submit', (e) => {
+    let conversation_id = current_messages[0].data.conversation_id
+  e.preventDefault();
+  let content = $(".send-box #content")[0].value;
+  $.post(`/api/mailboxes/mail/${conversation_id}`, {
+    id: conversation_id,
+    content: content,
+    _method: 'post'
+  })
+})
+
 })

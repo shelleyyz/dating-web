@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
 
 
   def show
-    categories_url = "https://opentdb.com/api.php?amount=10&category=#{params[:id]}&difficulty=medium&type=multiple"
+    categories_url = "https://opentdb.com/api.php?amount=10&category=#{params[:id]}&type=multiple"
     categories_info = HTTParty.get categories_url
     @categories = categories_info["results"]
     @category = Category.where(:api_id => params[:id])
@@ -28,7 +28,6 @@ class CategoriesController < ApplicationController
     score = params[:score]
     @category.update :score => score
     @current_user.categories << @category
-    redirect_to category_path(@category[0].api_id)
   end
 
   def results
