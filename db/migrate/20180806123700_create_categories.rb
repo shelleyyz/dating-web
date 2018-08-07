@@ -1,0 +1,11 @@
+class CreateCategories < ActiveRecord::Migration[5.2]
+  def change
+    create_table :categories do |t|
+      t.integer :api_id
+      t.text :category
+      t.integer :score
+      t.integer :user_id
+      t.timestamps
+    end
+  end
+end

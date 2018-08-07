@@ -1,0 +1,20 @@
+<h1>code test bitches</h1>
+
+<div class = "questions">
+<% @categories.each_with_index do |question, index| %>
+<p><%= question["question"] %></p>
+<div class="<%= index %>">
+<% question["incorrect_answers"].push(question["correct_answer"]).shuffle.each do |answer| %>
+  <%= radio_button_tag(index, answer ) %>
+  <%= label_tag answer %>
+  <% end %>
+  <%= hidden_field_tag "ultra_secret_answer_that_only_true_devs_can_see", question["correct_answer"] %>
+
+</div>
+<br>
+
+<%end %>
+
+<a href ="/categories/results/<%= @category.first.api_id %>"><button>Submit</button></a>
+
+</div>

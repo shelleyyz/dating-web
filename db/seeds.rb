@@ -95,101 +95,101 @@ mailbox3 = Mailbox.create(
   :conversation_id => message2.id
 )
 
-Question.destroy_all
+Category.destroy_all
 
-q1 = Question.create(
-  :category_id => 9,
+q1 = Category.create(
+  :api_id => 9,
   :category => "General Knowledge"
 )
-q2 = Question.create(
-  :category_id => 10,
+q2 = Category.create(
+  :api_id => 10,
   :category => "Entertainment: Books"
 )
-q3 = Question.create(
-  :category_id => 11,
+q3 = Category.create(
+  :api_id => 11,
   :category => "Entertainment: Films"
 )
-q4 = Question.create(
-  :category_id => 12,
+q4 = Category.create(
+  :api_id => 12,
   :category => "Entertainment: Music"
 )
-q5 = Question.create(
-  :category_id => 13,
+q5 = Category.create(
+  :api_id => 13,
   :category => "Entertainment: Musicals & Theatres"
 )
-q6 = Question.create(
-  :category_id => 14,
+q6 = Category.create(
+  :api_id => 14,
   :category => "Television"
 )
-q7 = Question.create(
-  :category_id => 15,
+q7 = Category.create(
+  :api_id => 15,
   :category => "Video Games"
 )
-q8 = Question.create(
-  :category_id => 16,
+q8 = Category.create(
+  :api_id => 16,
   :category => "Board Games"
 )
-q9 = Question.create(
-  :category_id => 17,
+q9 = Category.create(
+  :api_id => 17,
   :category => "Science & Nature"
 )
-q10 = Question.create(
-  :category_id => 18,
+q10 = Category.create(
+  :api_id => 18,
   :category => "Science: Computers"
 )
-q11 = Question.create(
-  :category_id => 19,
+q11 = Category.create(
+  :api_id => 19,
   :category => "Science: Mathematics"
 )
-q12 = Question.create(
-  :category_id => 20,
+q12 = Category.create(
+  :api_id => 20,
   :category => "Mythology"
 )
-q13 = Question.create(
-  :category_id => 21,
+q13 = Category.create(
+  :api_id => 21,
   :category => "Sports"
 )
-q14 = Question.create(
-  :category_id => 22,
+q14 = Category.create(
+  :api_id => 22,
   :category => "Geography"
 )
-q15 = Question.create(
-  :category_id => 23,
+q15 = Category.create(
+  :api_id => 23,
   :category => "History"
 )
-q16 = Question.create(
-  :category_id => 24,
+q16 = Category.create(
+  :api_id => 24,
   :category => "Politics"
 )
-q17 = Question.create(
-  :category_id => 25,
+q17 = Category.create(
+  :api_id => 25,
   :category => "Arts"
 )
-q18 = Question.create(
-  :category_id => 26,
+q18 = Category.create(
+  :api_id => 26,
   :category => "Celebrities"
 )
-q19 = Question.create(
-  :category_id => 27,
+q19 = Category.create(
+  :api_id => 27,
   :category => "Animals"
 )
-q20 = Question.create(
-  :category_id => 28,
+q20 = Category.create(
+  :api_id => 28,
   :category => "Vehicles"
 )
-q21 = Question.create(
-  :category_id => 29,
+q21 = Category.create(
+  :api_id => 29,
   :category => "Entertainment: Comics"
 )
-q22 = Question.create(
-  :category_id => 30,
+q22 = Category.create(
+  :api_id => 30,
   :category => "Science: Gadgets"
 )
-q23 = Question.create(
-  :category_id => 31,
+q23 = Category.create(
+  :api_id => 31,
   :category => "Entertainment: Japanese Anime & Manga"
 )
-q13 = Question.create(
-  :category_id => 32,
+q13 = Category.create(
+  :api_id => 32,
   :category => "Entertainment: Cartoon and Animations"
 )
