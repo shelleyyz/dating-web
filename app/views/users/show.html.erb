@@ -3,12 +3,13 @@
 <br>
 <br>
 
-  <% if @current_user.admin? %>
+  <% if @current_user.present? && @current_user.admin? %>
     <%= button_to 'ADMIN: Delete Profile', user_path(@user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
   <% end %>
 
   <% if @user === @current_user %>
-    <%= button_to 'Edit Profile', edit_user_path(@user) %>
+    <%= button_to 'Edit Profile', edit_user_path(@user), :class=> 'button', :method => :get %>
+
     <%= button_to 'Delete Profile', user_path(@user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
   <% end %>
   <br />
