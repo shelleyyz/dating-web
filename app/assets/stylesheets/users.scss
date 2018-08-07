@@ -31,22 +31,27 @@
 
 
 
-//STYLING: USER INDEX
+//////////////STYLING: USER INDEX///////////
 .potential-matches-container {
-  max-width: 860px;
   text-align: center;
-  .index-image img {
-    max-width: 22vw;
+
+
+  .matches-index-grid {
+    display: inline-block;
+    width: 24vw;
+
+    .index-image {
+        max-width: 22vw;
+    }
   }
+
+
+
 }
 
-.matches-index-grid {
-  display: inline-block;
-  width: 24vw;
-}
 
 
-//STYLING: USER SHOW/PROFILE
+///////STYLING: USER SHOW/PROFILE////////////
 .user-image {
   max-width: 40vw;
 }
