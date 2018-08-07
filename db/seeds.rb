@@ -109,10 +109,10 @@ relationship4 = Relationship.create(
   :likee_id => user2.id
 )
 
-relationship5 = Relationship.create(
-  :liker_id => user2.id,
-  :likee_id => user3.id
-)
+# relationship5 = Relationship.create(
+#   :liker_id => user2.id,
+#   :likee_id => user3.id
+# )
 
 # relationship6 = Relationship.create(
 #   :liker_id => user4.id,

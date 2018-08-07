@@ -4,8 +4,8 @@ class RelationshipsController < ApplicationController
     # @current_user = session[:user_id]
     @likers = Relationship.where(:liker_id => @current_user.id)
     @user_likees = Relationship.where(:likee_id => @current_user.id)
-    @match = Relationship.where(:liker_id => @likers.first.likee_id)
-    
+    #@match = Relationship.where(:liker_id => @likers.first.likee_id)
+
     # @create_relationship = user.active_relationships.create(likee.id: other_user.id)
   end
 
@@ -14,6 +14,7 @@ class RelationshipsController < ApplicationController
   end
 
   def show
+;
   end
 
 
@@ -36,14 +37,8 @@ class RelationshipsController < ApplicationController
     relationship.save
       #@current_user.likers // likers relationship are stored.
 
-    #
-    #
-    # @users = User.all
-    # @liker = active_relationship.liker
-    # @likee = active_relationship.likee
-    # @create_relationship = user.active_relationships.create(likee_id: user.id)
-    # @build_relationship = user.active_relationships.build(likee_id: user.id)
-    #
+
+
     #may need to put these in user model?
     #   def like(user)
     #     active_relationships.create(likee_id: other_user.id)
@@ -66,13 +61,6 @@ class RelationshipsController < ApplicationController
 
   end
 
-  # @relationship_all = Relationship.all
-  #
-  # def find_match
-  #   @relationship_all.each do | user |
-  #
-  #
-  # end
 
 #  @user_likers = @current_user.likers
 #  @user_likees = @current_user.liking

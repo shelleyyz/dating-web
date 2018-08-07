@@ -8,22 +8,21 @@
     <%= user.id %>
     Current_user:<%= @current_user.id %>
 
-    <%= button_to "Like", relationships_path(user_id),  :class => "btn btn-default" %>
-
+    <%= button_to "Like", relationships_path(:user_id => user.id),  :class => "btn btn-default" %>
 
   </p>
   <% end %>
 
   <% @user_likees.each do |user| %>
     <p>
-      Current user likes <%= user.liker_id %>
+      Who likes current user: <%= user.liker_id %>
     </p>
 
   <% end %>
 
   <% @likers.each do |user| %>
   <p>
-    Who like current User<%= user.likee_id  %>
+    Current User like: <%= user.likee_id  %>
   </p>
   <% end %>
 <!--
