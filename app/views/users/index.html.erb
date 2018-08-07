@@ -6,9 +6,14 @@
 
   <div class="matches-index-grid">
 
+
     <% if user.image.present? %>
+
+    <div class="index-image-box">
+
       <%= link_to image_tag(user.image, :class => "index-image", :alt => user.first_name), user_path(user) %>
       <% end %>
+    </div>
 
     <%= link_to "View #{user.first_name}", user_path(user) %>
 
