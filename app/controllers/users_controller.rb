@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
-            #TODO change above redirect so user is redirected to their 'dashboard' once they create their account
+
     else
       render :new
     end
@@ -63,7 +63,11 @@ class UsersController < ApplicationController
   def destroy
     user = User.find params[:id]
     user.destroy
-    redirect_to users_path
+    if @current_user.admin?
+      redirect_to users_path
+    else
+      redirect_to new_user_path
+    end
   end
 
 

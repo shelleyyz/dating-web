@@ -3,13 +3,14 @@
 <br>
 <br>
 
-  <% if @current_user.admin? %>
-    <%= link_to 'ADMIN: Delete Profile', user_path(@user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
-  <% end %>
+
 
   <% if @user === @current_user %>
-    <%= link_to 'Edit Profile', edit_user_path(@user) %>
-    <%= link_to 'Delete Profile', user_path(@user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+    <%= button_to 'Edit Profile', edit_user_path(@user), :class=> 'button', :method => :get %>
+  <% end %>
+
+  <% if @user === @current_user || @current_user.present? && @current_user.admin? %>
+    <%= button_to 'Delete Profile', user_path(@user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
   <% end %>
   <br />
 
@@ -20,8 +21,7 @@
 <br>
 <br>
 
-  <h3>Name: <%= @user.first_name %>
-  <%= @user.last_name%></h3>
+  <h3>Name: <%= @user.first_name %></h3>
 
   <% if @user.interests.present? %>
   <h4>Interests: <%= @user.interests %></h4>
@@ -36,7 +36,7 @@
   <% end %>
 
   <% if @user.dob.present? %>
-  <h4>Date of Birth: <%= @user.dob %></h4>
+  <h4>Age: <%= ((Time.zone.now - @user.dob.to_time) / 1.year.seconds).floor %></h4>
   <h4>Starsign: <%= @user.zodiac_sign %></h4>
   <% end %>
 

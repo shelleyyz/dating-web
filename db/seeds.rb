@@ -1,16 +1,16 @@
 #user seeds
+p "Users"
 User.destroy_all
 
 user1 = User.create(
   :first_name => "Shelley",
   :last_name => "Zhang",
-  :interests => "",
   :image => "shelleyz.jpg",
   :password => "chicken",
   :interests => "",
   :language => "",
   :email => "shelley@ga.co",
-  :gender => "female",
+  :gender => "Female",
   :dob => '1991-11-04',
   :location => "Sydney",
   :bio => "",
@@ -21,12 +21,11 @@ user1 = User.create(
 user2 = User.create(
   :first_name => "Sherine",
   :last_name => "Foo",
-  :interests => "",
   :image => "sherine.jpg",
   :password => "chicken",
   :interests => "",
   :email => "sherine@ga.co",
-  :gender => "female",
+  :gender => "Female",
   :dob => '1979-06-05',
   :location => "Sydney",
   :bio => "",
@@ -37,12 +36,11 @@ user2 = User.create(
 user3 = User.create(
   :first_name => "Zabrina",
   :last_name => "Lagamayo",
-  :interests => "",
   :password => "chicken",
   :interests => "",
   :image => "zabrinal.jpg",
   :email => "zabrina@ga.co",
-  :gender => "female",
+  :gender => "Female",
   :dob => '1993-08-29',
   :location => "Sydney",
   :bio => "",
@@ -52,18 +50,18 @@ user3 = User.create(
 user4 = User.create(
   :first_name => "EJ",
   :last_name => "Willard",
-  :interests => "",
   :image => "ejw.png",
   :password => "chicken",
   :interests => "Cats & Tats, Anime and Japan",
   :email => "ej@ga.co",
-  :gender => "female",
+  :gender => "Female",
   :dob => '1987-01-15',
   :location => "Sydney",
   :bio => "Don't worry - I'm not crazy about me either.",
   :admin => true
 )
 
+p "Conversations"
 Conversation.destroy_all
 
 message1 = Conversation.create(
@@ -75,6 +73,7 @@ message2 = Conversation.create(
   :receiver_id => 1
 )
 
+p "Mailboxes"
 Mailbox.destroy_all
 
 mailbox1 = Mailbox.create(
@@ -95,7 +94,44 @@ mailbox3 = Mailbox.create(
   :conversation_id => message2.id
 )
 
+<<<<<<< HEAD
 Category.destroy_all
+=======
+
+p "Relationships"
+Relationship.destroy_all
+relationship1 = Relationship.create(
+  :liker_id => user1.id,
+  :likee_id => user2.id
+)
+
+relationship2 = Relationship.create(
+  :liker_id => user2.id,
+  :likee_id => user1.id
+)
+
+relationship3 = Relationship.create(
+  :liker_id => user1.id,
+  :likee_id => user4.id
+)
+
+relationship4 = Relationship.create(
+  :liker_id => user4.id,
+  :likee_id => user2.id
+)
+
+# relationship5 = Relationship.create(
+#   :liker_id => user2.id,
+#   :likee_id => user3.id
+# )
+
+# relationship6 = Relationship.create(
+#   :liker_id => user4.id,
+#   :likee_id => user3.id
+# )
+
+Question.destroy_all
+>>>>>>> 86f2417f01020a0fdd6f194722386daf0d2f625d
 
 q1 = Category.create(
   :api_id => 9,
