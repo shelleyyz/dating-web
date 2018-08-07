@@ -8,7 +8,7 @@
     <%= user.id %>
     Current_user:<%= @current_user.id %>
 
-    <%= button_to "Like", relationships_path(:user_id => user.id),  :class => "btn btn-default" %>
+    <%= button_to "Like", relationships_path(user_id),  :class => "btn btn-default" %>
 
 
   </p>

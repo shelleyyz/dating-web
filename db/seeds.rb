@@ -86,7 +86,7 @@ mailbox3 = Mailbox.create(
   :conversation_id => message2.id
 )
 
-<<<<<<< HEAD
+
 p "Relationships"
 Relationship.destroy_all
 relationship1 = Relationship.create(
@@ -118,7 +118,7 @@ relationship5 = Relationship.create(
 #   :liker_id => user4.id,
 #   :likee_id => user3.id
 # )
-=======
+
 Question.destroy_all
 
 q1 = Question.create(
@@ -217,4 +217,3 @@ q13 = Question.create(
   :category_id => 32,
   :category => "Entertainment: Cartoon and Animations"
 )
->>>>>>> 42ec87679685db59109141bc9bbeba5dc06ec9e7

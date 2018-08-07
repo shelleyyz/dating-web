@@ -230,11 +230,8 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.0)
-<<<<<<< HEAD
-  redis (~> 4.0)
-=======
   rails_12factor
->>>>>>> 7d45bb605f283350166b0459add00c2f0f96f9a8
+  redis (~> 4.0)
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
