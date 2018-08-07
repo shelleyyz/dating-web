@@ -40,8 +40,6 @@
             <%= link_to "Sign Out #{@current_user.first_name.capitalize} ", login_path, :method => 'delete', :class => "nav-link" %>
           </li>
 
-          <%= link_to 'Admin Area', users_path if @current_user.admin? %>
-
         <% else %>
 
           <%= link_to 'Log In', login_path, :class => "nav-link" %>
