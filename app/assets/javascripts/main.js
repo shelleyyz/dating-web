@@ -61,6 +61,7 @@ $("div.9 input").on('click', function(event){
     })
   })
 let current_messages = [];
+$('.send-box').hide();
 
 const showMessages = function(results){
   results.messages.filter((record, index)=> {
@@ -92,9 +93,23 @@ $(".convo-list a").on('click', (e) => {
   e.preventDefault();
   current = e.target.id;
   clearInterval(setInt)
+  current_messages = [];
   $(".messages").empty();
+  $('.send-box').show();
+
   api_call().done(()=> setInt())
 })
 
+
+$(".send-box form").on('submit', (e) => {
+    let conversation_id = current_messages[0].data.conversation_id
+  e.preventDefault();
+  let content = $(".send-box #content")[0].value;
+  $.post(`/api/mailboxes/mail/${conversation_id}`, {
+    id: conversation_id,
+    content: content,
+    _method: 'post'
+  })
+})
 
 })

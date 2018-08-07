@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/mailboxes/new/:id' => 'mailboxes#new'
   post '/mailboxes/mail/:id' => 'mailboxes#mail'
   get '/api/mailboxes/:id' => 'mailboxes#api_show'
+  post '/api/mailboxes/mail/:id' => 'mailboxes#api_mail'
   resources :conversations
   get '/login' => 'session#new' #login form
   post '/login' => 'session#create' #perform the login

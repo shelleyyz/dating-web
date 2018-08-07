@@ -39,7 +39,7 @@ class MailboxesController < ApplicationController
       receiver_id = User.where(:id => receiver.to_i)
 
       mailboxes_mapped = mailboxes.map{ |mailbox|
-  
+
         JSON.parse(mailbox.to_json)[0] = {:data => mailbox, :sender_first_name => mailbox.sender.first_name }
 
        }
@@ -58,6 +58,16 @@ class MailboxesController < ApplicationController
     mailbox.save
 
   redirect_back :fallback_location => root_path
+
+  end
+
+  def api_mail
+    mailbox = Mailbox.new
+    mailbox.conversation_id = params[:id]
+    mailbox.content = params[:content]
+    mailbox.sender_id = @current_user.id
+    mailbox.save
+
 
   end
 

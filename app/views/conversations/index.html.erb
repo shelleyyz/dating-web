@@ -19,3 +19,12 @@
 </div>
 
 <div class = "messages"></div>
+
+<div class = "send-box">
+  <%= form_tag "/mailboxes/mail/#{params[:id]}" do %>
+    <%= text_field_tag :content %>
+    <%= button_tag "Send" %>
+  <% end %>
+
+
+</div>
