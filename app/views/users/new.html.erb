@@ -26,6 +26,9 @@
     <%= f.email_field :email, :required => true, :placeholder => "janesmith@ga.co" %>
     <br />
 
+    <%= f.label "You Location" %>
+    <%= f.text_field :location, :required => true, :placeholder => "Sydney" %>
+
     <%= f.label :password %>
     <%= f.password_field :password %>
     <br />
@@ -33,7 +36,7 @@
     <%= f.label "Confirm password" %>
     <%= f.password_field :password_confirmation, :required => true %>
     <br />
-    
+
     <%= f.submit "Sign me up!", :class => "submit-btn" %>
     </div>
     <% end %>
