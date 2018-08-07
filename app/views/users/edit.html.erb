@@ -36,6 +36,8 @@
   <%= f.label :image %>
   <br />
   <%= f.file_field :image %>
+  <br />
+    <%= image_tag @user.image, :class => 'edit-page-img' if @user.image.present? %>
   </div>
   <br />
 
