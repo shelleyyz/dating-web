@@ -6,26 +6,17 @@
 
   <div class="matches-index-grid">
 
-    <% if @current_user.admin? %>
-      <% if user.image.present? %>
-        <%= link_to image_tag(user.image), user_path(user), :alt => user.first_name, :class => "index-image" %>
-        <br />
+    <% if user.image.present? %>
+      <%= link_to image_tag(user.image, :class => "index-image", :alt => user.first_name), user_path(user) %>
       <% end %>
 
+    <%= link_to "View #{user.first_name}", user_path(user) %>
 
-      <%= link_to "View #{user.first_name}", user_path(user) %>
+    <% if @current_user.admin? %>
 
       <%= link_to 'Delete User', user_path(user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %> <br />
 
-    <% else %>
-
-      <% if user.image.present? %>
-        <%= image_tag user.image, :alt => user.first_name %>
       <% end %>
-
-
-      <%= link_to "View #{user.first_name}", user_path(user)  %>
-    <% end %>
 
     <br />
   </div>

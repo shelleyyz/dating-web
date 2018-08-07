@@ -28,7 +28,7 @@
   <% end %>
 
   <% if @user.bio.present? %>
-  <h4>A Little About Me: <%= @user.bio %> </h4>
+  <h4>Things to know about me: <%= @user.bio %> </h4>
   <% end %>
 
   <% if @user.gender.present? %>
@@ -45,8 +45,6 @@
   <% if @user.language.present? %>
   <h4>Favourite Language: <%= @user.language %></h4>
   <% end %>
-
-  <h4>Languages: <%= @user.language %></h4>
 
 
   <% if @user.location.present? %>
