@@ -21,16 +21,14 @@
 
 class User < ApplicationRecord
   has_secure_password
+  zodiac_reader :dob
   validates :email, :presence => true, :uniqueness => true
   validates :location, :presence => true
   geocoded_by :location
   after_validation :geocode, if :location_changed?
-  # validates :dob
+
   # validates :first_name, :presence => true
   # validates :last_name, :presence => true
-  # # validates :image
-  # # validates :gender
-
 
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: [:liker_id, :likee_id],
