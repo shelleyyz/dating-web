@@ -32,15 +32,13 @@
 
 
           <li class="nav-item"></div>
-              <a href="#">Fun stuff</a>
+              <a href="/categories">Fun stuff</a>
           </li>
 
 
           <li class="nav-item">
             <%= link_to "Sign Out #{@current_user.first_name.capitalize} ", login_path, :method => 'delete', :class => "nav-link" %>
           </li>
-
-          <%= link_to 'Admin Area', users_path if @current_user.admin? %>
 
         <% else %>
 

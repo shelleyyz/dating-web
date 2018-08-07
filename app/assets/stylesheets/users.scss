@@ -41,17 +41,23 @@
     width: 24vw;
 
     .index-image {
-        max-width: 22vw;
+      max-width: 22vw;
+      max-height: 40vh;
     }
   }
 
-
-
 }
+
 
 
 
 ///////STYLING: USER SHOW/PROFILE////////////
 .user-image {
   max-width: 40vw;
+}
+
+/////////STYLING: EDIT PROFILE FORM//////////
+
+.edit-page-img {
+  max-width: 10vw;
 }

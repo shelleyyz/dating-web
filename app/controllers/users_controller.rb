@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
-          
+
     else
       render :new
     end
@@ -63,7 +63,11 @@ class UsersController < ApplicationController
   def destroy
     user = User.find params[:id]
     user.destroy
-    redirect_to users_path
+    if @current_user.admin?
+      redirect_to users_path
+    else
+      redirect_to new_user_path
+    end
   end
 
 
