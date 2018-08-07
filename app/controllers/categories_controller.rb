@@ -31,4 +31,10 @@ class CategoriesController < ApplicationController
     redirect_to category_path(@category[0].api_id)
   end
 
+  def results
+    @category = Category.where(:api_id => params[:id])
+    score_info = @current_user.categories.where(:api_id => params[:id])
+    @score = score_info.first.score
+  end
+
 end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # post 'questions/results/:id' => 'questions#results'
   # post 'questions/:id' => 'questions#scores', :as => "questions_scores"
   post '/categories' => 'categories#form'
+  get '/categories/results/:id' => 'categories#results'
   # root :to => 'session#new'
     # get "/" => 'pages#home'
     # get '/users/profile' => 'users#profile'
