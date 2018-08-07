@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     # get "/" => 'pages#home'
     # get '/users/profile' => 'users#profile'
   resources :users
+
   resources :relationships
+  post '/relationships/:id' => 'relationships#show'
+
+
   resources :mailboxes
   get '/mailboxes/new/:id' => 'mailboxes#new'
   post '/mailboxes/mail/:id' => 'mailboxes#mail'

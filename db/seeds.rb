@@ -1,4 +1,5 @@
 #user seeds
+p "Users"
 User.destroy_all
 
 user1 = User.create(
@@ -60,6 +61,7 @@ user4 = User.create(
   :admin => true
 )
 
+p "Conversations"
 Conversation.destroy_all
 
 message1 = Conversation.create(
@@ -71,6 +73,7 @@ message2 = Conversation.create(
   :receiver_id => 1
 )
 
+p "Mailboxes"
 Mailbox.destroy_all
 
 mailbox1 = Mailbox.create(
@@ -90,6 +93,39 @@ mailbox3 = Mailbox.create(
   :content => "hello dude",
   :conversation_id => message2.id
 )
+
+
+p "Relationships"
+Relationship.destroy_all
+relationship1 = Relationship.create(
+  :liker_id => user1.id,
+  :likee_id => user2.id
+)
+
+relationship2 = Relationship.create(
+  :liker_id => user2.id,
+  :likee_id => user1.id
+)
+
+relationship3 = Relationship.create(
+  :liker_id => user1.id,
+  :likee_id => user4.id
+)
+
+relationship4 = Relationship.create(
+  :liker_id => user4.id,
+  :likee_id => user2.id
+)
+
+# relationship5 = Relationship.create(
+#   :liker_id => user2.id,
+#   :likee_id => user3.id
+# )
+
+# relationship6 = Relationship.create(
+#   :liker_id => user4.id,
+#   :likee_id => user3.id
+# )
 
 Question.destroy_all
 
