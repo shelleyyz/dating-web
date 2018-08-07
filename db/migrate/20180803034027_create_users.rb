@@ -12,10 +12,10 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.text :language
       t.text :bio
       t.boolean :admin
-
+      t.integer :category_id
       t.timestamps
     end
 
-    
+
   end
 end

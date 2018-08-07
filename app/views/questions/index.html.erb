@@ -1,7 +1,0 @@
-<h1>Test your proficiency in different categories</h1>
-
-<%= form_tag "/questions", :method => "post" do %>
-<%= label_tag 'Category' %>
-<%= select_tag :category_id, options_from_collection_for_select(@questions, :category_id, :category), :prompt => "Select a Category"%>
-<%= submit_tag 'Select Category'%>
-<% end %>
