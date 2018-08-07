@@ -74,6 +74,7 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    funtimes (0.4.0)
     geocoder (1.4.9)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -207,6 +208,9 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    zodiac (0.2.9)
+      funtimes
+      i18n
 
 PLATFORMS
   ruby
@@ -235,6 +239,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  zodiac
 
 RUBY VERSION
    ruby 2.5.1p57

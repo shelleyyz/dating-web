@@ -20,17 +20,11 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
-            #TODO change above redirect so user is redirected to their 'dashboard' once they create their account
+          
     else
       render :new
     end
   end
-
-  # def age(dob)
-  #   dob = @user.dob
-  #   now = Time.now.utc.to_date
-  #   now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
-  # end
 
   def show
     @user = User.find params[:id]

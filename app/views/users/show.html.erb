@@ -20,15 +20,14 @@
 <br>
 <br>
 
-  <h3>Name: <%= @user.first_name %>
-  <%= @user.last_name%></h3>
+  <h3>Name: <%= @user.first_name %></h3>
 
   <% if @user.interests.present? %>
   <h4>Interests: <%= @user.interests %></h4>
   <% end %>
 
   <% if @user.bio.present? %>
-  <h4>A Little About Me: <%= @user.bio %> </h4>
+  <h4>Things to know about me: <%= @user.bio %> </h4>
   <% end %>
 
   <% if @user.gender.present? %>
@@ -36,7 +35,8 @@
   <% end %>
 
   <% if @user.dob.present? %>
-  <h4>Date of Birth: <%= @user.dob %></h4>
+  <h4>Age: <%= ((Time.zone.now - @user.dob.to_time) / 1.year.seconds).floor %></h4>
+  <h4>Starsign: <%= @user.zodiac_sign %></h4>
   <% end %>
 
   <h4>Location: <%= @user.location %></h4>
@@ -45,8 +45,6 @@
   <% if @user.language.present? %>
   <h4>Favourite Language: <%= @user.language %></h4>
   <% end %>
-
-  <h4>Languages: <%= @user.language %></h4>
 
 
   <% if @user.location.present? %>
@@ -69,5 +67,5 @@
         })
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOqObQluS3qUNuRCtLudvPZvx4SOeYHc0&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRJ_rNpk79o-xD6SiesCvKhF6fEWrF6lk&callback=initMap"
     async defer></script>
