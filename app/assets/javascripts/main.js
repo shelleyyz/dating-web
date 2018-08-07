@@ -60,23 +60,40 @@ $("div.9 input").on('click', function(event){
       _method: 'put'
     })
   })
+let current_messages = [];
 
 const showMessages = function(results){
-  results.messages.map((record)=> {
+  results.messages.filter((record, index)=> {
+      // console.log("new")
+      if (!current_messages[index]) {return true};
+          // console.log(record.data.id);
+          // console.log(current_messages[index].data.id)
+    return record.data.id !== current_messages[index].data.id
+
+  }).map((record)=> {
       $(".messages").append(`<p>${record.sender_first_name + ":" + record.data.content}<p>`)
   })
+
+    current_messages = results.messages
 }
 
-const api_call = function(id){
-  return $.getJSON(`http://localhost:3000/api/mailboxes/${id}`,{
+const api_call = function(){
+  return $.getJSON(`http://localhost:3000/api/mailboxes/${current}`,{
     format: 'json'
   }).done(showMessages)
 }
 
+let current = null;
+const setInt = function(){
+  setInterval(function() { api_call()},2000)
+}
+
 $(".convo-list a").on('click', (e) => {
   e.preventDefault();
-  let id = e.target.id
-  api_call(id).done(()=> setInterval(() => {$(".messages").empty(); api_call(id)},4000))
+  current = e.target.id;
+  clearInterval(setInt)
+  $(".messages").empty();
+  api_call().done(()=> setInt())
 })
 
 
