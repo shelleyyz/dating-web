@@ -35,7 +35,7 @@
   <% end %>
 
   <% if @user.dob.present? %>
-  <h4>Date of Birth: <%= @user.dob %></h4>
+  <h4>Age: <%= ((Time.zone.now - @user.dob.to_time) / 1.year.seconds).floor %></h4>
   <h4>Starsign: <%= @user.zodiac_sign %></h4>
   <% end %>
 
