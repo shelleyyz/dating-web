@@ -94,9 +94,6 @@ mailbox3 = Mailbox.create(
   :conversation_id => message2.id
 )
 
-<<<<<<< HEAD
-Category.destroy_all
-=======
 
 p "Relationships"
 Relationship.destroy_all
@@ -130,8 +127,7 @@ relationship4 = Relationship.create(
 #   :likee_id => user3.id
 # )
 
-Question.destroy_all
->>>>>>> 86f2417f01020a0fdd6f194722386daf0d2f625d
+Category.destroy_all
 
 q1 = Category.create(
   :api_id => 9,

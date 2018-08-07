@@ -60,4 +60,24 @@ $("div.9 input").on('click', function(event){
       _method: 'put'
     })
   })
+
+const showMessages = function(results){
+  results.messages.map((record)=> {
+      $(".messages").append(`<p>${record.sender_first_name + ":" + record.data.content}<p>`)
+  })
+}
+
+const api_call = function(id){
+  return $.getJSON(`http://localhost:3000/api/mailboxes/${id}`,{
+    format: 'json'
+  }).done(showMessages)
+}
+
+$(".convo-list a").on('click', (e) => {
+  e.preventDefault();
+  let id = e.target.id
+  api_call(id).done(()=> setInterval(() => {$(".messages").empty(); api_call(id)},4000))
+})
+
+
 })

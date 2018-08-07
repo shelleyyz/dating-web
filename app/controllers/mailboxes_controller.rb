@@ -32,6 +32,24 @@ class MailboxesController < ApplicationController
       @receiver_id = User.where(:id => @receiver.to_i)
   end
 
+  def api_show
+    mailboxes = Mailbox.where(:conversation_id => params[:id])
+    conversations = Conversation.where(:id => params[:id])
+      receiver = conversations.first.receiver_id
+      receiver_id = User.where(:id => receiver.to_i)
+
+      mailboxes_mapped = mailboxes.map{ |mailbox|
+  
+        JSON.parse(mailbox.to_json)[0] = {:data => mailbox, :sender_first_name => mailbox.sender.first_name }
+
+       }
+    render json: {
+      conversation_id: params[:id],
+      messages: mailboxes_mapped
+    }
+
+  end
+
   def mail
     mailbox = Mailbox.new
     mailbox.conversation_id = params[:id]
