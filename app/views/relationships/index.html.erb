@@ -13,21 +13,5 @@
   </p>
   <% end %>
 
-  <% @user_likees.each do |user| %>
-    <p>
-      Who likes current user: <%= user.liker_id %>
-    </p>
 
-  <% end %>
-
-  <% @likers.each do |user| %>
-  <p>
-    Current User like: <%= user.likee_id  %>
-  </p>
-  <% end %>
-<!--
-  <%# if user.liker_id == user.likee_id %>
-    <p>You Matched! </p>
-
-  <%# end %> -->
 </div>
