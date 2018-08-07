@@ -1,11 +1,19 @@
 <h1>Find your perfect match</h1>
 
+<!-- <form action="/users" method="get">
+Gender <input id="gender" name="gender" type="text"/>
+<input class="button" type="submit" value="Filter" />
+</form> -->
+
+<%= link_to "Female only", users_path(:gender => "Female") %>
+<%= link_to "Male only", users_path(:gender => "Male") %>
+<%= link_to "Other", users_path(:gender => "Non-Specified") %>
+
 <div class="potential-matches-container">
 
   <% @users.each do |user| %>
 
   <div class="matches-index-grid">
-
 
     <% if user.image.present? %>
 

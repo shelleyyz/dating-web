@@ -3,6 +3,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.order(:first_name)
+
+    if params[:gender]
+    @users = @users.where("gender = ?", params[:gender])
+  end
+
   end
 
   def new
