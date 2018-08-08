@@ -46,17 +46,11 @@ GEM
     attachinary (1.3.1)
       cloudinary (~> 1.1.0)
       rails (>= 3.2)
-    autoprefixer-rails (9.1.0)
-      execjs
     aws_cf_signer (0.1.3)
     bcrypt (3.1.12)
     bindex (0.5.0)
     bootsnap (1.3.1)
       msgpack (~> 1.0)
-    bootstrap (4.1.3)
-      autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.9, < 2)
-      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.2)
     cloudinary (1.1.7)
@@ -121,7 +115,6 @@ GEM
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     pg (1.0.0)
-    popper_js (1.14.3)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -222,7 +215,6 @@ DEPENDENCIES
   attachinary
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
-  bootstrap (~> 4.1.1)
   byebug
   cloudinary
   coffee-rails (~> 4.2)

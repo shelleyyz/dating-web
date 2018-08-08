@@ -42,12 +42,20 @@ class RelationshipsController < ApplicationController
     redirect_to relationship_path(relationship.likee_id)
   end
 
-#set relationship to inactive
+#remove relationship from find match
   def destroy
     relationship = Relationship.where(:liker_id => @current_user.id)
     relationship_likee = relationship.where(:likee_id => params[:id])
     relationship_likee[0].destroy
     redirect_to users_path
+  end
+
+#remove relationship from matched
+  def destroy2
+    relationship = Relationship.where(:liker_id => @current_user.id)
+    relationship_likee = relationship.where(:likee_id => params[:id])
+    relationship_likee[0].destroy
+    redirect_back :fallback_location => root_path
   end
 
 end
