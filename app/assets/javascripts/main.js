@@ -79,7 +79,7 @@ const showMessages = function(results){
 }
 
 const api_call = function(){
-  return $.getJSON(`http://localhost:3000/api/mailboxes/${current}`,{
+  return $.getJSON(`/api/mailboxes/${current}`,{
     format: 'json'
   }).done(showMessages)
 }
