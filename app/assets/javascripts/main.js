@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  $('.attachinary-input').attachinary();
+
   let score = 0;
 $("div.0 input").on('click', function(event){
   if(event.target.value === $('div.0 input')[4].value){
@@ -60,6 +62,7 @@ $("div.9 input").on('click', function(event){
       _method: 'put'
     }).done(()=> window.location.replace(`/categories/results/${url_array[url_array.length - 1]}`))
   })
+
 let current_messages = [];
 $('.send-box').hide();
 
