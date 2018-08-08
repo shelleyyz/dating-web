@@ -61,6 +61,71 @@ user4 = User.create(
   :admin => true
 )
 
+user5 = User.create(
+  :first_name => "Ryan",
+  :last_name => "Gosling",
+  :image => "https://media3.giphy.com/media/GpyS1lJXJYupG/giphy-downsized.gif",
+  :password => "chicken",
+  :interests => "Hey girl memes",
+  :email => "ryangosling@ga.co",
+  :gender => "Male",
+  :dob => '1980-11-12',
+  :location => "Sydney",
+  :bio => "I'm famous"
+)
+
+user6 = User.create(
+  :first_name => "Sebastian",
+  :last_name => "Stan",
+  :image => "https://media.giphy.com/media/rJRGNO7TVgzPG/giphy.gif",
+  :password => "chicken",
+  :interests => "being a bro to captain america",
+  :email => "buckybarnes@ga.co",
+  :gender => "Male",
+  :dob => '1982-08-13',
+  :location => "Sydney",
+  :bio => "I'm also famous"
+)
+
+user7 = User.create(
+  :first_name => "Linna",
+  :last_name => "Liu",
+  :image => "linna.jpeg",
+  :password => "chicken",
+  :interests => "Sleeping",
+  :email => "linnaliu@ga.co",
+  :gender => "Female",
+  :dob => '1970-01-01',
+  :location => "Sydney",
+  :bio => "I am awesome"
+)
+
+user8 = User.create(
+  :first_name => "Ryan",
+  :last_name => "Reynolds",
+  :image => "Ryan.jpg",
+  :password => "chicken",
+  :interests => "breaking the fourth wall",
+  :email => "ryanreynolds@ga.co",
+  :gender => "Male",
+  :dob => '1976-10-23',
+  :location => "Sydney",
+  :bio => "I'm also famous"
+)
+
+user9 = User.create(
+  :first_name => "Nick",
+  :last_name => "Valentine",
+  :image => "http://storage-cube.quebecormedia.com/v1/dynamic_resize?quality=75&size=1500x1500&src=http%3A%2F%2Fstorage-cube.quebecormedia.com%2Fv1%2Fellecanada_prod%2Felle_canada%2Fe8bbfd70-0871-48ae-a086-d07de169a3ed%2F46645",
+  :password => "chicken",
+  :interests => "weightlifting",
+  :email => "nickvalentine@ga.co",
+  :gender => "Male",
+  :dob => '1976-08-25',
+  :location => "Sydney",
+  :bio => "I enjoy life"
+)
+
 p "Conversations"
 Conversation.destroy_all
 
@@ -93,10 +158,6 @@ mailbox3 = Mailbox.create(
   :content => "hello dude",
   :conversation_id => message2.id
 )
-
-
-Category.destroy_all
-
 
 p "Relationships"
 Relationship.destroy_all
@@ -131,7 +192,9 @@ relationship4 = Relationship.create(
 # )
 
 
+Category.destroy_all
 
+p "Category"
 q1 = Category.create(
   :api_id => 9,
   :category => "General Knowledge"

@@ -1,2 +1,6 @@
 <h1>Relationships#show</h1>
 <p>Find me in app/views/relationships/show.html.erb</p>
+
+<% if @current_user.matches.include? User.find params[:id] %>
+  <p> "You matched!" </p>
+<% end %>

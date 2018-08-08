@@ -6,28 +6,28 @@
     <%= user.first_name  %>
     <%= user.last_name %>
     <%= user.id %>
+    <!-- testing purpuses -->
     Current_user:<%= @current_user.id %>
+    <!-- testing purpuses -->
 
-    <%= button_to "Like", relationships_path(:user_id => user.id),  :class => "btn btn-default" %>
+  <!-- testing purpuses -->
+    <% if @current_user.likes.include?(user) %>
+      <%= @current_user.first_name %> (YOU) - likes <%= user.first_name %>
+    <% end %>
+    <% if @current_user.likees.include?(user) %>
+      <%= user.first_name %> likes YOU <%= @current_user.first_name %>
+    <% end  %>
+  <!-- testing purpuses -->
+
+    <% if @current_user.present? &&  user != @current_user %>
+      <% if @current_user.likes.include?(user)  %>
+       <%= button_to "Unlike", relationship_path(user.id), method: :delete, :class => "btn btn-default", :id => "like_button" %>
+      <% else %>
+
+       <%= button_to "Like", relationship_path(user.id),  :class => "btn btn-primary", :id => "like_button" %>
+      <% end %>
+    <% end %>
 
   </p>
   <% end %>
-
-  <% @user_likees.each do |user| %>
-    <p>
-      Who likes current user: <%= user.liker_id %>
-    </p>
-
-  <% end %>
-
-  <% @likers.each do |user| %>
-  <p>
-    Current User like: <%= user.likee_id  %>
-  </p>
-  <% end %>
-<!--
-  <%# if user.liker_id == user.likee_id %>
-    <p>You Matched! </p>
-
-  <%# end %> -->
 </div>
