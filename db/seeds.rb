@@ -95,8 +95,6 @@ mailbox3 = Mailbox.create(
 )
 
 
-
-
 p "Relationships"
 Relationship.destroy_all
 relationship1 = Relationship.create(
@@ -129,6 +127,7 @@ relationship4 = Relationship.create(
 #   :likee_id => user3.id
 # )
 
+Category.destroy_all
 
 p "Category"
 q1 = Category.create(

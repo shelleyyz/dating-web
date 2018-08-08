@@ -3,6 +3,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.order(:first_name)
+
+    if params[:gender]
+    @users = @users.where("gender = ?", params[:gender])
+  end
+
   end
 
   def new
@@ -32,6 +37,8 @@ class UsersController < ApplicationController
     coordinates = results.first.coordinates
     @latitude = coordinates.first
     @longitude = coordinates.last
+    @categories = Category.where(:user_id => params[:id]).order(score: :desc)
+
   end
 
   def edit

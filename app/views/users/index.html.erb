@@ -1,18 +1,27 @@
 <h1>Find your perfect match</h1>
 
+<%= link_to "Female only", users_path(:gender => "Female") %>
+<%= link_to "Male only", users_path(:gender => "Male") %>
+<%= link_to "Other", users_path(:gender => "Non-Specified") %>
+
 <div class="potential-matches-container">
 
   <% @users.each do |user| %>
 
   <div class="matches-index-grid">
 
-
     <% if user.image.present? %>
 
     <div class="index-image-box">
 
       <%= link_to image_tag(user.image, :class => "index-image", :alt => user.first_name), user_path(user) %>
-      <% end %>
+
+    <% else %>
+
+      <%= image_tag 'img.jpg', :class => "index-image"  %>
+
+    <% end %>
+
     </div>
 
     <%= link_to "View #{user.first_name}", user_path(user) %>

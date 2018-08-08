@@ -16,6 +16,11 @@
 
   <% if @user.image.present? %>
     <%= image_tag @user.image, :class => "user-image", :alt => @user.first_name %>
+
+  <% else %>
+
+  <%= image_tag 'img.jpg', :class => "index-image"  %>
+    
   <% end %>
 
 <br>
@@ -70,3 +75,10 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRJ_rNpk79o-xD6SiesCvKhF6fEWrF6lk&callback=initMap"
     async defer></script>
+
+<div>
+  <h3>User interests based on test scores</h3>
+    <% @categories.each do |category| %>
+      <p> <%= category.category %>: <%= category.score %>0% </p>
+    <% end %>
+  </div>
