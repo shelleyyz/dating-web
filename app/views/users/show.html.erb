@@ -3,8 +3,6 @@
 <br>
 <br>
 
-
-
   <% if @user === @current_user %>
     <%= button_to 'Edit Profile', edit_user_path(@user), :class=> 'button', :method => :get %>
   <% end %>
@@ -14,13 +12,19 @@
   <% end %>
   <br />
 
-  <% if @user.image.present? %>
-    <%= image_tag @user.image, :class => "user-image", :alt => @user.first_name %>
+  <% if @user.photos.present? %>
 
+    <% @user.photos.each do |photo| %>
+    <%= cl_image_tag(photo.path, { size: '400x400', crop: :fit, :alt => @user.first_name}) %>
+
+    <% end %>
+
+  <% elsif @user.image.present? %>
+  <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
   <% else %>
+    <!-- default image here -->
+  <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
 
-  <%= image_tag 'img.jpg', :class => "index-image"  %>
-    
   <% end %>
 
 <br>

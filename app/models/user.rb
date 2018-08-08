@@ -27,6 +27,9 @@ class User < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if :location_changed?
 
+  attr_accessor :name
+  has_attachments :photos, maximum: 3
+
   # validates :first_name, :presence => true
   # validates :last_name, :presence => true
 
@@ -35,6 +38,7 @@ class User < ApplicationRecord
 
   has_many :mailboxes, :through =>:conversation
   has_many :conversations
+  has_many :categories
   # enum language: [:javascript, :ruby, :python, :golang, :C, :php, :java]
 
   # Users this user likes

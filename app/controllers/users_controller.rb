@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   # before_action :check_for_admin, :only => [:index]
 
+   User.includes(:avatar_files, :photo_files).all
+
   def index
     @users = User.all.order(:first_name)
 
@@ -91,7 +93,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :interests, :email, :password, :password_confirmation, :image, :gender, :dob, :location, :language, :bio, :admin)
+    params.require(:user).permit(:first_name, :last_name, :interests, :email, :password, :password_confirmation, :image, :gender, :dob, :location, :language, :bio, :admin, :photos => [])
   end
 
 

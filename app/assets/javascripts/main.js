@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  $('.attachinary-input').attachinary();
+
   let score = 0;
 $("div.0 input").on('click', function(event){
   if(event.target.value === $('div.0 input')[4].value){
@@ -58,8 +60,10 @@ $("div.9 input").on('click', function(event){
     $.post(window.location.href, {
       score: score,
       _method: 'put'
-    }).done(()=> window.location.replace(`/categories/results/${url_array[url_array.length - 1]}`))
+    })
   })
+  // .done(()=> window.location.replace(`/categories/results/${url_array[url_array.length - 1]}`))
+
 let current_messages = [];
 $('.send-box').hide();
 
@@ -104,15 +108,14 @@ $(".convo-list a").on('click', (e) => {
 $(".send-box form").on('submit', (e) => {
   e.preventDefault();
   let conversation_id = current_messages[0].data.conversation_id
-  if (! conversation_id) {
-    debugger;
-  }
+
   let content = $(".send-box #content")[0].value;
   $.post(`/api/mailboxes/mail/${conversation_id}`, {
     id: conversation_id,
     content: content,
     _method: 'post'
   })
+
 })
 
 })
