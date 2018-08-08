@@ -45,11 +45,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'cloudinary'
 gem 'attachinary'
-<<<<<<< HEAD
-=======
 
-
->>>>>>> e96d730c45d00fad1247bfeabf40bcd5a5633238
 gem 'rails_12factor', group: :production
 
 gem 'zodiac'
