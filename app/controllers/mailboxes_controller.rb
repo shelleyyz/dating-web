@@ -57,7 +57,6 @@ class MailboxesController < ApplicationController
     mailbox.sender_id = @current_user.id
     mailbox.save
 
-  redirect_back :fallback_location => root_path
 
   end
 
