@@ -4,6 +4,8 @@ class RelationshipsController < ApplicationController
     # @current_user = session[:user_id]
     @likers = Relationship.where(:liker_id => @current_user.id)
     @user_likees = Relationship.where(:likee_id => @current_user.id)
+    # @current_user_like_click = User.find params[:id]
+
     #@match = Relationship.where(:liker_id => @likers.first.likee_id)
 
   end
@@ -13,6 +15,9 @@ class RelationshipsController < ApplicationController
   end
 
   def show
+    @likees = @current_user.likes
+
+
   end
 
   def create
@@ -27,24 +32,22 @@ class RelationshipsController < ApplicationController
     # check the relationships already exist - error msg if its exist
     # Create new relationships - asked http status code and error return from controller
     relationship = Relationship.new
-    relationship.likee_id = params[:user_id]
-
+    relationship.likee_id = params[:id]
     relationship.liker_id = @current_user.id
+    # @likee = User.find params[:id]
     relationship.save
 
-    # if (@current_user.matches.include? user_id == true)
-    #   flash.now[:notice] = 'You matched!'
-    #   raise "hell"
-    # else
-    #
-    # end
 
+
+    redirect_to relationship_path(relationship.likee_id)
   end
 
-
 #set relationship to inactive
-  def deactivate_relationship
-
+  def destroy
+    relationship = Relationship.where(:liker_id => @current_user.id)
+    relationship_likee = relationship.where(:likee_id => params[:id])
+    relationship_likee[0].destroy
+    redirect_to users_path
   end
 
 end

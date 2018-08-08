@@ -12,8 +12,10 @@ Rails.application.routes.draw do
     # get '/users/profile' => 'users#profile'
   resources :users
 
-  resources :relationships
-  post '/relationships/:id' => 'relationships#show'
+  resources :relationships, only: [:index, :create, :show]
+  post '/relationships/:id' => 'relationships#create'
+  get '/relationship/:id' => 'relationships#show'
+  delete '/relationships/:id' => 'relationships#destroy'
 
 
   resources :mailboxes
