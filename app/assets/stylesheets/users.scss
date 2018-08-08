@@ -6,6 +6,9 @@
 
 
 .convo-list {
+  width: 40%;
+  text-align: center;
+  margin: 0 auto;
   background-color: blue;
 }
 
@@ -32,15 +35,14 @@
 .potential-matches-container {
   text-align: center;
 
+}
 
-  .matches-index-grid {
-    display: inline-block;
-    width: 24vw;
-  }
-
-    .index-image {
-      max-width: 21vw;
-      height: auto;
+.matches-index-grid {
+  display: inline-block;
+  width: 24vw;
+  .index-image {
+    max-width: 22vw;
+    // max-height: 40vh;
   }
 
 }

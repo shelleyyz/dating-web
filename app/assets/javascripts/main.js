@@ -82,26 +82,31 @@ const showMessages = function(results){
     current_messages = results.messages
 }
 
-const api_call = function(){
+const api_call = function() {
+  console.log('called');
   return $.getJSON(`/api/mailboxes/${current}`,{
     format: 'json'
   }).done(showMessages)
 }
 
 let current = null;
-const setInt = function(){
-  setInterval(function() { api_call()},2000)
-}
+let timer = null;
+
+const startTimer = function () {
+  timer = setInterval(api_call, 4000);
+};
 
 $(".convo-list a").on('click', (e) => {
   e.preventDefault();
   current = e.target.id;
-  clearInterval(setInt)
   current_messages = [];
   $(".messages").empty();
   $('.send-box').show();
-
-  api_call().done(()=> setInt())
+  api_call().done(function() {
+    if (!timer) {
+      startTimer()
+    }
+  })
 })
 
 
