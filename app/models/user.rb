@@ -38,6 +38,7 @@ class User < ApplicationRecord
 
   has_many :mailboxes, :through =>:conversation
   has_many :conversations
+  has_many :categories
   # enum language: [:javascript, :ruby, :python, :golang, :C, :php, :java]
 
   # Users this user likes
