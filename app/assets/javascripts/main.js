@@ -60,8 +60,9 @@ $("div.9 input").on('click', function(event){
     $.post(window.location.href, {
       score: score,
       _method: 'put'
-    }).done(()=> window.location.replace(`/categories/results/${url_array[url_array.length - 1]}`))
+    })
   })
+  // .done(()=> window.location.replace(`/categories/results/${url_array[url_array.length - 1]}`))
 
 let current_messages = [];
 $('.send-box').hide();
