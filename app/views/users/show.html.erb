@@ -16,6 +16,11 @@
 
   <% if @user.image.present? %>
     <%= image_tag @user.image, :class => "user-image", :alt => @user.first_name %>
+
+  <% else %>
+
+  <%= image_tag 'img.jpg', :class => "index-image"  %>
+    
   <% end %>
 
 <br>
