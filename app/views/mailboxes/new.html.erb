@@ -5,7 +5,7 @@
 
 <%= @receiver.first_name %>
 <%= f.text_field :content %>
-<%= hidden_field :extra, :receiver_id, :value => params[:id] %> 
+<%= hidden_field :extra, :receiver_id, :value => params[:id] %>
 
 <%= f.submit 'Send Mail'%>
 <% end %>

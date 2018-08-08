@@ -21,7 +21,7 @@ class MailboxesController < ApplicationController
     mailbox.content = mailbox_params[:content]
     mailbox.sender_id = @current_user.id
     mailbox.save
-    redirect_to mailbox_path(mailbox.conversation_id)
+    redirect_to conversations_path
 
   end
 

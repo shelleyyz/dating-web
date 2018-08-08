@@ -21,6 +21,7 @@
 
       <%= link_to "View #{user.first_name}", user_path(user) %>
 
+      <%= link_to 'New Mail', controller: "mailboxes", action: "new", id: user.id %>
 
 
   <% end %>
