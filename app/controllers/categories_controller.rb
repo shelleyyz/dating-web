@@ -23,6 +23,8 @@ class CategoriesController < ApplicationController
   end
 
 
+
+
   def update
     @category = Category.where(:api_id => params[:id])
     score = params[:score]

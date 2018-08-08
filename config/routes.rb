@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'scores/index'
-  get 'scores/show'
   root :to => 'pages#home'
   resources :pages
   resources :categories, only: [:index, :show, :update]
+
   # post 'questions/results/:id' => 'questions#results'
   # post 'questions/:id' => 'questions#scores', :as => "questions_scores"
   post '/categories' => 'categories#form'
   get '/categories/results/:id' => 'categories#results'
+  get '/categories/myresults/:id' => 'categories#myresults'
   # root :to => 'session#new'
     # get "/" => 'pages#home'
     # get '/users/profile' => 'users#profile'

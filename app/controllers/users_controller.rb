@@ -37,6 +37,8 @@ class UsersController < ApplicationController
     coordinates = results.first.coordinates
     @latitude = coordinates.first
     @longitude = coordinates.last
+    @categories = Category.where(:user_id => params[:id]).order(score: :desc)
+
   end
 
   def edit
