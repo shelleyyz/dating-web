@@ -61,6 +61,58 @@ user4 = User.create(
   :admin => true
 )
 
+user5 = User.create(
+  :first_name => "Ryan",
+  :last_name => "Gosling",
+  :image => "https://media3.giphy.com/media/GpyS1lJXJYupG/giphy-downsized.gif",
+  :password => "chicken",
+  :interests => "Hey girl memes",
+  :email => "ryangosling@ga.co",
+  :gender => "Male",
+  :dob => '1980-11-12',
+  :location => "Sydney",
+  :bio => "I'm famous"
+)
+
+user6 = User.create(
+  :first_name => "Sebastian",
+  :last_name => "Stan",
+  :image => "https://media.giphy.com/media/rJRGNO7TVgzPG/giphy.gif",
+  :password => "chicken",
+  :interests => "being a bro to captain america",
+  :email => "buckybarnes@ga.co",
+  :gender => "Male",
+  :dob => '1982-08-13',
+  :location => "Sydney",
+  :bio => "I'm also famous"
+)
+
+user7 = User.create(
+  :first_name => "Linna",
+  :last_name => "Liu",
+  :image => "linna.jpeg",
+  :password => "chicken",
+  :interests => "Sleeping",
+  :email => "linnaliu@ga.co",
+  :gender => "Female",
+  :dob => '1970-01-01',
+  :location => "Sydney",
+  :bio => "I am awesome"
+)
+
+user8 = User.create(
+  :first_name => "Ryan",
+  :last_name => "Reynolds",
+  :image => "https://media0.giphy.com/media/oYxNkISitSQo/giphy-tumblr.gif",
+  :password => "chicken",
+  :interests => "breaking the fourth wall",
+  :email => "ryanreynolds@ga.co",
+  :gender => "Male",
+  :dob => '1976-10-23',
+  :location => "Sydney",
+  :bio => "I'm also famous"
+)
+
 p "Conversations"
 Conversation.destroy_all
 
