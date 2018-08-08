@@ -85,6 +85,11 @@ class UsersController < ApplicationController
     render :show
   end
 
+  def matches
+    @users = @current_user.matches
+    render :matches
+  end
+
 
   private
   def user_params

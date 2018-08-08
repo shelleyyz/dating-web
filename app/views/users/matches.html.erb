@@ -1,0 +1,27 @@
+<h1> My Matches</h1>
+
+  <% @users.each do |user| %>
+
+
+    <div class="matches-index-grid">
+
+      <% if user.image.present? %>
+
+      <div class="index-image-box">
+
+        <%= link_to image_tag(user.image, :class => "index-image", :alt => user.first_name), user_path(user) %>
+
+      <% else %>
+
+        <%= image_tag 'img.jpg', :class => "index-image"  %>
+
+      <% end %>
+
+      </div>
+
+      <%= link_to "View #{user.first_name}", user_path(user) %>
+
+      <%= link_to 'New Mail', controller: "mailboxes", action: "new", id: user.id %>
+
+
+  <% end %>

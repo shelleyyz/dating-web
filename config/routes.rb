@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # root :to => 'session#new'
     # get "/" => 'pages#home'
     # get '/users/profile' => 'users#profile'
+  get '/users/matches' => 'users#matches'
   resources :users
 
   resources :relationships, only: [:index, :create, :show]
