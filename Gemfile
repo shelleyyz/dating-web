@@ -46,7 +46,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'cloudinary'
 gem 'attachinary'
 
-gem 'bootstrap', '~> 4.1.1'
 
 gem 'rails_12factor', group: :production
 
