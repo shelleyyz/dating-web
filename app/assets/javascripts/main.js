@@ -104,15 +104,14 @@ $(".convo-list a").on('click', (e) => {
 $(".send-box form").on('submit', (e) => {
   e.preventDefault();
   let conversation_id = current_messages[0].data.conversation_id
-  if (! conversation_id) {
-    debugger;
-  }
+
   let content = $(".send-box #content")[0].value;
   $.post(`/api/mailboxes/mail/${conversation_id}`, {
     id: conversation_id,
     content: content,
     _method: 'post'
   })
+
 })
 
 })
