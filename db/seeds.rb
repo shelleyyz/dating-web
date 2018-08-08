@@ -194,6 +194,7 @@ relationship4 = Relationship.create(
 
 Category.destroy_all
 
+p "Category"
 q1 = Category.create(
   :api_id => 9,
   :category => "General Knowledge"
