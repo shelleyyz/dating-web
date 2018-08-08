@@ -15,7 +15,13 @@
     <div class="index-image-box">
 
       <%= link_to image_tag(user.image, :class => "index-image", :alt => user.first_name), user_path(user) %>
-      <% end %>
+
+    <% else %>
+
+      <%= image_tag 'img.jpg', :class => "index-image"  %>
+
+    <% end %>
+
     </div>
 
     <%= link_to "View #{user.first_name}", user_path(user) %>
