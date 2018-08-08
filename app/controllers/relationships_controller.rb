@@ -17,7 +17,7 @@ class RelationshipsController < ApplicationController
   def show
     @likees = @current_user.likes
 
-
+    redirect_to users_path
   end
 
   def create
