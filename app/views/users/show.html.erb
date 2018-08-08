@@ -14,9 +14,23 @@
   <% end %>
   <br />
 
-  <% if @user.image.present? %>
-    <%= image_tag @user.image, :class => "user-image", :alt => @user.first_name %>
+
+  <% if @user.photos.present? %>
+
+    <% @user.photos.each do |photo| %>
+    <%= cl_image_tag(photo.path, { size: '400x400', crop: :fit, :alt => @user.first_name}) %>
+
+    <% end %>
+
+  <% elsif @user.image.present? %>
+  <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+  <% else %>
+    <!-- default image here -->
+  <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
   <% end %>
+
+
+
 
 <br>
 <br>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
   resources :pages
   resources :categories, only: [:index, :show, :update]
+
   # post 'questions/results/:id' => 'questions#results'
   # post 'questions/:id' => 'questions#scores', :as => "questions_scores"
   post '/categories' => 'categories#form'
@@ -25,4 +26,6 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy' #perform signout/'delete' the signin
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  mount Attachinary::Engine => "/attachinary"
 end

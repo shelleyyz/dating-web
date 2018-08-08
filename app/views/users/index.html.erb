@@ -6,14 +6,18 @@
 
   <div class="matches-index-grid">
 
-
-    <% if user.image.present? %>
-
     <div class="index-image-box">
 
-      <%= link_to image_tag(user.image, :class => "index-image", :alt => user.first_name), user_path(user) %>
-      <% end %>
-    </div>
+    <% if user.photos.first.present? %>
+  	<%= link_to cl_image_tag(user.photos.last.path, {:class => 'index-image', :size => '300x300', :crop => :fit, :alt => user.first_name} ), user_path(user) %>
+
+    <% elsif user.image.present? %>
+    <%= link_to image_tag(user.image, {:class => 'index-image', :size => '300x300', :crop => :fit, :alt => user.first_name} ), user_path(user) %>
+    <% else %>
+      <!-- default image here -->
+    <%= link_to image_tag('/assets/img.jpg', {:class => 'index-image', :size => '300x300', :crop => :fit, :alt => user.first_name} ), user_path(user) %>
+    <% end %>
+  </div>
 
     <%= link_to "View #{user.first_name}", user_path(user) %>
 

@@ -27,6 +27,9 @@ class User < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if :location_changed?
 
+  attr_accessor :name
+  has_attachments :photos, maximum: 3
+
   # validates :first_name, :presence => true
   # validates :last_name, :presence => true
 
