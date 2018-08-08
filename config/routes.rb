@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:index, :create, :show]
   post '/relationships/:id' => 'relationships#create'
   get '/relationship/:id' => 'relationships#show'
+  delete '/relationships/unlike/:id' => 'relationships#destroy2', :as => 'unlike'
   delete '/relationships/:id' => 'relationships#destroy'
 
   resources :mailboxes
