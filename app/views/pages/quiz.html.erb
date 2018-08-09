@@ -80,16 +80,18 @@ let score = 0
 
     for (let i = 0, length = radiosNo.length; i < length; i++) {
       if (radiosNo[i].checked) {
+
+      //assign answerValue a number
         let answerValue = Number(radiosNo[i].value);
       }
+      return answerValue;
     }
 
-    console.log('test')
+    console.log('answerValue')
 
   }
 
-
-    //get & display score
+    //calc score with answerScore function
 
     //redirect to sign up if score > 1 with alert
 
