@@ -24,13 +24,16 @@ A dating site catered towards singles in the tech industry. Users can browse pro
 * User Login Make sure you have basic authentication and authorization set up (if you need it).
 * Deploy your code to Heroku.
 
-## Challenge Add-ons
-These were not covered in class but were added to the project.
-
+## Technologies
 * File upload. The project uses Cloudinary and the attachinary gem for single and multiple image uploads.
 * The project uses the search functionality of ruby gem Geocoder that takes an address from user input and searches for its latitude and longitude coordinates. This connects to the Google Maps API and will display when a user updates their user profile or signs up to the site
 * Zodiac sign gem to determine a user's star sign based on their date of birth
-* Slick for carousel
+* Slick for carousel display of images
+* Open Trivia Database (API)
+* jQuery
+* Javascript
+* AJAX
+* Ruby on Rails
 
 ## To Do:
 - [ ] Date location generator

@@ -1,7 +1,13 @@
-<h1>Test your proficiency in different categories</h1>
 
-<%= form_tag "/categories", :method => "post" do %>
-<%= label_tag 'Category' %>
-<%= select_tag :api_id, options_from_collection_for_select(@categories, :api_id, :category), :prompt => "Select a Category"%>
-<%= submit_tag 'Select Category'%>
-<% end %>
+<div class="categories-index">
+  <h1>&lt;h1> &spades; Test your proficiency in different categories &spades; &lt;/h1></h1>
+
+  <div class="categories-selection">
+    <%= form_tag "/categories", :method => "post" do %>
+    <%= label_tag 'Category' %>
+    <%= select_tag :api_id, options_from_collection_for_select(@categories, :api_id, :category,), :prompt => "Select a Category", :class => "select-category-btn" %>
+    <%= submit_tag 'Select Category', :class => "select-category-btn"%>
+    <% end %>
+  </div>
+
+</div>

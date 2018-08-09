@@ -44,7 +44,7 @@ body {
   width: 16em;
   // top: -20px;
   padding-bottom: 0.5em;
-  margin-right: 10vw;
+  margin-right: 8vw;
 }
 
 .nav-item {
@@ -283,19 +283,6 @@ a.user_filter {
   padding: 1vw 1.75vw;
 }
 
-// .user-btn {
-//   background-color: rgba(54, 54, 61, 0.8);
-//   padding: 1vw 1.75vw;
-//   font-size: 1.70vw;
-//   border: white solid 2px;
-//   border-radius: 5px;
-//
-//   margin: 0.5vw;
-//   text-decoration: none;
-//   color: rgba(255, 175, 147, 1);
-//   float: left;
-// }
-
 a.admin_delete {
   color: $peach;
 }
@@ -308,6 +295,7 @@ a.admin_delete {
   display: inline-block;
   grid-column-gap: 1em;
   width: 24vw;
+
   background-color: #36363D;
   color: #E37F6B;
 
@@ -323,7 +311,10 @@ div.matches-index-nested {
   display: grid;
   grid-template-rows: 2.5fr 0.2fr;
   grid-row-gap: 1em;
+  }
 
+  img.index-image {
+    height: 28vw;
   }
 
   .btn-default {
@@ -712,9 +703,50 @@ padding-left: 3%;
   margin: 2% 1.5%;
   box-shadow: 0 0 15px #36363D;
 }
+
+///////// Category_index page/////////////
+.categories-index {
+  text-align: center;
+
+  h1 {
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  font-family: $typefont;
+
+  }
+
+
+  div.categories-selection {
+    max-width: 30vw;
+    border: 2px solid #E37F6B;
+    border-radius: 5px;
+    padding: 5vw;
+    font-size: 3vw;
+    display: inline-block;
+    background-color: $grey;
+    color: $peach;
+    box-shadow: 2px 2px 10px #404040;
+
+    .select-category-btn {
+      background-color: rgba(54, 54, 61, 0.8);
+      padding: 1vw 1.75vw;
+      font-size: 1.2vw;
+      border: white solid 2px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 10px #E37F6B;
+      margin: 2vw;
+      display: inline-block;
+      text-decoration: none;
+      color: rgba(255, 175, 147, 1);
+    }
+
+  }
+}
+///////// Styling Quiz //////////////
 .container-quiz .note {
   text-align: center;
 }
+
 .container-quiz .quiz-button {
   margin: 7% 25%;
   height: 20vh;
@@ -724,6 +756,6 @@ padding-left: 3%;
   border: white;
   color: white;
   border-color: white;
-  border-style:double;
+  border-style: double;
   border-width: 4px;
 }
