@@ -156,12 +156,22 @@ $(".questions-carousel").slick({
   arrows: true,
   infinite: false,
   adaptiveHeight: true,
-  autoplay: true,
-  autoplaySpeed: 3000
+  // autoplay: true,
+  // autoplaySpeed: 3000
 
 })
 
+$(".suggestions button").on('click', function(event){
+  event.preventDefault();
 
+    const buttonVal = $(this).text()
+    console.log(buttonVal)
+    const input = $(".new-mail .textfield")
+    input.val("");
+    input.val(input.val() + buttonVal);
+           return false;
+
+})
 
 
 })
