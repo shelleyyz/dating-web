@@ -283,19 +283,6 @@ a.user_filter {
   padding: 1vw 1.75vw;
 }
 
-// .user-btn {
-//   background-color: rgba(54, 54, 61, 0.8);
-//   padding: 1vw 1.75vw;
-//   font-size: 1.70vw;
-//   border: white solid 2px;
-//   border-radius: 5px;
-//
-//   margin: 0.5vw;
-//   text-decoration: none;
-//   color: rgba(255, 175, 147, 1);
-//   float: left;
-// }
-
 a.admin_delete {
   color: $peach;
 }
@@ -711,4 +698,35 @@ padding-left: 3%;
   color: #E37F6B;
   margin: 2% 1.5%;
   box-shadow: 0 0 15px #36363D;
+}
+
+///////// Category_index page/////////////
+.categories-index {
+  text-align: center;
+
+  h1 {
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  font-family: $typefont;
+
+  }
+
+
+  div.categories-selection {
+    max-width: 30vw;
+    border: 2px solid #E37F6B;
+    border-radius: 5px;
+    padding: 5vw;
+    font-size: 3vw;
+    display: inline-block;
+    background-color: $grey;
+    color: $peach;
+    box-shadow: 2px 2px 10px #404040;
+
+    select.select-category-btn {
+      padding: 5vw;
+    }
+
+  }
+
 }
