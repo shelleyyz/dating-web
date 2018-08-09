@@ -1,59 +1,66 @@
-<h1><%= @user.first_name %>'s Profile</h1>
+  <h1><%= @user.first_name %>'s Profile</h1>
 
-<br>
-<br>
+  <br>
+  <br>
+
+  <%= content_tag :div, :class => "photo-carousel", data: {images: @user.photos} do %>
+
+    <% if @user.photos.present? %>
+
+      <% @user.photos.each do |photo| %>
+        <div class="photo-box">
+          <%= cl_image_tag(photo.path, { size: '400x400', crop: :fit, :alt => @user.first_name}) %>
+        </div>
+      <% end %>
+
+    <% elsif @user.image.present? %>
+    <div class="photo-box">
+      <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+    </div>
+    <% else %>
+    <div class="photo-box">
+      <!-- default image here -->
+      <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+    </div>
+      <% end %>
+    <% end %>
 
   <% if @user === @current_user %>
-    <%= button_to 'Edit Profile', edit_user_path(@user), :class=> 'button', :method => :get %>
+    <%= button_to 'Edit Profile', edit_user_path(@user), :class=> 'user-btn', :method => :get %>
   <% end %>
 
   <% if @user === @current_user || @current_user.present? && @current_user.admin? %>
-    <%= button_to 'Delete Profile', user_path(@user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+    <%= button_to 'Delete Profile', user_path(@user), :class=> 'user-btn', :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
   <% end %>
   <br />
 
-  <% if @user.photos.present? %>
-
-    <% @user.photos.each do |photo| %>
-    <%= cl_image_tag(photo.path, { size: '400x400', crop: :fit, :alt => @user.first_name}) %>
-
-    <% end %>
-
-  <% elsif @user.image.present? %>
-  <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
-  <% else %>
-    <!-- default image here -->
-  <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
-
-  <% end %>
-
 <br>
 <br>
 
-  <h3>Name: <%= @user.first_name %></h3>
+  <h4>Name </br> <%= @user.first_name %></h4>
 
   <% if @user.interests.present? %>
-  <h4>Interests: <%= @user.interests %></h4>
+  <h4>Interests </br>  <%= @user.interests %></h4>
   <% end %>
 
   <% if @user.bio.present? %>
-  <h4>Things to know about me: <%= @user.bio %> </h4>
+  <h4>Things to know about me: </br> <%= @user.bio %> </h4>
   <% end %>
 
   <% if @user.gender.present? %>
-  <h4>Gender: <%= @user.gender %></h4>
+  <h4>Gender </br> <%= @user.gender %></h4>
   <% end %>
 
   <% if @user.dob.present? %>
-  <h4>Age: <%= ((Time.zone.now - @user.dob.to_time) / 1.year.seconds).floor %></h4>
-  <h4>Starsign: <%= @user.zodiac_sign %></h4>
+  <h4>Age </br>  <%= ((Time.zone.now - @user.dob.to_time) / 1.year.seconds).floor %></h4>
+  <h4>Starsign </br>  <%= @user.zodiac_sign %></h4>
   <% end %>
 
-  <h4>Location: <%= @user.location %></h4>
+  <h4>Location </br>  <%= @user.location %></h4>
 
 
   <% if @user.language.present? %>
-  <h4>Favourite Language: <%= @user.language %></h4>
+  <h4>Favourite Language </br> <%= @user.language %></h4>
   <% end %>
 
 
@@ -61,6 +68,8 @@
   <div id="map"></div> <!--need predefined height to display content, otherwise it won't expand-->
 
 <% end %>
+
+</div>
 
   <script>
       var myLatLng = {lat: <%= @latitude %>, lng: <%= @longitude %>};
@@ -86,3 +95,4 @@
       <p> <%= category.category %>: <%= category.score %>0% </p>
     <% end %>
   </div>
+</div>
