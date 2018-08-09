@@ -6,56 +6,62 @@
 		<h1>Code Test</h1>
 		<br />
 
+<p>To sign up to //TODO: Meet You, you must prove you're a developer by passing this simple code test</p>
 
-		<p>To sign up to //TODO: Meet You, you must prove you're a developer by passing this simple code test</p>
+<br />
+<br />
 
+		<p class="question">1. What is HTML?</p>
+  	<select class="quizquestion">
+      <option class="answer" id="a">High Tea Markup</option>
+      <option class="answer" id="b">Hypertext Missing Language</option>
+      <option class="answer" id="c">HyperText Markup Language</option>
+		</select>
+	</div>
+	<div>
 		<br />
 		<br />
+		<p class="question">2. How do you print to console with Javascript?</p>
 
-				<p class="question">1. What does HTML stand for?</p>
-		  	<select class="quizquestion">
-		      <option class="answer" id="a">HyperText Markup Language</option>
-		      <option class="answer" id="b">Hypertext Missing Language</option>
-		      <option class="answer" id="c">High Tea Markup Language</option>
-				</select>
-				<br />
-				<br />
-				<p class="question">2. How do you print to console with Javascript?</p>
+    <select class="quizquestions2">
+      <option class="answer" id="a">print "text"</option>
+      <option class="answer" id="b">console.log('text')</option>
+      <option class="answer" id="c">puts "text"</option>
+		</select>
+ 	</div>
+	<div>
 
-		    <select class="quizquestion">
-		      <option class="answer" id="a">print "text"</option>
-		      <option class="answer" id="b">console.log('text')</option>
-		      <option class="answer" id="c">puts "text"</option>
-				</select>
+<br/>
 
-		  <div class="submitter">
-		          <input class="quizSubmit" id="submitButton"
-		          type="submit" value="Submit" />
-		  </div>
+  <div class="submitter">
+          <input class="quizSubmit" id="submitButton"
+          type="submit" value="Submit" />
+  </div>
 
-		<script>
+<script>
 
-		let passed = false;
+let passed = false;
 
-		$(document).ready(function() {
+$(document).ready(function() {
 
-		  const quizScore = function() {
-		    if ($(".quizquestion option:selected").text() === "HyperText Markup Language" && ($(".quizquestions2 option:selected").text() === "console.log('text')")) {
-		      passed = true;
-		    }
-		  }
+  const quizScore = function() {
+    if ($(".quizquestion option:selected").text() === "HyperText Markup Language" && ($(".quizquestions2 option:selected").text() === "console.log('text')")) {
+      passed = true;
+    }
+  }
 
-		  $('#submitButton').click(function() {
-		    quizScore();
-		    if (passed) {
-		      window.location.replace('/users/new')
-		    } else {
-		      alert("You suck, sorry you can't sit with us");
-		    }
-		  });
-		});
+  $('#submitButton').click(function() {
+    quizScore();
+    if (passed) {
+      window.location.replace('/users/new')
+    } else {
+      alert("Sorry you're not entitled to love");
+    }
+  });
+});
 
-		</script>
-	</div> <!--end of code test-->
+</script>
+
+</div> <!--end of code test-->
 
 </div><!--code-test-container end-->

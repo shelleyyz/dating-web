@@ -1,7 +1,7 @@
 class ConversationsController < ApplicationController
   def index
 
-    @conversations = Conversation.where(:sender_id => @current_user.id).or(Conversation.where(:receiver_id => @current_user.id))
+    @conversations = Conversation.where(:sender_id => @current_user.id).or(Conversation.where(:receiver_id => @current_user.id)).order('created_at DESC')
 
 
   end

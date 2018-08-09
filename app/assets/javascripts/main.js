@@ -126,6 +126,7 @@ $(".send-box form").on('submit', (e) => {
   let conversation_id = current_messages[0].data.conversation_id
 
   let content = $(".send-box #content")[0].value;
+  $(".send-box #content")[0].value = "";
   $.post(`/api/mailboxes/mail/${conversation_id}`, {
     id: conversation_id,
     content: content,
@@ -153,11 +154,14 @@ $('.convo-sender').on('click', function(e) {
 
 $(".questions-carousel").slick({
   dots: true,
-  arrows: true,
+  arrows: false,
   infinite: false,
   adaptiveHeight: true,
-  // autoplay: true,
-  // autoplaySpeed: 3000
+  accessibility:true,
+  autoplay: true,
+  autoplaySpeed: 7000,
+  pauseOnFocus: false
+
 
 })
 
@@ -172,6 +176,7 @@ $(".suggestions button").on('click', function(event){
            return false;
 
 })
+
 
 
 })
