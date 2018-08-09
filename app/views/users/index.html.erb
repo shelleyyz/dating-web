@@ -1,9 +1,9 @@
 <h1 class="find_title">Find your perfect match</h1>
 
-  <%= link_to "Female only", users_path(:gender => "Female"), class="user_filter" %>
-  <%= link_to "Male only", users_path(:gender => "Male"), class="user_filter" %>
-  <%= link_to "Other", users_path(:gender => "Non-Specified"), class="user_filter"%>
-  <%= link_to "All", users_path,  class="user_filter"%>
+  <%= link_to "Female only", users_path(:gender => "Female"), :class => "user_filter" %>
+  <%= link_to "Male only", users_path(:gender => "Male"), :class => "user_filter" %>
+  <%= link_to "Other", users_path(:gender => "Non-Specified"), :class => "user_filter"%>
+  <%= link_to "All", users_path,  :class => "user_filter" %>
   <br />
 
 

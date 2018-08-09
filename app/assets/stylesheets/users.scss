@@ -20,11 +20,79 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+/////////////// nav style//////////////////
+#header   {
+  background:#36363D;
+  width:100%;
+  position:relative;
+  margin: auto;
+  padding: 2px 2px 1px 2px;
+
+}
+
+
+#header:after{
+  content:"";
+  clear:both;
+  display:block
+}
+
+.home_logo {
+  width: 16em;
+  // top: -20px;
+  padding-bottom: 0.5em;
+  margin-right: 10em;
+}
+
 .nav-item {
   list-style-type: none;
   display: inline;
+  font-family: Montserrat;
+	text-align: center;
+}
+
+.nav_bar {
+  background-color: #36363D;
+}
+
+.nav-link
+{
+    text-decoration: none;
+    color: #E37F6B;
+    background: #36363D;
+    text-decoration: none;
+    font: 1em Montserrat ;
+    margin: 0px 0.3em;
+    padding: 1em 1em;
+    position: relative;
+    // float: right;
+    top: -30px;
+    z-index: 0;
+    cursor: pointer;
+    list-style-type: none;
+
 
 }
+
+nav.pullUp a:before
+{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    bottom: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.2;
+    transition: all 0.3s;
+}
+
+nav.pullUp a:hover:before
+{
+    height: 100%;
+}
+/////////////// nav style - end//////////////////
+
 
 
 .convo-list {
@@ -147,6 +215,11 @@ body {
 
 
 //////////////STYLING: USER INDEX///////////
+
+h1.find_title {
+  text-align: center;
+
+}
 .potential-matches-container {
   text-align: center;
 
