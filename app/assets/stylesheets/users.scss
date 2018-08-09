@@ -220,26 +220,93 @@ nav.pullUp a:hover:before
 
 //////////////STYLING: USER INDEX///////////
 
+$monts: 'Montserrat', sans-serif;
+
 h1.find_title {
   text-align: center;
   font-family: $typefont;
   font-weight: bold;
-  font-size: 2em;
-  color:grey;
-  text-shadow: 2px 2px 8px #FFAF93;
+  font-size: 3em;
+  color: $grey;
   padding: 1em;
 }
+
+div.find_user_tab {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+a.user_filter {
+  font-family: $monts;
+  text-align: center;
+  font-size: 1.25em;
+  padding: 0.8em;
+  color: $grey;
+  text-decoration: none;
+  border: 2px solid #FFAF93;
+}
+
+
 .potential-matches-container {
   text-align: center;
+  background: $apricot;
 
 }
 
-.matches-index-grid {
+.matches-index-wrapper {
   display: inline-block;
+  grid-column-gap: 1em;
   width: 24vw;
+  background-color: #36363D;
+  color: #E37F6B;
+
+  // a {
+  //   background-color: #36363D;
+  // }
   .index-image {
+    border: 10px solid #36363D;
     max-width: 22vw;
     // max-height: 40vh;
+  }
+}
+
+div.matches-index-nested {
+  display: grid;
+  grid-template-rows: 2.5fr 0.2fr;
+  grid-row-gap: 1em;
+
+  .btn-default {
+    width: 15em;
+    border-radius: 5px;
+    border: 2px solid #FFAF93;
+    background-color: rgba(54,54,61,0.7);
+    color: #FFAF93;
+    font-size: 1em;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+  }
+  .btn-default {
+    width: 15em;
+    border-radius: 5px;
+    border: 2px solid #FFAF93;
+    background-color: rgb(54,54,61);
+    color: #FFAF93;
+    font-size: 1em;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+  }
+  .btn-primary {
+    width: 15em;
+    border-radius: 5px;
+    border: 2px solid rgb(54,54,61);
+    background-color: #FFAF93;
+    color: rgb(54,54,61);
+    font-size: 1em;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
   }
 
 }
@@ -247,6 +314,7 @@ h1.find_title {
 ///////STYLING: USER SHOW/PROFILE////////////
 .user-image {
   max-width: 40vw;
+
 }
 
 /////////STYLING: EDIT PROFILE FORM//////////
