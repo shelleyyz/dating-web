@@ -1,0 +1,174 @@
+/////////////RESET//////////////
+* {
+  padding: 0;
+  margin: 0;
+
+}
+
+////////////////FONTS//////////////
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+////////////////VARIABLES////////////////////
+$typefont: 'Slabo 27px', serif;
+
+/////////////////STYLING////////////////////
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-item {
+  list-style-type: none;
+  display: inline;
+
+}
+
+
+.convo-list {
+  width: 40%;
+  text-align: center;
+  margin: 0 auto;
+  background-color: blue;
+}
+
+.convo-list a {
+  text-decoration: none;
+  color: white;
+
+}
+.convo-list a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+#map {
+  height: 90vh;
+  width: 80%;
+  margin: 0 auto;
+  border: red solid 2px;
+}
+
+
+//////////////STYLING: LANDING PAGE//////////
+.home-page-container  {
+  background-image: url("meetyouheroimg-flipped.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  .hero-img {
+    width: 100vw;
+    height: 70vh;
+    box-shadow: 2px 5px 10px grey;
+  }
+
+  .typewriter {
+    text-align: center;
+
+    h1 {
+
+      font-family: $typefont;
+      max-width: 600px;
+      font-size: 3.5em;
+      padding: 0.5em  0 0 0;
+      overflow: hidden;
+      border-right: .10em solid #FFAF93;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      color: white;
+      animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+    }
+  }
+}
+
+.btn-container {
+  text-align: center;
+  // background-color: rgba(131, 153, 148, 0.55);
+  width: 60vw;
+  margin: 0;
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  margin-right: -50%;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+
+  .moto {
+
+    color: white;
+    letter-spacing: 0.12em;
+    font-family: $typefont;
+    font-size: 1.55em;
+    p {
+      animation: moto-fade 2s;
+    }
+
+  }
+
+  .home-page-btn {
+    background-color: rgba(54, 54, 61, 0.8);
+    padding: 1.25em;
+    font-size: 1.25em;
+    border: white solid 2px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #404040;
+    margin: 2em;
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(255, 175, 147, 1);
+
+  }
+}
+
+//////ANIMATIONS: Landing Page///////
+@keyframes typing {
+  from {width: 0}
+  to {width:100%}
+}
+
+@keyframes blink-caret {
+  from, to {border-color: transparent}
+  50% {border-color: #FFAF93}
+}
+
+@keyframes moto-fade {
+  0%{opacity:0}
+  85%{opacity:0.30}
+  89%{opacity: 0.50}
+  92%{opacity: 0.70}
+  95%{opacity:0.90}
+  100%{opacity:1}
+}
+
+
+//////////////STYLING: USER INDEX///////////
+.potential-matches-container {
+  text-align: center;
+
+}
+
+.matches-index-grid {
+  display: inline-block;
+  width: 24vw;
+  .index-image {
+    max-width: 22vw;
+    // max-height: 40vh;
+  }
+
+}
+
+///////STYLING: USER SHOW/PROFILE////////////
+.user-image {
+  max-width: 40vw;
+}
+
+/////////STYLING: EDIT PROFILE FORM//////////
+
+.edit-page-img {
+  max-width: 10vw;
+}

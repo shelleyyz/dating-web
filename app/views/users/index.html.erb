@@ -11,7 +11,6 @@
 
   <% @users.each do |user| %>
 
-
     <% if @current_user.present? &&  user != @current_user %>
       <div id="<%= user.first_name %>" class="matches-index-grid">
 
