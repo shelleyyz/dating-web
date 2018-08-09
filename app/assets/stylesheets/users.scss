@@ -12,7 +12,7 @@
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 
 ////////////////VARIABLES////////////////////
-$typefont: ‘Slabo 27px’, serif;
+$typefont: 'Slabo 27px', serif;
 $peach: rgb(255, 175, 147);
 $apricot: rgb(227, 127, 107);
 $grey: rgb(54, 54, 61);
@@ -310,6 +310,10 @@ nav.pullUp a:hover:before
       display: inline-block;
       text-decoration: none;
       color: rgba(255, 175, 147, 1);
+    }
+
+    .quizquestions2 {
+      @extend .quizquestion;
     }
 
   .quizSubmit {
