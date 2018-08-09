@@ -190,15 +190,53 @@ relationship6 = Relationship.create(
   :liker_id => user3.id,
   :likee_id => user1.id
 )
-# relationship5 = Relationship.create(
-#   :liker_id => user2.id,
-#   :likee_id => user3.id
-# )
 
-# relationship6 = Relationship.create(
-#   :liker_id => user4.id,
-#   :likee_id => user3.id
-# )
+relationship7 = Relationship.create(
+  :liker_id => user4.id,
+  :likee_id => user5.id
+)
+
+relationship8 = Relationship.create(
+  :liker_id => user5.id,
+  :likee_id => user4.id
+)
+
+relationship9 = Relationship.create(
+  :liker_id => user9.id,
+  :likee_id => user4.id
+)
+
+relationship10 = Relationship.create(
+  :liker_id => user9.id,
+  :likee_id => user3.id
+)
+relationship11 = Relationship.create(
+  :liker_id => user9.id,
+  :likee_id => user1.id
+)
+
+relationship12 = Relationship.create(
+  :liker_id => user9.id,
+  :likee_id => user7.id
+)
+relationship13 = Relationship.create(
+  :liker_id => user7.id,
+  :likee_id => user9.id
+)
+relationship14 = Relationship.create(
+  :liker_id => user1.id,
+  :likee_id => user9.id
+)
+
+relationship15 = Relationship.create(
+  :liker_id => user2.id,
+  :likee_id => user9.id
+)
+
+relationship16 = Relationship.create(
+  :liker_id => user9.id,
+  :likee_id => user2.id
+)
 
 
 Category.destroy_all
