@@ -12,11 +12,11 @@
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 
 ////////////////VARIABLES////////////////////
-$typefont: 'Slabo 27px', serif;
-$peach: rbg(255 175 147);
-$apricot: rbg(227 127 107);
-$grey: rbg(54 54 61);
-$light: rbg(200, 232, 217);
+$typefont: ‘Slabo 27px’, serif;
+$peach: rgb(255, 175, 147);
+$apricot: rgb(227, 127, 107);
+$grey: rgb(54, 54, 61);
+$light: rgb(200, 232, 217);
 
 /////////////////STYLING////////////////////
 body {
@@ -260,6 +260,7 @@ div.matches-index-nested {
   grid-row-gap: 1em;
 
   }
+
   .btn-default {
     width: 15em;
     border-radius: 5px;
@@ -283,65 +284,64 @@ div.matches-index-nested {
 
   }
 
-}
-
-/////////STYLING: My matches////////
-
-h1.my-matches {
-  text-align: center;
-  font-family: $typefont;
-  font-weight: bold;
-  font-size: 4vw;
-  color: $grey;
-  padding: 1em;
-}
-
-.matched-container {
-  text-align: center;
-  grid-template-columns: 33% 33% 33%;
-}
-
-.matched-index-wrapper  {
-  display: inline-block;
-
-  grid-column-gap: 1em;
-  width: 24vw;
-  background-color: $peach;
-  color: #36363D;
 
 
-  .index-image {
-    border: 10px solid #FFAF93;
-    max-width: 22vw;
-  }
-}
+  /////////STYLING: My matches////////
 
-div.matched-index-nested {
-  display: grid;
-  // grid-template-rows: 2.5fr 0.2fr;
-  grid-row-gap: 1em;
-
-
-
-  .btn-default {
-    width: 15em;
-    border-radius: 5px;
-    border: 2px solid #FFF;
-    background-color: rgb(54,54,61);
-    color: #FFAF93;
-    font-size: 1em;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    margin-bottom: 10px;
-
+  h1.my-matches {
+    text-align: center;
+    font-family: $typefont;
+    font-weight: bold;
+    font-size: 4vw;
+    color: $grey;
+    padding: 1em;
   }
 
-  a {
+  .matched-container {
+    text-align: center;
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  .matched-index-wrapper  {
+    display: inline-block;
+    background-color: rgb(255, 175, 147);
+    grid-column-gap: 1em;
+    width: 24vw;
     color: #36363D;
-    text-decoration: none;
 
+
+    .index-image {
+      border: 10px solid #FFAF93;
+      max-width: 22vw;
+    }
   }
-}
+
+  .matched-index-nested {
+    display: grid;
+    // grid-template-rows: 2.5fr 0.2fr;
+    grid-row-gap: 1em;
+
+
+
+    .btn-default {
+      width: 15em;
+      border-radius: 5px;
+      border: 2px solid #FFF;
+      background-color: rgb(54,54,61);
+      color: #FFAF93;
+      font-size: 1em;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      margin-bottom: 10px;
+
+    }
+
+    a {
+      color: #36363D;
+      text-decoration: none;
+
+    }
+  }
 
 ///////STYLING: USER SHOW/PROFILE////////////
 .user-image {
