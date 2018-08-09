@@ -1,4 +1,4 @@
-## PROJECT #1 PWNLISTS
+## PROJECT #1 TODO: Meet You.
 
 [Link to live site](https://todo-meetyou.herokuapp.com/)
 Login details - shelley@ga.co password: chicken
