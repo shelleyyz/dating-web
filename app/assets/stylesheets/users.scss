@@ -14,6 +14,10 @@
 
 ////////////////VARIABLES////////////////////
 $typefont: 'Slabo 27px', serif;
+$peach: rbg(255 175 147);
+$apricot: rbg(227 127 107);
+$grey: rbg(54 54 61);
+$light: rbg(200, 232, 217);
 
 /////////////////STYLING////////////////////
 body {
@@ -124,15 +128,11 @@ nav.pullUp a:hover:before
 .home-page-container  {
   background-image: url("meetyouheroimg-flipped.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  width: 100vw;
-  height: 100vh;
-  .hero-img {
-    width: 100vw;
-    height: 70vh;
-    box-shadow: 2px 5px 10px grey;
-  }
+
+  background-size:cover;
+  // background-attachment: fixed;
+  min-height: 100vh;
+
 
   .typewriter {
     text-align: center;
@@ -140,11 +140,11 @@ nav.pullUp a:hover:before
     h1 {
 
       font-family: $typefont;
-      max-width: 600px;
-      font-size: 3.5em;
-      padding: 0.5em  0 0 0;
+      max-width: 60vw;
+      font-size: 5vw;
+      padding: 0.2vw  0 0 0;
       overflow: hidden;
-      border-right: .10em solid #FFAF93;
+      border-right: .08em solid #FFAF93;
       white-space: nowrap;
       margin: 0 auto;
       letter-spacing: .15em;
@@ -156,22 +156,15 @@ nav.pullUp a:hover:before
 
 .btn-container {
   text-align: center;
-  // background-color: rgba(131, 153, 148, 0.55);
-  width: 60vw;
-  margin: 0;
-  position: absolute;
-  top: 16%;
-  left: 50%;
-  margin-right: -50%;
+  max-width: 60vw;
+  margin: 0 auto;
   border-radius: 5px;
-  transform: translate(-50%, -50%);
 
-  .moto {
-
+  .motto {
     color: white;
     letter-spacing: 0.12em;
     font-family: $typefont;
-    font-size: 1.55em;
+    font-size: 2vw;
     p {
       animation: moto-fade 2s;
     }
@@ -180,12 +173,12 @@ nav.pullUp a:hover:before
 
   .home-page-btn {
     background-color: rgba(54, 54, 61, 0.8);
-    padding: 1.25em;
-    font-size: 1.25em;
+    padding: 1vw 1.75vw;
+    font-size: 1.70vw;
     border: white solid 2px;
     border-radius: 5px;
     box-shadow: 2px 2px 10px #404040;
-    margin: 2em;
+    margin: 2vw;
     display: inline-block;
     text-decoration: none;
     color: rgba(255, 175, 147, 1);
@@ -201,7 +194,7 @@ nav.pullUp a:hover:before
 
 @keyframes blink-caret {
   from, to {border-color: transparent}
-  50% {border-color: #FFAF93}
+  40% {border-color: #FFAF93}
 }
 
 @keyframes moto-fade {
@@ -218,7 +211,12 @@ nav.pullUp a:hover:before
 
 h1.find_title {
   text-align: center;
-
+  font-family: $typefont;
+  font-weight: bold;
+  font-size: 2em;
+  color:grey;
+  text-shadow: 2px 2px 8px #FFAF93;
+  padding: 1em;
 }
 .potential-matches-container {
   text-align: center;
@@ -245,3 +243,168 @@ h1.find_title {
 .edit-page-img {
   max-width: 10vw;
 }
+
+////STYLING: CONVO PAGE //////////
+.container-convo {
+  background-color: white;
+  width: 70%;
+  margin: 0 auto;
+  max-height: 100vh;
+  margin-top: 2%;
+  border: 4px solid #FFAF93;
+
+}
+// .convo-header {
+//   // background-color: #36363D;
+//   margin: 0 auto;
+//   color: #36363D;
+//   padding: 2%;
+//   text-align: center;
+//   width: 100%;
+//   border: 4px solid #FFAF93;
+// }
+// // .conversations {
+// //   height: 74vh;
+// //   width: 80%;
+// // }
+.convo-list {
+  // background-color: #FFAF93;
+  // background-color: #36363D;
+  display: inline-block;
+  width: 25%;
+  height: 60vh;
+  margin: 0 auto;
+  overflow: auto;
+  // border-left: 1px solid #FFAF93;
+  border-right: 3px solid #FFAF93;
+  border-bottom: 3px solid #FFAF93;
+  // border: 3px solid #FFAF93;
+
+
+}
+.convo-sender {
+  width: 100%;
+  background-color: white;
+}
+
+
+.convo-sender a {
+  text-decoration: none;
+  color: #36363D;
+  width: 40%;
+  display: inline-block;
+  text-align: center;
+  margin: 3%;
+  vertical-align: top;
+  padding: 5% 0;
+
+}
+.convo-sender a:hover {
+  color: #36363D;
+  text-decoration: underline;
+}
+
+.message-box {
+
+  display: inline-block;
+  margin: 0 auto;
+  // min-height: 100%;
+  // padding: 0 4%;
+  width: 70%;
+  vertical-align: top;
+  // border: 4px solid #FFAF93;
+  height: 100%;
+
+
+}
+
+.change-color {
+  background-color: #E37F6B;
+  // background-color: #FFAF93;
+
+}
+
+
+
+#content {
+  height: 10vh;
+  width: 50%;
+  margin: 0 auto;
+  display: inline-block;
+  margin-left: 10%;
+  border-radius: 5em;
+  // border-color: #E37F6B;
+}
+
+.send-box input[type="text"]{
+    font-size:24px;
+    padding: 0 2%;
+}
+
+.pic {
+  border-radius: 500em;
+  height: 15%;
+  width: 20%;
+  margin: 4%;
+  margin-left: 8%;
+  display: inline-block;
+   border:2px solid #E37F6B
+}
+
+.messages {
+  overflow: auto;
+  height: 50vh;
+  display: inline-block;
+  // margin: 1%;
+  width: 60%;
+
+}
+.messages p {
+  padding: 4% 5%;
+  border: 2px solid #E37F6B;
+  border-radius: 5em;
+  margin: 3%;
+  color: #E37F6B;
+  background-color: #36363D;
+
+
+}
+
+.send-box button img {
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+.send-box button {
+  background-color: #E37F6B;
+  border: none;
+  display: inline-block;
+  margin: 3%;
+
+}
+
+.send-box {
+  display: block;
+  // border: 2px solid black;
+  width: 100%;
+  margin: 0 auto;
+  background-color:#36363D;
+  padding: 3% 0 ;
+  // height: 40%;
+  border: 3px solid #FFAF93;
+  // border-top: 4px solid #FFAF93;
+
+
+}
+
+/////////////MEDIA QUERIES//////////////
+// @media screen and (max-width:380px) {
+//   .home-page-container  {
+//     max-width: 380px;
+//     background-image: url("meetyouheroimg-flipped.jpg");
+//     background-position: center !important;
+//     background-repeat: no-repeat;
+//     background-size:cover;
+//     min-height: 100vh;
+//   }
+// }

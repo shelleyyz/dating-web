@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
   def new
-    redirect_to lists_path if @current_user.present?
+
   end
 
     def create
