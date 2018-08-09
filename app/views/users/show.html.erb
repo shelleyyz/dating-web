@@ -12,20 +12,24 @@
   <% end %>
   <br />
 
-  <% if @user.photos.present? %>
+  <%= content_tag :div, :class => "photo-carousel", data: {images: @user.photos} do %>
 
-    <% @user.photos.each do |photo| %>
-    <%= cl_image_tag(photo.path, { size: '400x400', crop: :fit, :alt => @user.first_name}) %>
+    <% if @user.photos.present? %>
 
+      <% @user.photos.each do |photo| %>
+        <div class="photo-box">
+          <%= cl_image_tag(photo.path, { size: '400x400', crop: :fit, :alt => @user.first_name}) %>
+        </div>
+      <% end %>
+
+    <% elsif @user.image.present? %>
+      <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+    <% else %>
+      <!-- default image here -->
+      <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+
+      <% end %>
     <% end %>
-
-  <% elsif @user.image.present? %>
-  <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
-  <% else %>
-    <!-- default image here -->
-  <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
-
-  <% end %>
 
 <br>
 <br>
