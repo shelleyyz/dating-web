@@ -3,7 +3,6 @@
   <br>
   <br>
 
-
   <%= content_tag :div, :class => "photo-carousel", data: {images: @user.photos} do %>
 
     <% if @user.photos.present? %>
@@ -15,14 +14,14 @@
       <% end %>
 
     <% elsif @user.image.present? %>
-      <div class="photo-box">
-        <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
-      </div>
+    <div class="photo-box">
+      <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+    </div>
     <% else %>
-      <div class="photo-box">
-        <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
-      </div>
-
+    <div class="photo-box">
+      <!-- default image here -->
+      <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+    </div>
       <% end %>
     <% end %>
 
