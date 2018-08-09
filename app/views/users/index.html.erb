@@ -2,7 +2,7 @@
 
   <%= link_to "Female only", users_path(:gender => "Female") %>
   <%= link_to "Male only", users_path(:gender => "Male") %>
-  <%= link_to "Other", users_path(:gender => "Non-Specified") %>
+  <%= link_to "Non-Specified", users_path(:gender => "Non-Specified") %>
   <%= link_to "All", users_path %>
   <br />
 
@@ -10,9 +10,6 @@
 <div class="potential-matches-container">
 
   <% @users.each do |user| %>
-
-
-
 
     <% if @current_user.present? &&  user != @current_user %>
       <div id="<%= user.first_name %>" class="matches-index-grid">
