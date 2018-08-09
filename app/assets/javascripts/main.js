@@ -157,9 +157,11 @@ $(".questions-carousel").slick({
   arrows: false,
   infinite: false,
   adaptiveHeight: true,
-  accessibility:true
-  // autoplay: true,
-  // autoplaySpeed: 3000
+  accessibility:true,
+  autoplay: true,
+  autoplaySpeed: 7000,
+  pauseOnFocus: false
+
 
 })
 

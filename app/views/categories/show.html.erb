@@ -1,5 +1,6 @@
 <div class="container-quiz">
 <h1>Test your proficiency in <%= @category.first.category %></h1>
+<!-- <h3>You will only be given 7 seconds to answer each question before it moves on to the next question.</h3> -->
 <div class = "questions-carousel">
 
 <% @categories.each_with_index do |question, index| %>
@@ -21,5 +22,6 @@
 <a href ="/users/<%= @current_user.id %>"><button class= "quiz-button">Submit</button></a>
 
 </div>
-<p class= "note">(drag the slides to the left to move to the next slide)</p>
+<p class="note">You will only be given 7 seconds to answer each question before it moves on to the next question.</p>
+<!-- <p class= "note">(drag the slides to the left to move to the next slide)</p> -->
 </div>
