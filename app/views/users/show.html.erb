@@ -54,44 +54,63 @@
     <h1><%= @user.first_name %>'s Profile</h1>
 
     <br>
-    <br>
 
     <h4>Name</h4>
+    <br>
     <p><%= @user.first_name %></p>
 
     <% if @user.interests.present? %>
-      <h4>Describe 3 key interests</h4>
+      <br>
+      <h4>Interests</h4>
+      <br>
       <p><%= @user.interests %></p>
     <% end %>
 
     <% if @user.bio.present? %>
+      <br>
       <h4>About Me</h4>
+      <br>
       <p><%= @user.bio %></p>
     <% end %>
 
     <% if @user.gender.present? %>
+      <br>
       <h4>Gender</h4>
+      <br>
       <p><%= @user.gender %></p>
     <% end %>
 
     <% if @user.dob.present? %>
+      <br>
       <h4>Age</h4>
+      <br>
       <p><%= ((Time.zone.now - @user.dob.to_time) / 1.year.seconds).floor %></p>
-      <h4>Starsign</h4>
-      <p><%= @user.zodiac_sign %></p>
+
     <% end %>
 
+    <% if @user.zodiac_sign.present? %>
+      <br>
+      <h4>Starsign</h4>
+      <br>
+      <p><%= @user.zodiac_sign %></p>
+
+    <% end %>
+
+    <br>
     <h4>Location</h4>
+    <br>
     <p><%= @user.location %></p>
 
     <% if @user.language.present? %>
+      <br>
       <h4>Favourite Programming Language</h4>
+      <br>
       <p><%= @user.language %></p>
     <% end %>
 
     <br>
-
     <h4>Trivia Test Results</h4>
+    <br>
     <% @categories.each do |category| %>
       <p>
         <%= category.category %>:
@@ -99,6 +118,8 @@
       </p>
     <% end %>
 
+<br>
+<br>
 <br>
 <br>
 

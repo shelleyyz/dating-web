@@ -363,9 +363,10 @@ div.matches-index-nested {
 
 .col {
   height: 100%;
-  width: 49%;
+  width: 40%;
   vertical-align: top;
   display: inline-block;
+  margin: 40px;
 }
 
 .user-btn {
@@ -375,15 +376,20 @@ div.matches-index-nested {
   border: white solid 2px;
   border-radius: 5px;
   box-shadow: 2px 2px 10px #404040;
-  margin: 2vw;
+  margin: 0.5vw;
   text-decoration: none;
   color: rgba(255, 175, 147, 1);
   float: left;
 }
 
+.user-btn:hover {
+  background-color: rgb(227, 127, 107);
+  transition: background-color .5s;
+}
+
 h4 {
   color: rgb(227, 127, 107);
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 ////STYLING: CONVO PAGE //////////
@@ -582,7 +588,7 @@ padding-left: 25%;
 
 }
 
-.slick-arrow {
+.questions-carousel slick-arrow {
   background-color: grey;
 }
 
