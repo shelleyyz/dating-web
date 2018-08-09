@@ -66,7 +66,7 @@ $("div.9 input").on('click', function(event){
     score++
   }})
 
-  $(".questions button").on('click', function(){
+  $(".questions-carousel button").on('click', function(){
     let url_array = window.location.href.split("/")
     $.post(window.location.href, {
       score: score,
@@ -77,6 +77,7 @@ $("div.9 input").on('click', function(event){
 
 let current_messages = [];
 $('.send-box form').hide();
+
 
 const showMessages = function(results){
   results.messages.filter((record, index)=> {
@@ -150,6 +151,15 @@ $('.convo-sender').on('click', function(e) {
 
 })
 
+$(".questions-carousel").slick({
+  dots: true,
+  arrows: true,
+  infinite: false,
+  adaptiveHeight: true,
+  autoplay: true,
+  autoplaySpeed: 3000
+
+})
 
 
 
