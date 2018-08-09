@@ -1,18 +1,15 @@
-<h1>Find your perfect match</h1>
+<h1 class="find_title">Find your perfect match</h1>
 
-  <%= link_to "Female only", users_path(:gender => "Female") %>
-  <%= link_to "Male only", users_path(:gender => "Male") %>
-  <%= link_to "Other", users_path(:gender => "Non-Specified") %>
-  <%= link_to "All", users_path %>
+  <%= link_to "Female only", users_path(:gender => "Female"), :class => "user_filter" %>
+  <%= link_to "Male only", users_path(:gender => "Male"), :class => "user_filter" %>
+  <%= link_to "Other", users_path(:gender => "Non-Specified"), :class => "user_filter"%>
+  <%= link_to "All", users_path,  :class => "user_filter" %>
   <br />
 
 
 <div class="potential-matches-container">
 
   <% @users.each do |user| %>
-
-
-
 
     <% if @current_user.present? &&  user != @current_user %>
       <div id="<%= user.first_name %>" class="matches-index-grid">
@@ -30,14 +27,14 @@
         <% end %>
 
         <% if @current_user.present? && @current_user.admin? %>
-          <%= link_to 'Delete User', user_path(user), :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+          <%= link_to 'Delete User', user_path(user), :method => 'delete', :class => 'admin_delete', :data => { :confirm => 'Are you sure?' } %>
 
         <% end %>
 
 
         <% if @current_user.likes.include?(user) && @current_user.matches.include?(user) %>
          <%= button_to "Unlike", relationship_path(user.id), method: :delete, :class => "btn btn-default", :id => "like_button" %>
-         <p> "You matched!" </p>
+         <p class="matched"> "You matched!" </p>
 
         <% elsif  @current_user.likes.include?(user) %>
 

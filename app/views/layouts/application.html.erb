@@ -10,47 +10,48 @@
   </head>
 
   <body>
-    <nav>
+    <div id="nav_bar_id" >
+      <nav class= "pullUp" >
 
-      <ul>
+        <ul class="nav_bar">
 
-        <% if @current_user.present? %>
-          <%= link_to 'Home', root_path, :class=> "nav-link" %>
-
-          <%= link_to 'My Profile', user_path(@current_user), :class => "nav-link" %>
+          <% if @current_user.present? %>
 
           <li class="nav-item">
-            <%= link_to "Find Matches!", users_path, :class => "nav-link" %>
+            <%= image_tag 'todo_logo_grey_background.png', :alt => "Logo", :class => 'home_logo' %>
           </li>
 
-          <li class="nav-item">
-            <a href='/users/matches'>My Matches</a>
-          </li>
+            <li class="nav-item">
+              <%= link_to "#{@current_user.first_name}", user_path(@current_user), :class => "nav-link" %>
+            </li>
 
-          <li class="nav-item"></div>
-              <a href="/conversations">My Conversations</a>
-          </li>
+            <li class="nav-item">
+              <%= link_to "Find Matches!", users_path, :class => "nav-link" %>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href='/users/matches'>My Matches</a>
+            </li>
 
-          <li class="nav-item"></div>
-              <a href="/categories">Fun stuff</a>
-          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/conversations">Chatroom</a>
+            </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="/categories">Fun stuff</a>
+            </li>
 
-          <li class="nav-item">
-            <%= link_to "Sign Out #{@current_user.first_name.capitalize} ", login_path, :method => 'delete', :class => "nav-link" %>
-          </li>
+            <li class="nav-item">
+              <%= link_to "Sign Out", login_path, :method => 'delete', :class => "nav-link" %>
+            </li>
 
-        <% else %>
+        
+          <% end %>
+        </ul>
 
-          <%= link_to 'Log In', login_path, :class => "nav-link" %>
-          <%= link_to 'Sign Up', new_user_path, :class => "nav-link" %>
-        <% end %>
-      </ul>
+      </nav>
 
-    </nav>
-
-    <%= yield %>
-
+      <%= yield %>
+    </div>
   </body>
 </html>

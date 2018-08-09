@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root :to => 'pages#home'
   resources :pages
+  get '/quiz' => 'pages#quiz'
+
   resources :categories, only: [:index, :show, :update]
 
   # post 'questions/results/:id' => 'questions#results'

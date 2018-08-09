@@ -4,8 +4,7 @@ class PagesController < ApplicationController
 
   end
 
-
-
-
-
+  def show
+    render :quiz
+  end
 end

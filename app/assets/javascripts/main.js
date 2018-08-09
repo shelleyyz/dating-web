@@ -1,4 +1,6 @@
-$(document).ready(function () {
+
+$(document).ready(function() {
+
   $('.attachinary-input').attachinary();
 
   let score = 0;

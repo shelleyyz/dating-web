@@ -1,6 +1,7 @@
 class SessionController < ApplicationController
   def new
-    end
+    redirect_to lists_path if @current_user.present?
+  end
 
     def create
       #get use with this email address:

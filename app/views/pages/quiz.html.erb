@@ -1,0 +1,106 @@
+<h1>Quiz</h1>
+
+<p>Get a score of 2 to sign up for //TODO: Meet You</p>
+
+<table style="width:583px">
+	<tr>
+	  <td>
+	  	<div>
+	  		<p class="question">1. What is HTML?</p>
+	    	<ul>
+	    	<input class="answer" type="radio" name="q1" value="1">
+	        <label id="correctString1">HyperText Markup Language</label>
+	    	<br>
+	        <input class="answer" type="radio" name="q1" value="0">
+	        <label>Hypertext Missing Language</label>
+	        <br>
+	        <input class="answer" type="radio" name="q1" value="0">
+	        <label>High Tea Markup Language</label>
+	        <br>
+    		</ul>
+	  	</div>
+	  </td>
+	  <td>
+	  	<div>
+	  		<p class="question">2. How do you print to console with Javascript?</p>
+	    	<ul>
+	        <input class="answer" type="radio" name="q2" value="0">
+	        <label>print "text"</label>
+	        <br>
+	        <input class="answer" type="radio" name="q2" value="1">
+	        <label id="correctString2">console.log("text")</label>
+	        <br>
+	        <input class="answer" type="radio" name="q2" value="0">
+	        <label>puts "text"</label>
+	        <br>
+	    	</ul>
+	  	</div>
+	  </td>
+	</tr>
+
+	</table>
+<br/>
+  <div class="submitter">
+          <input class="quizSubmit" id="submitButton" onClick="submitQuiz()"
+          type="submit" value="Submit" />
+    </div>
+
+<script>
+
+let score = 0
+
+  var quiz = [
+    {
+      "question" : "Q1: How do you print to console with Javascript",
+      "choices" : [
+        "print 'text'",
+        "console.log('text')",
+        "puts 'text'"
+      ],
+      "correct" : "console.log('text')",
+    },
+    {
+      "question" : "Q2: What does HTML stand for?",
+      "choices" : [
+        "High Tea Markup Language",
+        "Hypertext Missing Language",
+        "HyperText Markup Language"
+      ],
+      "correct" : "HyperText MarkUp Language",
+    },
+  ]
+
+  const submitQuiz = function() {
+    console.log('submitted');
+
+//get the score for each answer and add to score var
+
+  const answerScore(quiz) = function() {
+    let radiosNo = document.getElementsByName(quiz);
+
+    for (let i = 0, length = radiosNo.length; i < length; i++) {
+      if (radiosNo[i].checked) {
+
+      //assign answerValue a number
+        let answerValue = Number(radiosNo[i].value);
+      }
+      return answerValue;
+    }
+
+    console.log('answerValue')
+
+  }
+
+    //calc score with answerScore function
+
+    //redirect to sign up if score > 1 with alert
+
+    }
+
+$(document).ready(function() {
+  $('#submitButton').click(function() {
+    $(this).addClass('hide');
+  });
+});
+
+</script>
