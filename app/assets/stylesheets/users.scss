@@ -118,11 +118,9 @@ nav.pullUp a:hover:before
 
 #map {
   height: 60vh;
-  width: 390px;
-  border: rgb(255, 175, 147) solid 8px;
+  width: 399px;
+  border: rgb(255, 175, 147) solid 2px;
 }
-
-
 
 //////////////STYLING: LANDING PAGE//////////
 .home-page-container  {
@@ -310,6 +308,7 @@ div.matches-index-nested {
     min-height: 400px;
     img {
       height: 400px;
+      border: rgb(255, 175, 147) solid 2px;
     }
   }
 }
@@ -331,13 +330,14 @@ div.matches-index-nested {
   border-radius: 5px;
   box-shadow: 2px 2px 10px #404040;
   margin: 2vw;
-  display: inline-block;
   text-decoration: none;
   color: rgba(255, 175, 147, 1);
+  float: left;
 }
 
 h4 {
-  color: rgb(54, 54, 61);
+  color: rgb(227, 127, 107);
+  font-size: 2vw;
 }
 
 ////STYLING: CONVO PAGE //////////

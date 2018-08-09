@@ -30,15 +30,6 @@
 
   <br>
 
-
-    <h2>Trivia Test Results</h2>
-    <% @categories.each do |category| %>
-      <p>
-        <%= category.category %>:
-        <%= category.score %>0%
-      </p>
-    <% end %>
-
     <script>
       var myLatLng = {
         lat: <%= @latitude %>,
@@ -98,6 +89,19 @@
       <p><%= @user.language %></p>
     <% end %>
 
+    <br>
+
+    <h4>Trivia Test Results</h4>
+    <% @categories.each do |category| %>
+      <p>
+        <%= category.category %>:
+        <%= category.score %>0%
+      </p>
+    <% end %>
+
+<br>
+<br>
+
 <% if @user === @current_user %>
   <%= button_to 'Edit Profile', edit_user_path(@user), :class=> 'user-btn', :method => :get %>
 <% end %>
@@ -106,6 +110,8 @@
   <%= button_to 'Delete Profile', user_path(@user), :class=> 'user-btn', :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
 <% end %>
 
+
+</div>
 </div>
 </div>
 </div>
