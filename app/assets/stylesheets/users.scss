@@ -14,6 +14,10 @@
 
 ////////////////VARIABLES////////////////////
 $typefont: 'Slabo 27px', serif;
+$peach: rbg(255 175 147);
+$apricot: rbg(227 127 107);
+$grey: rbg(54 54 61);
+$light: rbg(200, 232, 217);
 
 /////////////////STYLING////////////////////
 body {
@@ -218,7 +222,12 @@ nav.pullUp a:hover:before
 
 h1.find_title {
   text-align: center;
-
+  font-family: $typefont;
+  font-weight: bold;
+  font-size: 2em;
+  color:grey;
+  text-shadow: 2px 2px 8px #FFAF93;
+  padding: 1em;
 }
 .potential-matches-container {
   text-align: center;
