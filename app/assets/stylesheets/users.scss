@@ -424,6 +424,8 @@ h4 {
 
 
 }
+
+
 .convo-sender {
   width: 100%;
   background-color: white;
@@ -554,4 +556,42 @@ padding-left: 25%;
   min-height: 12vh;
 
 
+}
+
+.questions-carousel {
+  border-color: #E37F6B;
+  border-style: double;
+  border-width: 5px;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 7%;
+  min-height: 40vh;
+  background-color: #36363D;
+  color: rgb(255, 175, 147);
+}
+
+.container-quiz h1 {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.questions-carousel p{
+  margin-top: 5%;
+  font-size: 170%;
+  text-align: center;
+
+}
+
+.slick-arrow {
+  background-color: grey;
+}
+
+.chicken {
+  margin-top: 5%;
+  font-size: 120%;
+  text-align: center;
+}
+
+.chicken label {
+  padding: 2%
 }

@@ -1,20 +1,24 @@
+<div class="container-quiz">
 <h1>Test your proficiency in <%= @category.first.category %></h1>
-<div class = "questions">
+<div class = "questions-carousel">
 
 <% @categories.each_with_index do |question, index| %>
-<p><%= question["question"] %></p>
-<div class="<%= index %>" class = "single-item">
-<% question["incorrect_answers"].push(question["correct_answer"]).shuffle.each do |answer| %>
-  <%= radio_button_tag(index, answer ) %>
-  <%= label_tag answer %>
-  <% end %>
-  <%= hidden_field_tag "ultra_secret_answer_that_only_true_devs_can_see", question["correct_answer"] %>
+  <div class="single-item">
+    <p><%= question["question"] %></p>
+    <div class="<%= index %> chicken">
+    <% question["incorrect_answers"].push(question["correct_answer"]).shuffle.each do |answer| %>
+      <%= radio_button_tag(index, answer ) %>
+      <%= label_tag answer %>
+      <% end %>
+      <%= hidden_field_tag "ultra_secret_answer_that_only_true_devs_can_see", question["correct_answer"] %>
+    </div>
+  </div>
 
-</div>
-<br>
 
 <%end %>
 
+
 <a href ="/users/<%= @current_user.id %>"><button>Submit</button></a>
 
+</div>
 </div>
