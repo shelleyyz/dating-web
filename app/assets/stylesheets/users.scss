@@ -218,7 +218,12 @@ nav.pullUp a:hover:before
 
 h1.find_title {
   text-align: center;
-
+  font-family: $typefont;
+  font-weight: bold;
+  font-size: 2em;
+  color:grey;
+  text-shadow: 2px 2px 8px #FFAF93;
+  padding: 1em;
 }
 .potential-matches-container {
   text-align: center;
