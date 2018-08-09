@@ -2,9 +2,9 @@
 <h1 class="find_title" >&lt;h1>Find Your Perfect Match  &#10084; &lt;/h1>	 </h1>
 
 <div class="find_user_tab">
-    <%= link_to "Female only", users_path(:gender => "Female"), :class => "user_filter" %>
-    <%= link_to "Male only", users_path(:gender => "Male"), :class => "user_filter" %>
-    <%= link_to "Other", users_path(:gender => "Non-Specified"), :class => "user_filter"%>
+    <%= link_to "Female", users_path(:gender => "Female"), :class => "user_filter" %>
+    <%= link_to "Male", users_path(:gender => "Male"), :class => "user_filter" %>
+    <%= link_to "Non-Binary", users_path(:gender => "Non-Specified"), :class => "user_filter"%>
     <%= link_to "All", users_path,  :class => "user_filter" %>
 </div>
 

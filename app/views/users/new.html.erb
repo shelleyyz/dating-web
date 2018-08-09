@@ -1,43 +1,48 @@
-<div class="signup-form">
+<p class="page-logo">//TODO: Meet You.</p>
+<div class="signup-form-container">
 
-  <h1>Sign Up!</h1>
+  <div class="sign-up-form">
 
-  <% if @user.errors.any? %>
-    <ol>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <h1>Sign Up!</h1>
+
+    <% if @user.errors.any? %>
+      <ol>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ol>
       <% end %>
-    </ol>
-    <% end %>
 
-    <%= form_for @user do |f| %>
-    <div class="signup">
+      <%= form_for @user do |f| %>
+
+      <%= f.label :first_name, :class => "input-label" %><br />
+      <%= f.text_field :first_name, :required => true, :placeholder => "Jane", :class => "input-box" %>
+      <br />
+
+      <%= f.label :last_name, :class => "input-label" %><br />
+      <%= f.text_field :last_name, :required => true, :placeholder => "Smith", :class => "input-box" %>
+      <br />
+
+      <%= f.label "Email Address", :class => "input-label" %><br />
+      <%= f.email_field :email, :required => true, :placeholder => "janesmith@ga.co", :class => "input-box" %>
+      <br />
+
+      <%= f.label "Your Location", :class => "input-label" %> <br />
+      <%= f.text_field :location, :required => true, :placeholder => "Sydney", :class => "input-box" %>
+      <br />
+
+      <%= f.label :password, :class => "input-label" %><br />
+      <%= f.password_field :password, :class => "input-box" %>
+      <br />
+
+      <%= f.label "Confirm password", :class => "input-label"%><br />
+      <%= f.password_field :password_confirmation, :required => true, :class => "input-box" %>
+      <br />
+
+      <%= f.submit "Sign me up!", :class => "submit-btn" %><br />
+
+      <% end %>
+    </div><!--end of signupform div-->
 
 
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, :required => true, :placeholder => "Jane" %>
-    <br />
-
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, :required => true, :placeholder => "Smith" %>
-    <br />
-
-    <%= f.label "Email Address" %>
-    <%= f.email_field :email, :required => true, :placeholder => "janesmith@ga.co" %>
-    <br />
-
-    <%= f.label "You Location" %>
-    <%= f.text_field :location, :required => true, :placeholder => "Sydney" %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br />
-
-    <%= f.label "Confirm password" %>
-    <%= f.password_field :password_confirmation, :required => true %>
-    <br />
-
-    <%= f.submit "Sign me up!", :class => "submit-btn" %>
-    </div>
-    <% end %>
-  </div>
+<!-- </div><!--end of signup form container div-->
