@@ -237,6 +237,17 @@ h1.find_title {
 .user-image {
   max-width: 40vw;
 }
+////CAROUSEL////
+.photo-carousel {
+
+  .photo-box {
+    max-height: 400px;
+    min-height: 400px;
+    img {
+      height: 400px;
+    }
+  }
+}
 
 /////////STYLING: EDIT PROFILE FORM//////////
 
