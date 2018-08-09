@@ -103,7 +103,7 @@ nav.pullUp a:hover:before
   width: 40%;
   text-align: center;
   margin: 0 auto;
-  background-color: blue;
+  // background-color: blue;
 }
 
 .convo-list a {
@@ -237,6 +237,17 @@ h1.find_title {
 .user-image {
   max-width: 40vw;
 }
+////CAROUSEL////
+.photo-carousel {
+
+  .photo-box {
+    max-height: 400px;
+    min-height: 400px;
+    img {
+      height: 400px;
+    }
+  }
+}
 
 /////////STYLING: EDIT PROFILE FORM//////////
 
@@ -246,9 +257,13 @@ h1.find_title {
 
 ////STYLING: CONVO PAGE //////////
 .container-convo {
+  background-color: white;
   width: 70%;
   margin: 0 auto;
   max-height: 100vh;
+  margin-top: 2%;
+  border: 4px solid #FFAF93;
+
 }
 // .convo-header {
 //   // background-color: #36363D;
@@ -265,21 +280,22 @@ h1.find_title {
 // // }
 .convo-list {
   // background-color: #FFAF93;
-  background-color: #36363D;
+  // background-color: #36363D;
   display: inline-block;
   width: 25%;
-  height: 50vh;
+  height: 60vh;
   margin: 0 auto;
   overflow: auto;
-  // border-left: 4px solid #FFAF93;
-  // border-right: 4px solid #FFAF93;
-  // border-bottom: 4px solid #FFAF93;
-  // border: 4px solid #FFAF93;;
+  // border-left: 1px solid #FFAF93;
+  border-right: 3px solid #FFAF93;
+  border-bottom: 3px solid #FFAF93;
+  // border: 3px solid #FFAF93;
 
 
 }
 .convo-sender {
   width: 100%;
+  background-color: white;
 }
 
 
@@ -295,11 +311,12 @@ h1.find_title {
 
 }
 .convo-sender a:hover {
+  color: #36363D;
   text-decoration: underline;
-  color: white;
 }
 
 .message-box {
+
   display: inline-block;
   margin: 0 auto;
   // min-height: 100%;
@@ -322,11 +339,11 @@ h1.find_title {
 
 #content {
   height: 10vh;
-  width: 70%;
+  width: 50%;
   margin: 0 auto;
   display: inline-block;
   margin-left: 10%;
-  // border-radius: 5em;
+  border-radius: 5em;
   // border-color: #E37F6B;
 }
 
@@ -342,6 +359,7 @@ h1.find_title {
   margin: 4%;
   margin-left: 8%;
   display: inline-block;
+   border:2px solid #E37F6B
 }
 
 .messages {
@@ -353,9 +371,12 @@ h1.find_title {
 
 }
 .messages p {
-  padding: 3%;
+  padding: 4% 5%;
   border: 2px solid #E37F6B;
   border-radius: 5em;
+  margin: 3%;
+  color: #E37F6B;
+  background-color: #36363D;
 
 
 }
@@ -379,11 +400,13 @@ h1.find_title {
   width: 100%;
   margin: 0 auto;
   background-color:#36363D;
-  padding: 5% 0 ;
+  padding: 3% 0 ;
   // height: 40%;
+  border: 3px solid #FFAF93;
+  // border-top: 4px solid #FFAF93;
+
 
 }
-
 
 /////////////MEDIA QUERIES//////////////
 // @media screen and (max-width:380px) {
