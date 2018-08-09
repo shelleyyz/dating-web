@@ -23,11 +23,14 @@
 
 
 </div>
+
 <div class = "send-box">
   <%= form_tag "/mailboxes/mail/#{params[:id]}" do %>
-    <%= text_field_tag :content%>
-    <!-- <button>  <img src = "http://cdn.onlinewebfonts.com/svg/img_542962.png">
-</button> -->
+  <%= image_tag "user-solid-apricot.png", :class => 'user' %>
+    <%= text_field_tag :content, "", :placeholder => "Enter message here"%>
+
+    <button> <%= image_tag "share-square-solid-apricot.png"%>
+</button>
   <% end %>
 
 </div>

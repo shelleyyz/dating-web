@@ -1,9 +1,9 @@
-<h1>code test bitches</h1>
-
+<h1>Test your proficiency in <%= @category.first.category %></h1>
 <div class = "questions">
+
 <% @categories.each_with_index do |question, index| %>
 <p><%= question["question"] %></p>
-<div class="<%= index %>">
+<div class="<%= index %>" class = "single-item">
 <% question["incorrect_answers"].push(question["correct_answer"]).shuffle.each do |answer| %>
   <%= radio_button_tag(index, answer ) %>
   <%= label_tag answer %>

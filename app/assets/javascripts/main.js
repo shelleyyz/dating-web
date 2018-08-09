@@ -76,7 +76,7 @@ $("div.9 input").on('click', function(event){
   // .done(()=> window.location.replace(`/categories/results/${url_array[url_array.length - 1]}`))
 
 let current_messages = [];
-$('.message-box').hide();
+$('.send-box form').hide();
 
 const showMessages = function(results){
   results.messages.filter((record, index)=> {
@@ -111,7 +111,7 @@ $(".convo-list a").on('click', (e) => {
   current = e.target.id;
   current_messages = [];
   $(".messages").empty();
-  $('.message-box').show();
+  $('.send-box form').show();
   api_call().done(function() {
     if (!timer) {
       startTimer()
@@ -149,6 +149,8 @@ $('.convo-sender').on('click', function(e) {
 });
 
 })
+
+
 
 
 
