@@ -23,10 +23,13 @@
       <% end %>
 
     <% elsif @user.image.present? %>
-      <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+      <div class="photo-box">
+        <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+      </div>
     <% else %>
-      <!-- default image here -->
-      <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+      <div class="photo-box">
+        <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+      </div>
 
       <% end %>
     <% end %>
