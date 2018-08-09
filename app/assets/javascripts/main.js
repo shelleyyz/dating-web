@@ -2,6 +2,15 @@
 $(document).ready(function() {
 
   $('.attachinary-input').attachinary();
+  $('.photo-carousel').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    // adaptiveHeight: false,
+    autoplay: true,
+    autoplaySpeed: 2000
+  });
 
   let score = 0;
 $("div.0 input").on('click', function(event){
