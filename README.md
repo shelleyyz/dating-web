@@ -14,6 +14,7 @@ A dating site catered towards singles in the tech industry. Users can browse pro
 * View your matches in the 'My matches' tab to see who has liked you back
 * Message potential matches
 * Complete "Interest Quizzes" so that users can see what you're interested in. After completing a category in the quiz database, your score will be displayed on your user profile.
+* Admin functionality
 
 ## Objectives
 * The app should have at least 3 models. Currently Category, Conversation, Mailbox, Relationship and User.
@@ -30,14 +31,6 @@ These were not covered in class but were added to the project.
 * The project uses the search functionality of ruby gem Geocoder that takes an address from user input and searches for its latitude and longitude coordinates. This connects to the Google Maps API and will display when a user updates their user profile or signs up to the site
 * Zodiac sign gem to determine a user's star sign based on their date of birth
 * Slick for carousel
-
-## Scope
-* Sign up
-* Sign in via email address
-* Set up profile with avatar using Cloudinary and Google Maps API & Geocoder GEM for user's location
-* Admin functionality to delete lists, users or games
-* Ron Swanson quote generator
-* Basic styling and CRUD working
 
 ## To Do:
 - [ ] Date location generator
