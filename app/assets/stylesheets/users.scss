@@ -117,11 +117,11 @@ nav.pullUp a:hover:before
 }
 
 #map {
-  height: 90vh;
-  width: 80%;
-  margin: 0 auto;
-  border: red solid 2px;
+  height: 60vh;
+  width: 390px;
+  border: rgb(255, 175, 147) solid 8px;
 }
+
 
 
 //////////////STYLING: LANDING PAGE//////////
@@ -249,24 +249,14 @@ h1.find_title {
   }
 }
 
-/////////STYLING: EDIT PROFILE FORM//////////
+/////////STYLING: SHOW PROFILE FORM//////////
 
-.edit-page-img {
-  max-width: 10vw;
+.col {
+  height: 100%;
+  width: 49%;
+  vertical-align: top;
+  display: inline-block;
 }
-
-/////////////MEDIA QUERIES//////////////
-// @media screen and (max-width:380px) {
-//   .home-page-container  {
-//     max-width: 380px;
-//     background-image: url("meetyouheroimg-flipped.jpg");
-//     background-position: center !important;
-//     background-repeat: no-repeat;
-//     background-size:cover;
-//     min-height: 100vh;
-//   }
-// }
-
 
 .user-btn {
   background-color: rgba(54, 54, 61, 0.8);
@@ -280,6 +270,11 @@ h1.find_title {
   text-decoration: none;
   color: rgba(255, 175, 147, 1);
 }
+
+h4 {
+  color: rgb(54, 54, 61);
+}
+
 ////STYLING: CONVO PAGE //////////
 .container-convo {
   background-color: white;
