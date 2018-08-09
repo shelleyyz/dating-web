@@ -2,7 +2,6 @@
 * {
   padding: 0;
   margin: 0;
-
 }
 
 ////////////////FONTS//////////////
@@ -13,11 +12,11 @@
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 
 ////////////////VARIABLES////////////////////
-$typefont: 'Slabo 27px', serif;
-$peach: rbg(255 175 147);
-$apricot: rbg(227 127 107);
-$grey: rbg(54 54 61);
-$light: rbg(200, 232, 217);
+$typefont: ‘Slabo 27px’, serif;
+$peach: rgb(255, 175, 147);
+$apricot: rgb(227, 127, 107);
+$grey: rgb(54, 54, 61);
+$light: rgb(200, 232, 217);
 
 /////////////////STYLING////////////////////
 body {
@@ -236,7 +235,6 @@ a.user_filter {
 
 .potential-matches-container {
   text-align: center;
-  background: $apricot;
 
 }
 
@@ -259,17 +257,8 @@ div.matches-index-nested {
   grid-template-rows: 2.5fr 0.2fr;
   grid-row-gap: 1em;
 
-  .btn-default {
-    width: 15em;
-    border-radius: 5px;
-    border: 2px solid #FFAF93;
-    background-color: rgba(54,54,61,0.7);
-    color: #FFAF93;
-    font-size: 1em;
-    padding-top: 2px;
-    padding-bottom: 2px;
-
   }
+
   .btn-default {
     width: 15em;
     border-radius: 5px;
@@ -293,7 +282,64 @@ div.matches-index-nested {
 
   }
 
-}
+
+
+  /////////STYLING: My matches////////
+
+  h1.my-matches {
+    text-align: center;
+    font-family: $typefont;
+    font-weight: bold;
+    font-size: 4vw;
+    color: $grey;
+    padding: 1em;
+  }
+
+  .matched-container {
+    text-align: center;
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  .matched-index-wrapper  {
+    display: inline-block;
+    background-color: rgb(255, 175, 147);
+    grid-column-gap: 1em;
+    width: 24vw;
+    color: #36363D;
+
+
+    .index-image {
+      border: 10px solid #FFAF93;
+      max-width: 22vw;
+    }
+  }
+
+  .matched-index-nested {
+    display: grid;
+    // grid-template-rows: 2.5fr 0.2fr;
+    grid-row-gap: 1em;
+
+
+
+    .btn-default {
+      width: 15em;
+      border-radius: 5px;
+      border: 2px solid #FFF;
+      background-color: rgb(54,54,61);
+      color: #FFAF93;
+      font-size: 1em;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      margin-bottom: 10px;
+
+    }
+
+    a {
+      color: #36363D;
+      text-decoration: none;
+
+    }
+  }
 
 ///////STYLING: USER SHOW/PROFILE////////////
 .user-image {
@@ -378,6 +424,8 @@ h4 {
 
 
 }
+
+
 .convo-sender {
   width: 100%;
   background-color: white;
@@ -508,4 +556,42 @@ padding-left: 25%;
   min-height: 12vh;
 
 
+}
+
+.questions-carousel {
+  border-color: #E37F6B;
+  border-style: double;
+  border-width: 5px;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 7%;
+  min-height: 40vh;
+  background-color: #36363D;
+  color: rgb(255, 175, 147);
+}
+
+.container-quiz h1 {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.questions-carousel p{
+  margin-top: 5%;
+  font-size: 170%;
+  text-align: center;
+
+}
+
+.slick-arrow {
+  background-color: grey;
+}
+
+.chicken {
+  margin-top: 5%;
+  font-size: 120%;
+  text-align: center;
+}
+
+.chicken label {
+  padding: 2%
 }
