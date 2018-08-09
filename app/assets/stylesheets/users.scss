@@ -295,6 +295,7 @@ a.admin_delete {
   display: inline-block;
   grid-column-gap: 1em;
   width: 24vw;
+
   background-color: #36363D;
   color: #E37F6B;
 
@@ -310,7 +311,10 @@ div.matches-index-nested {
   display: grid;
   grid-template-rows: 2.5fr 0.2fr;
   grid-row-gap: 1em;
+  }
 
+  img.index-image {
+    height: 28vw;
   }
 
   .btn-default {
@@ -633,7 +637,7 @@ padding-left: 25%;
 
 }
 
-.slick-arrow {
+.questions-carousel slick-arrow {
   background-color: grey;
 }
 
@@ -723,10 +727,35 @@ padding-left: 3%;
     color: $peach;
     box-shadow: 2px 2px 10px #404040;
 
-    select.select-category-btn {
-      padding: 5vw;
+    .select-category-btn {
+      background-color: rgba(54, 54, 61, 0.8);
+      padding: 1vw 1.75vw;
+      font-size: 1.2vw;
+      border: white solid 2px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 10px #E37F6B;
+      margin: 2vw;
+      display: inline-block;
+      text-decoration: none;
+      color: rgba(255, 175, 147, 1);
     }
 
   }
+}
+///////// Styling Quiz //////////////
+.container-quiz .note {
+  text-align: center;
+}
 
+.container-quiz .quiz-button {
+  margin: 7% 25%;
+  height: 20vh;
+  width: 50%;
+  font-size: 150%;
+  background-color: #E37F6B;
+  border: white;
+  color: white;
+  border-color: white;
+  border-style: double;
+  border-width: 4px;
 }
