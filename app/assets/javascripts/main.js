@@ -65,7 +65,7 @@ $("div.9 input").on('click', function(event){
   // .done(()=> window.location.replace(`/categories/results/${url_array[url_array.length - 1]}`))
 
 let current_messages = [];
-$('.send-box').hide();
+$('.message-box').hide();
 
 const showMessages = function(results){
   results.messages.filter((record, index)=> {
@@ -76,9 +76,8 @@ const showMessages = function(results){
     return record.data.id !== current_messages[index].data.id
 
   }).map((record)=> {
-      $(".messages").append(`<p>${record.sender_first_name + ":" + record.data.content}<p>`)
+      $(".messages").append(`<p>${record.sender_first_name + ": " + record.data.content}</p>`)
   })
-
     current_messages = results.messages
 }
 
@@ -101,7 +100,7 @@ $(".convo-list a").on('click', (e) => {
   current = e.target.id;
   current_messages = [];
   $(".messages").empty();
-  $('.send-box').show();
+  $('.message-box').show();
   api_call().done(function() {
     if (!timer) {
       startTimer()
@@ -120,7 +119,26 @@ $(".send-box form").on('submit', (e) => {
     content: content,
     _method: 'post'
   })
+})
+
+//design stuff
+let classId;
+
+$('.convo-sender').on('click', function(e) {
+  $('.convo-sender').removeClass('change-color');
+  // console.log(e.currentTarget.id);
+
+  classId = e.target.id;
+  $('.convo-sender').each(function(i, obj) {
+    if (i == e.currentTarget.id) {
+      console.log(i);
+      $(obj).addClass('change-color');
+
+    }
+});
 
 })
+
+
 
 })
