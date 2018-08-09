@@ -575,6 +575,8 @@ padding-left: 25%;
   min-height: 40vh;
   background-color: #36363D;
   color: rgb(255, 175, 147);
+  box-shadow: 0 0 15px #36363D;
+
 }
 
 .container-quiz h1 {
@@ -589,7 +591,7 @@ padding-left: 25%;
 
 }
 
-.questions-carousel slick-arrow {
+.slick-arrow {
   background-color: grey;
 }
 
@@ -601,4 +603,57 @@ padding-left: 25%;
 
 .chicken label {
   padding: 2%
+}
+
+.new-mail {
+  width: 60%;
+  background-color: #E37F6B;
+  margin: 0 auto;
+  text-align: center;
+  height: 70vh;
+  margin-top: 5%;
+  box-shadow: 0 0 15px #36363D;
+}
+
+.new-mail h1{
+  padding-top: 10%;
+  color: #36363D;
+
+}
+
+#mailbox_content {
+  height: 10vh;
+  width: 70%;
+  margin: 0 auto;
+  display: inline-block;
+  margin-left: 5%;
+  border-radius: 5em;
+  margin-top: 5%;
+}
+
+.new-mail input[type="text"] {
+font-size: 24px;
+padding-left: 3%;
+}
+
+.new-mail input[type="submit"] {
+  display: inline-block;
+  margin: 3%;
+  vertical-align: middle;
+
+}
+
+.suggestions {
+  padding-top: 2%;
+}
+.suggestions button{
+  height: 20vh;
+  max-width: 20%;
+  font-size: 100%;
+  padding: 3%;
+  background-color: #36363D;
+  border: none;
+  color: #E37F6B;
+  margin: 2% 1.5%;
+  box-shadow: 0 0 15px #36363D;
 }
