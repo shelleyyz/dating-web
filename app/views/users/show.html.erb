@@ -1,10 +1,8 @@
-  <h1><%= @user.first_name %>'s Profile</h1>
+<div id="container">
 
-  <br>
-  <br>
+  <div class="col">
 
-
-  <%= content_tag :div, :class => "photo-carousel", data: {images: @user.photos} do %>
+    <%= content_tag :div, :class => "photo-carousel", data: {images: @user.photos} do %>
 
     <% if @user.photos.present? %>
 
@@ -14,66 +12,38 @@
         </div>
       <% end %>
 
-    <% elsif @user.image.present? %>
-      <div class="photo-box">
-        <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
-      </div>
-    <% else %>
-      <div class="photo-box">
-        <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
-      </div>
-
+      <% elsif @user.image.present? %>
+        <div class="photo-box">
+          <%= image_tag(@user.image, {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+        </div>
+      <% else %>
+        <div class="photo-box">
+          <!-- default image here -->
+          <%= image_tag('/assets/img.jpg', {:class => 'index-image', :size => '400x400', :crop => :fit, :alt => @user.first_name} ) %>
+        </div>
       <% end %>
     <% end %>
 
-  <% if @user === @current_user %>
-    <%= button_to 'Edit Profile', edit_user_path(@user), :class=> 'user-btn', :method => :get %>
-  <% end %>
+    <% if @user.location.present? %>
+      <div id="map"></div>
+    <% end %>
 
-  <% if @user === @current_user || @current_user.present? && @current_user.admin? %>
-    <%= button_to 'Delete Profile', user_path(@user), :class=> 'user-btn', :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
-  <% end %>
-  <br />
-
-<br>
-<br>
-
-  <h4>Name </br> <%= @user.first_name %></h4>
-
-  <% if @user.interests.present? %>
-  <h4>Interests </br>  <%= @user.interests %></h4>
-  <% end %>
-
-  <% if @user.bio.present? %>
-  <h4>Things to know about me: </br> <%= @user.bio %> </h4>
-  <% end %>
-
-  <% if @user.gender.present? %>
-  <h4>Gender </br> <%= @user.gender %></h4>
-  <% end %>
-
-  <% if @user.dob.present? %>
-  <h4>Age </br>  <%= ((Time.zone.now - @user.dob.to_time) / 1.year.seconds).floor %></h4>
-  <h4>Starsign </br>  <%= @user.zodiac_sign %></h4>
-  <% end %>
-
-  <h4>Location </br>  <%= @user.location %></h4>
+  <br>
 
 
-  <% if @user.language.present? %>
-  <h4>Favourite Language </br> <%= @user.language %></h4>
-  <% end %>
+    <h2>Trivia Test Results</h2>
+    <% @categories.each do |category| %>
+      <p>
+        <%= category.category %>:
+        <%= category.score %>0%
+      </p>
+    <% end %>
 
-
-  <% if @user.location.present? %>
-  <div id="map"></div> <!--need predefined height to display content, otherwise it won't expand-->
-
-<% end %>
-
-</div>
-
-  <script>
-      var myLatLng = {lat: <%= @latitude %>, lng: <%= @longitude %>};
+    <script>
+      var myLatLng = {
+        lat: <%= @latitude %>,
+        lng: <%= @longitude %>
+      };
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -81,19 +51,62 @@
           zoom: 15
         });
 
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-        })
+        var marker = new google.maps.Marker({position: myLatLng, map: map})
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRJ_rNpk79o-xD6SiesCvKhF6fEWrF6lk&callback=initMap"
-    async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRJ_rNpk79o-xD6SiesCvKhF6fEWrF6lk&callback=initMap" async="async" defer="defer"></script>
 
-<div>
-  <h3>User interests based on test scores</h3>
-    <% @categories.each do |category| %>
-      <p> <%= category.category %>: <%= category.score %>0% </p>
-    <% end %>
   </div>
+
+  <div class="col">
+
+    <h1><%= @user.first_name %>'s Profile</h1>
+
+    <br>
+    <br>
+
+    <h4>Name</h4>
+    <p><%= @user.first_name %></p>
+
+    <% if @user.interests.present? %>
+      <h4>Describe 3 key interests</h4>
+      <p><%= @user.interests %></p>
+    <% end %>
+
+    <% if @user.bio.present? %>
+      <h4>About Me</h4>
+      <p><%= @user.bio %></p>
+    <% end %>
+
+    <% if @user.gender.present? %>
+      <h4>Gender</h4>
+      <p><%= @user.gender %></p>
+    <% end %>
+
+    <% if @user.dob.present? %>
+      <h4>Age</h4>
+      <p><%= ((Time.zone.now - @user.dob.to_time) / 1.year.seconds).floor %></p>
+      <h4>Starsign</h4>
+      <p><%= @user.zodiac_sign %></p>
+    <% end %>
+
+    <h4>Location</h4>
+    <p><%= @user.location %></p>
+
+    <% if @user.language.present? %>
+      <h4>Favourite Programming Language</h4>
+      <p><%= @user.language %></p>
+    <% end %>
+
+<% if @user === @current_user %>
+  <%= button_to 'Edit Profile', edit_user_path(@user), :class=> 'user-btn', :method => :get %>
+<% end %>
+
+<% if @user === @current_user || @current_user.present? && @current_user.admin? %>
+  <%= button_to 'Delete Profile', user_path(@user), :class=> 'user-btn', :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+<% end %>
+
+</div>
+</div>
+</div>
 </div>

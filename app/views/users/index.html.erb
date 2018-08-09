@@ -1,59 +1,60 @@
-<h1 class="find_title">&lt;h1>Find your perfect match&lt;/h1></h1>
 
-  <%= link_to "Female only", users_path(:gender => "Female"), :class => "user_filter" %>
-  <%= link_to "Male only", users_path(:gender => "Male"), :class => "user_filter" %>
-  <%= link_to "Other", users_path(:gender => "Non-Specified"), :class => "user_filter"%>
-  <%= link_to "All", users_path,  :class => "user_filter" %>
+<h1 class="find_title" >&lt;h1>Find Your Perfect Match  &#10084; &lt;/h1>	 </h1>
+
+<div class="find_user_tab">
+    <%= link_to "Female only", users_path(:gender => "Female"), :class => "user_filter" %>
+    <%= link_to "Male only", users_path(:gender => "Male"), :class => "user_filter" %>
+    <%= link_to "Other", users_path(:gender => "Non-Specified"), :class => "user_filter"%>
+    <%= link_to "All", users_path,  :class => "user_filter" %>
+</div>
+
   <br />
-
 
 <div class="potential-matches-container">
 
   <% @users.each do |user| %>
 
     <% if @current_user.present? &&  user != @current_user %>
-      <div id="<%= user.first_name %>" class="matches-index-grid">
+      <div class="matches-index-wrapper">
+        <div class="matches-index-nested">
+            <% if user.photos.first.present? %>
+            	<%= link_to cl_image_tag(user.photos.last.path, {:class => 'index-image', :size => '300x300', :crop => :fit, :alt => user.first_name} ), user_path(user) %>
 
-        <% if user.photos.first.present? %>
-        	<%= link_to cl_image_tag(user.photos.last.path, {:class => 'index-image', :size => '300x300', :crop => :fit, :alt => user.first_name} ), user_path(user) %>
+            <% elsif user.image.present? %>
 
-        <% elsif user.image.present? %>
+              <%= link_to image_tag(user.image, {:class => 'index-image', :size => '300x300', :crop => :fit, :alt => user.first_name} ), user_path(user) %>
 
-          <%= link_to image_tag(user.image, {:class => 'index-image', :size => '300x300', :crop => :fit, :alt => user.first_name} ), user_path(user) %>
+            <% else %>
 
-        <% else %>
+              <%= link_to image_tag('/assets/img.jpg', {:class => 'index-image', :size => '300x300', :crop => :fit, :alt => user.first_name} ), user_path(user) %>
+            <% end %>
 
-          <%= link_to image_tag('/assets/img.jpg', {:class => 'index-image', :size => '300x300', :crop => :fit, :alt => user.first_name} ), user_path(user) %>
-        <% end %>
+            <% if @current_user.present? && @current_user.admin? %>
+              <%= link_to 'Delete User', user_path(user), :method => 'delete', :class => 'admin_delete', :data => { :confirm => 'Are you sure?' } %>
 
-        <% if @current_user.present? && @current_user.admin? %>
-          <%= link_to 'Delete User', user_path(user), :method => 'delete', :class => 'admin_delete', :data => { :confirm => 'Are you sure?' } %>
+            <% elsif @current_user.likes.include?(user) && @current_user.matches.include?(user)%>
 
-        <% end %>
+              <p class="matched"> &#10084; "You matched!" </p>
 
+            <% end %>
+        </div>
 
-        <% if @current_user.likes.include?(user) && @current_user.matches.include?(user) %>
-         <%= button_to "Unlike", relationship_path(user.id), method: :delete, :class => "btn btn-default", :id => "like_button" %>
-         <p class="matched"> "You matched!" </p>
+        <div class="matches-index-nested">
 
-        <% elsif  @current_user.likes.include?(user) %>
+          <% if  @current_user.likes.include?(user) %>
 
-         <%= button_to "Unlike #{user.first_name}", relationship_path(user.id), method: :delete, :class => "btn btn-default", :id => "like_button" %>
+           <%= button_to "Unlike #{user.first_name}", relationship_path(user.id), method: :delete, :class => "btn-default", :id => "like_button" %>
 
-        <% else  %>
+          <% else  %>
 
-           <%= button_to "Like #{user.first_name}", relationship_path(user.id),  :class => "btn btn-primary", :id => "like_button" %>
-        <% end %>
+           <%= button_to "  Like #{user.first_name}", relationship_path(user.id),  :class => "btn-primary", :id => "like_button" %>
 
+          <% end %>
+          </div>
 
-          </div> <!-- end of matches-index-grid-->
+      </div> <!-- end of matches-index-grid-->
 
       <% end %><!--end of if current user not user-->
-
-
-
   <% end %> <!--end of users each do! rendering uders on page-->
-
-
 
 </div> <!--end of potential matches container-->

@@ -1,32 +1,43 @@
-<h1> My Matches</h1>
+<h1 class="my-matches" >&lt;h1> &#10084; My Matches &#10084; &lt;/h1></h1>
 
+<div class="matched-container">
   <% @users.each do |user| %>
 
 
-    <div class="matches-index-grid">
 
       <% if user.image.present? %>
 
-      <div class="index-image-box">
+      <div class="matched-index-wrapper">
 
-        <%= link_to image_tag(user.image, :class => "index-image", :alt => user.first_name), user_path(user) %>
+        <div class="matched-index-nested">
 
-      <% else %>
+            <%= link_to image_tag(user.image, :class => "index-image", :alt => user.first_name), user_path(user) %>
 
-        <%= image_tag 'img.jpg', :class => "index-image"  %>
+          <% else %>
 
-      <% end %>
+            <%= image_tag 'img.jpg', :class => "index-image"  %>
+
+          <% end %>
+        </div>
+
+
+        <div class="matched-index-nested">
+
+          <%= link_to "Checkout #{user.first_name}", user_path(user) %>
+
+
+          <%= link_to 'Chat ?', controller: "mailboxes", action: "new", id: user.id %>
+
+          <%= button_to "Remove", unlike_path(user.id), method: :delete, :class => "btn btn-default", :id => "like_button" %>
+
+
+
+
+        </div>
 
       </div>
-      <%= link_to "View #{user.first_name}", user_path(user) %>
-      <br>
-
-
-       <%= button_to "Remove", unlike_path(user.id), method: :delete, :class => "btn btn-default", :id => "like_button" %>
-
-
-
-      <%= link_to 'New Mail', controller: "mailboxes", action: "new", id: user.id %>
 
 
   <% end %>
+
+</div>
