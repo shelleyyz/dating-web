@@ -128,15 +128,11 @@ nav.pullUp a:hover:before
 .home-page-container  {
   background-image: url("meetyouheroimg-flipped.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  width: 100vw;
-  height: 100vh;
-  .hero-img {
-    width: 100vw;
-    height: 70vh;
-    box-shadow: 2px 5px 10px grey;
-  }
+
+  background-size:cover;
+  // background-attachment: fixed;
+  min-height: 100vh;
+
 
   .typewriter {
     text-align: center;
@@ -144,11 +140,11 @@ nav.pullUp a:hover:before
     h1 {
 
       font-family: $typefont;
-      max-width: 600px;
-      font-size: 3.5em;
-      padding: 0.5em  0 0 0;
+      max-width: 60vw;
+      font-size: 5vw;
+      padding: 0.2vw  0 0 0;
       overflow: hidden;
-      border-right: .10em solid #FFAF93;
+      border-right: .08em solid #FFAF93;
       white-space: nowrap;
       margin: 0 auto;
       letter-spacing: .15em;
@@ -160,22 +156,15 @@ nav.pullUp a:hover:before
 
 .btn-container {
   text-align: center;
-  // background-color: rgba(131, 153, 148, 0.55);
-  width: 60vw;
-  margin: 0;
-  position: absolute;
-  top: 16%;
-  left: 50%;
-  margin-right: -50%;
+  max-width: 60vw;
+  margin: 0 auto;
   border-radius: 5px;
-  transform: translate(-50%, -50%);
 
-  .moto {
-
+  .motto {
     color: white;
     letter-spacing: 0.12em;
     font-family: $typefont;
-    font-size: 1.55em;
+    font-size: 2vw;
     p {
       animation: moto-fade 2s;
     }
@@ -184,12 +173,12 @@ nav.pullUp a:hover:before
 
   .home-page-btn {
     background-color: rgba(54, 54, 61, 0.8);
-    padding: 1.25em;
-    font-size: 1.25em;
+    padding: 1vw 1.75vw;
+    font-size: 1.70vw;
     border: white solid 2px;
     border-radius: 5px;
     box-shadow: 2px 2px 10px #404040;
-    margin: 2em;
+    margin: 2vw;
     display: inline-block;
     text-decoration: none;
     color: rgba(255, 175, 147, 1);
@@ -205,7 +194,7 @@ nav.pullUp a:hover:before
 
 @keyframes blink-caret {
   from, to {border-color: transparent}
-  50% {border-color: #FFAF93}
+  40% {border-color: #FFAF93}
 }
 
 @keyframes moto-fade {
@@ -394,3 +383,16 @@ h1.find_title {
   // height: 40%;
 
 }
+
+
+/////////////MEDIA QUERIES//////////////
+// @media screen and (max-width:380px) {
+//   .home-page-container  {
+//     max-width: 380px;
+//     background-image: url("meetyouheroimg-flipped.jpg");
+//     background-position: center !important;
+//     background-repeat: no-repeat;
+//     background-size:cover;
+//     min-height: 100vh;
+//   }
+// }
