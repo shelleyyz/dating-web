@@ -117,11 +117,9 @@ nav.pullUp a:hover:before
 
 #map {
   height: 60vh;
-  width: 390px;
-  border: rgb(255, 175, 147) solid 8px;
+  width: 399px;
+  border: rgb(255, 175, 147) solid 2px;
 }
-
-
 
 //////////////STYLING: LANDING PAGE//////////
 .home-page-container  {
@@ -375,6 +373,7 @@ div.matches-index-nested {
     min-height: 400px;
     img {
       height: 400px;
+      border: rgb(255, 175, 147) solid 2px;
     }
   }
 }
@@ -383,9 +382,10 @@ div.matches-index-nested {
 
 .col {
   height: 100%;
-  width: 49%;
+  width: 40%;
   vertical-align: top;
   display: inline-block;
+  margin: 40px;
 }
 
 .user-btn {
@@ -395,14 +395,21 @@ div.matches-index-nested {
   border: white solid 2px;
   border-radius: 5px;
   box-shadow: 2px 2px 10px #404040;
-  margin: 2vw;
-  display: inline-block;
+  margin: 0.5vw;
   text-decoration: none;
   color: rgba(255, 175, 147, 1);
+  float: left;
+}
+
+.user-btn:hover {
+  background-color: rgb(227, 127, 107);
+  transition: background-color .5s;
+  color: rgb(54, 54, 61);
 }
 
 h4 {
-  color: rgb(54, 54, 61);
+  color: rgb(227, 127, 107);
+  font-size: 1.5vw;
 }
 
 ////STYLING: CONVO PAGE //////////
@@ -587,6 +594,8 @@ padding-left: 25%;
   min-height: 40vh;
   background-color: #36363D;
   color: rgb(255, 175, 147);
+  box-shadow: 0 0 15px #36363D;
+
 }
 
 .container-quiz h1 {
@@ -613,4 +622,57 @@ padding-left: 25%;
 
 .chicken label {
   padding: 2%
+}
+
+.new-mail {
+  width: 60%;
+  background-color: #E37F6B;
+  margin: 0 auto;
+  text-align: center;
+  height: 70vh;
+  margin-top: 5%;
+  box-shadow: 0 0 15px #36363D;
+}
+
+.new-mail h1{
+  padding-top: 10%;
+  color: #36363D;
+
+}
+
+#mailbox_content {
+  height: 10vh;
+  width: 70%;
+  margin: 0 auto;
+  display: inline-block;
+  margin-left: 5%;
+  border-radius: 5em;
+  margin-top: 5%;
+}
+
+.new-mail input[type="text"] {
+font-size: 24px;
+padding-left: 3%;
+}
+
+.new-mail input[type="submit"] {
+  display: inline-block;
+  margin: 3%;
+  vertical-align: middle;
+
+}
+
+.suggestions {
+  padding-top: 2%;
+}
+.suggestions button{
+  height: 20vh;
+  max-width: 20%;
+  font-size: 100%;
+  padding: 3%;
+  background-color: #36363D;
+  border: none;
+  color: #E37F6B;
+  margin: 2% 1.5%;
+  box-shadow: 0 0 15px #36363D;
 }

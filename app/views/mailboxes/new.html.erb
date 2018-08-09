@@ -1,11 +1,22 @@
-<h1>Mailboxes#new</h1>
-<p>Find me in app/views/mailboxes/new.html.erb</p>
+<div class="new-mail">
+  <%= form_for @mailbox do |f| %>
+  <h1>Send your first message to
+    <%= @receiver.first_name %></h1>
+  <!-- <%= @receiver.first_name %> -->
+  <%= f.text_field :content, :placeholder => "Hit 'enter' to submit", :class => "textfield" %>
+  <%= hidden_field :extra, :receiver_id, :value => params[:id] %>
 
-<%= form_for @mailbox do |f| %>
-
-<%= @receiver.first_name %>
-<%= f.text_field :content %>
-<%= hidden_field :extra, :receiver_id, :value => params[:id] %>
-
-<%= f.submit 'Send Mail'%>
+  <!-- <%= f.submit 'Send Mail'%> -->
 <% end %>
+
+<div class="suggestions">
+  <h2>Suggestions:</h2>
+  <button class="pickup">I don’t need to modify your stylesheet baby, you’re already perfect.</button>
+  <button class="pickup">Are your pants a compressed file? Because I'd love to unzip them!</button>
+  <button class="pickup">Baby, you make my floppy disk turn into a hard drive
+</button>
+<button class="pickup">Girl, are you Wi-Fi? Cuz im feeling the connection!
+</button>
+
+  </div>
+</div>
