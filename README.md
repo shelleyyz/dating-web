@@ -2,7 +2,8 @@
 
 [Link to live site](https://todo-meetyou.herokuapp.com/)
 Login details - shelley@ga.co password: chicken
-Team members
+
+## Team members
 * [Zabrina Lagamayo](https://github.com/zabrinatan)
 * [EJ Willard](https://github.com/ellijayne)
 * [Sherine Foo](https://github.com/DreamerMay)
