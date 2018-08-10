@@ -3,10 +3,10 @@
 [Link to live site](https://todo-meetyou.herokuapp.com/)
 Login details - shelley@ga.co password: chicken
 Team members
-[Zabrina Lagamayo](https://github.com/zabrinatan)
-[EJ Willard](https://github.com/ellijayne)
-[Sherine Foo](https://github.com/DreamerMay)
-[Shelley Zhang]
+* [Zabrina Lagamayo](https://github.com/zabrinatan)
+* [EJ Willard](https://github.com/ellijayne)
+* [Sherine Foo](https://github.com/DreamerMay)
+* [Shelley Zhang](https://github.com/shelleyyz)
 
 ## //TODO: Meet You.
 A dating site catered towards singles in the tech industry. Users can browse profiles, like and unlike users and message potential matches.
