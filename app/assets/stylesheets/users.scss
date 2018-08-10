@@ -24,7 +24,7 @@ body {
 
 /////////////// nav style//////////////////
 #header   {
-  background:#36363D;
+  background: rgba(54, 54, 61, 0.7);
   width:100%;
   position:relative;
   margin: auto;
@@ -49,19 +49,17 @@ body {
 .nav-item {
   list-style-type: none;
   display: inline;
-  font-family: Montserrat;
 	text-align: center;
 }
 
 .nav_bar {
-  background-color: #36363D;
+  background-color: rgba(54, 54, 61, 0.98);
 }
 
 .nav-link
 {
     text-decoration: none;
-    color: #E37F6B;
-    background: #36363D;
+    color: $peach;
     text-decoration: none;
     font: 1em Montserrat ;
     margin: 0px 0.3em;
