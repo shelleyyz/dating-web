@@ -9,7 +9,7 @@
     <div class="<%= index %> chicken">
     <% question["incorrect_answers"].push(question["correct_answer"]).shuffle.each do |answer| %>
       <%= radio_button_tag(index, answer ) %>
-      <%= label_tag answer %>
+      <%== label_tag answer %>
       <% end %>
       <%= hidden_field_tag "ultra_secret_answer_that_only_true_devs_can_see", question["correct_answer"] %>
     </div>
