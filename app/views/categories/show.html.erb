@@ -5,7 +5,7 @@
 
 <% @categories.each_with_index do |question, index| %>
   <div class="single-item">
-    <p><%= question["question"] %></p>
+    <p><%== question["question"] %></p>
     <div class="<%= index %> chicken">
     <% question["incorrect_answers"].push(question["correct_answer"]).shuffle.each do |answer| %>
       <%= radio_button_tag(index, answer ) %>
