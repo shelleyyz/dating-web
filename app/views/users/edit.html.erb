@@ -1,3 +1,6 @@
+<div class="edit-form">
+<div class="sign-edit-form">
+
 <div class="user_form">
 
   <h1>Edit Your Profile!</h1>
@@ -5,30 +8,30 @@
   <%= form_for @user do |f| %>
 
   <div>
-  <%= f.label :first_name %>
+  <%= f.label :first_name, :class => "input-label" %>
   <br />
-  <%= f.text_field :first_name, :required => true, :placeholder => 'Name', :autofocus => true %>
+  <%= f.text_field :first_name, :required => true, :placeholder => 'Name', :autofocus => true,  :class => "input-box" %>
   </div>
   <br />
 
   <div>
-  <%= f.label :last_name %>
+  <%= f.label :last_name, :class => "input-label" %>
   <br />
-  <%= f.text_field :last_name, :required => true, :placeholder => 'Surname' %>
+  <%= f.text_field :last_name, :required => true, :placeholder => 'Surname',  :class => "input-box" %>
   </div>
   <br />
 
   <div>
-  <%= f.label :email %>
+  <%= f.label :email, :class => "input-label" %>
   <br />
-  <%= f.email_field :email, :required => true, :placeholder => "rubyMyRails@ga.co" %>
+  <%= f.email_field :email, :required => true, :placeholder => "rubyMyRails@ga.co",  :class => "input-box" %>
   </div>
   <br />
 
   <div>
-  <%= f.label :interests %>
+  <%= f.label :interests,  :class => "input-label" %>
   <br />
-  <%= f.text_area :interests, :placeholder => 'Gaming, Dogs, Craft Beer' %>
+  <%= f.text_area :interests, :placeholder => 'Gaming, Dogs, Craft Beer', :class => "input-box" %>
   </div>
   <br />
 
@@ -38,7 +41,7 @@
   <br />
 
   <div>
-  <%= f.label :gender %>
+  <%= f.label :gender, :class => "input-label" %>
   <br />
   <%= f.select :gender, options_for_select(["Female", "Male",  "Non-Specified"]), :include_blank => 'Select One' %>
 
@@ -46,30 +49,30 @@
   <br />
 
   <div>
-  <%= f.label :dob %>
+  <%= f.label :dob, :class => "input-label"  %>
   <br />
-  <%= f.date_field :dob %>
+  <%= f.date_field :dob,  :class => "input-box" %>
   </div>
   <br />
 
   <div>
-  <%= f.label :location %>
+  <%= f.label :location, :class => "input-label" %>
   <br />
-  <%= f.text_field :location, :placeholder => "Sydney", :required => true %>
+  <%= f.text_field :location, :placeholder => "Sydney", :required => true, :class => "input-box" %>
   </div>
   <br />
 
   <div>
-  <%= f.label :language %>
+  <%= f.label :language, :class => "input-label"  %>
   <br />
   <%= f.select :language, options_for_select(["JavaScript", "Python", "Ruby", "Java", "C++", "C#", "Go", "Sass"]), :include_blank => 'Please Select' %>
   </div>
   <br />
 
   <div>
-  <%= f.label :bio %>
+  <%= f.label :bio, :class => "input-label" %>
   <br />
-  <%= f.text_area :bio, :placeholder => 'Tell us a bit about yourself!' %>
+  <%= f.text_area :bio, :placeholder => 'Tell us a bit about yourself!' , :class => "input-box" %>
   </div>
   <br />
 
@@ -79,6 +82,7 @@
 
 
 
+</div>
 
-
+</div>
 </div>
