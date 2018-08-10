@@ -1,3 +1,7 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 
 ////////////////FONTS//////////////
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -7,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 
 ////////////////VARIABLES////////////////////
-$typefont: ‘Slabo 27px’, serif;
+$typefont: 'Slabo 27px', serif;
 $peach: rgb(255, 175, 147);
 $apricot: rgb(227, 127, 107);
 $grey: rgb(54, 54, 61);
@@ -340,6 +344,10 @@ nav.pullUp a:hover:before
       display: inline-block;
       text-decoration: none;
       color: rgba(255, 175, 147, 1);
+    }
+
+    .quizquestions2 {
+      @extend .quizquestion;
     }
 
   .quizSubmit {
@@ -817,7 +825,7 @@ div.matches-index-nested {
     max-height: 400px;
     min-height: 400px;
     img {
-      height: 400px;
+      // height: 400px;
       border: rgb(255, 175, 147) solid 2px;
     }
   }
