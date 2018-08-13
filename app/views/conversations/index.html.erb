@@ -5,10 +5,12 @@
 <% @conversations.each_with_index do |conversation, index| %>
 <div class="convo-sender" id= "<%= index %>">
   <% if conversation.sender_id != @current_user.id %>
-  <%= image_tag conversation.sender.image, :class => "pic" %>
+
+
+  <%= image_tag conversation.sender.image, :class => "pic"  unless conversation.sender.image.nil? %>
     <%= link_to conversation.sender.first_name, mailbox_path(conversation.id), :id => conversation.id, :class=> "msg"%>
     <% else %>
-    <%= image_tag conversation.receiver.image, :class => "pic" %>
+    <%= image_tag conversation.receiver.image, :class => "pic" unless conversation.receiver.image.nil? %>
      <%= link_to "#{conversation.receiver.first_name}", mailbox_path(conversation.id),:id => conversation.id, :class=> "msg" %>
   <% end %>
   <!-- <%= button_to 'Delete conversation', conversation_path(conversation.id), :method => 'delete' %> -->
