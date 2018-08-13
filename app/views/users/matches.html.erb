@@ -3,21 +3,24 @@
 <div class="matched-container">
   <% @users.each do |user| %>
 
+  <div class="matched-index-wrapper">
 
+    <div class="matched-index-nested">
 
       <% if user.image.present? %>
 
-      <div class="matched-index-wrapper">
+        <%= link_to image_tag(user.image, :class => "index-image", :alt => user.first_name), user_path(user) %>
 
-        <div class="matched-index-nested">
+        <% elsif user.photos.last.present? %>
 
-            <%= link_to image_tag(user.photos.last, :class => "index-image", :alt => user.first_name), user_path(user) %>
+        <%= link_to image_tag(user.photos.last, :class => "index-image", :alt => user.first_name), user_path(user) %>
 
-          <% else %>
+        <% else %>
 
-            <%= image_tag 'img.jpg', :class => "index-image"  %>
+        <%= image_tag 'img.jpg', :class => "index-image"  %>
 
-          <% end %>
+        <% end %>
+
         </div>
 
 
