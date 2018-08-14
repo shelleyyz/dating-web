@@ -4,14 +4,44 @@
 <div class ="convo-list">
 <% @conversations.each_with_index do |conversation, index| %>
 <div class="convo-sender" id= "<%= index %>">
+
+
   <% if conversation.sender_id != @current_user.id %>
 
+    <% if conversation.sender.image.present? %>
 
-  <%= image_tag conversation.sender.image, :class => "pic"  unless conversation.sender.image.nil? %>
-    <%= link_to conversation.sender.first_name, mailbox_path(conversation.id), :id => conversation.id, :class=> "msg"%>
+      <%= image_tag conversation.sender.image, :class => "pic" %>
+
+    <% elsif conversation.sender.photos.last.present? %>
+
+      <%= image_tag(conversation.sender.photos.last.fullpath, :class => "index-image") %>
+
     <% else %>
-    <%= image_tag conversation.receiver.image, :class => "pic" unless conversation.receiver.image.nil? %>
-     <%= link_to "#{conversation.receiver.first_name}", mailbox_path(conversation.id),:id => conversation.id, :class=> "msg" %>
+
+      <%= image_tag 'img.jpg', :class => "index-image"  %>
+
+    <% end %>
+
+      <%= link_to conversation.sender.first_name, mailbox_path(conversation.id), :id => conversation.id, :class=> "msg"%>
+
+    <% else %>
+
+    <% if conversation.receiver.image.present? %>
+
+      <%= image_tag conversation.receiver.image, :class => "pic"%>
+
+    <% elsif conversation.receiver.photos.last.present? %>
+
+      <%= image_tag(conversation.receiver.photos.last.fullpath, :class => "index-image") %>
+
+    <% else %>
+
+      <%= image_tag 'img.jpg', :class => "index-image"  %>
+
+    <% end %>
+    
+       <%= link_to "#{conversation.receiver.first_name}", mailbox_path(conversation.id),:id => conversation.id, :class=> "msg" %>
+
   <% end %>
   <!-- <%= button_to 'Delete conversation', conversation_path(conversation.id), :method => 'delete' %> -->
 </div>
