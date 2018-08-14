@@ -13,7 +13,7 @@
 
         <% elsif user.photos.last.present? %>
 
-        <%= link_to image_tag(user.photos.last, :class => "index-image", :alt => user.first_name), user_path(user) %>
+        <%= link_to image_tag(user.photos.last.fullpath, :class => "index-image", :alt => user.first_name), user_path(user) %>
 
         <% else %>
 
