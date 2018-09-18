@@ -8,38 +8,38 @@
 
   <% if conversation.sender_id != @current_user.id %>
 
-    <% if conversation.sender.image.present? %>
+    <%# if conversation.sender.image.present? %>
 
-      <%= image_tag conversation.sender.image, :class => "pic" %>
+      <%# image_tag conversation.sender.image, :class => "pic" %>
 
-    <% elsif conversation.sender.photos.last.present? %>
+    <%# elsif conversation.sender.photos.last.present? %>
 
-      <%= image_tag(conversation.sender.photos.last.fullpath, :class => "index-image") %>
+      <%# image_tag(conversation.sender.photos.last.fullpath, :class => "index-image") %>
 
-    <% else %>
+    <%# else %>
 
-      <%= image_tag 'img.jpg', :class => "index-image"  %>
+      <%# image_tag 'img.jpg', :class => "index-image"  %>
 
-    <% end %>
+    <%# end %>
 
       <%= link_to conversation.sender.first_name, mailbox_path(conversation.id), :id => conversation.id, :class=> "msg"%>
 
     <% else %>
 
-    <% if conversation.receiver.image.present? %>
+    <%# if conversation.receiver.image.present? %>
 
-      <%= image_tag conversation.receiver.image, :class => "pic"%>
+      <%# image_tag conversation.receiver.image, :class => "pic"%>
 
-    <% elsif conversation.receiver.photos.last.present? %>
+    <%# elsif conversation.receiver.photos.last.present? %>
 
-      <%= image_tag(conversation.receiver.photos.last.fullpath, :class => "index-image") %>
+      <%# image_tag(conversation.receiver.photos.last.fullpath, :class => "index-image") %>
 
-    <% else %>
+    <%# else %>
 
-      <%= image_tag 'img.jpg', :class => "index-image"  %>
+      <%# image_tag 'img.jpg', :class => "index-image"  %>
 
-    <% end %>
-    
+    <%# end %>
+
        <%= link_to "#{conversation.receiver.first_name}", mailbox_path(conversation.id),:id => conversation.id, :class=> "msg" %>
 
   <% end %>
