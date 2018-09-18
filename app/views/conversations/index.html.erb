@@ -40,7 +40,7 @@
 
     <%# end %>
 
-       <%= link_to "#{conversation.receiver.first_name}", mailbox_path(conversation.id),:id => conversation.id, :class=> "msg" %>
+       <%= link_to conversation.receiver.first_name, mailbox_path(conversation.id),:id => conversation.id, :class=> "msg" %>
 
   <% end %>
   <!-- <%= button_to 'Delete conversation', conversation_path(conversation.id), :method => 'delete' %> -->
