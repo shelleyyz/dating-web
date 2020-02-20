@@ -46,3 +46,4 @@ A dating site catered towards singles in the tech industry. Users can browse pro
 - [ ] Date location generator
 - [ ] Advanced styling
 - [ ] React
+- [ ] Web sprockets for live chat

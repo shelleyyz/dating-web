@@ -17,24 +17,12 @@ class RelationshipsController < ApplicationController
   end
 
   def create
-    #TODO check input is valid (guard clause) -
-      # def my_method(variable)
-      #   if variable == 'great'
-      #     # do something great
-      #   else
-      #     return nil
-      #   end
-      # end
-    # check the relationships already exist - error msg if its exist
-    # Create new relationships - asked http status code and error return from controller
+
     relationship = Relationship.new
     relationship.likee_id = params[:id]
     relationship.liker_id = @current_user.id
     # @likee = User.find params[:id]
     relationship.save
-
-
-
     redirect_to relationship_path(relationship.likee_id)
   end
 
