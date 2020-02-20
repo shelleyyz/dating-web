@@ -161,8 +161,6 @@ $(".questions-carousel").slick({
   autoplay: true,
   autoplaySpeed: 7000,
   pauseOnFocus: false
-
-
 })
 
 $(".suggestions button").on('click', function(event){
@@ -173,7 +171,7 @@ $(".suggestions button").on('click', function(event){
     const input = $(".new-mail .textfield")
     input.val("");
     input.val(input.val() + buttonVal);
-           return false;
+    return false;
 
 })
 

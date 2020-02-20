@@ -1,12 +1,8 @@
 class RelationshipsController < ApplicationController
   def index
     @users = User.all
-    # @current_user = session[:user_id]
     @likers = Relationship.where(:liker_id => @current_user.id)
     @user_likees = Relationship.where(:likee_id => @current_user.id)
-    # @current_user_like_click = User.find params[:id]
-
-    #@match = Relationship.where(:liker_id => @likers.first.likee_id)
 
   end
 

@@ -1,27 +1,19 @@
 <div class="container-quiz">
-<h1>Test your proficiency in <%= @category.first.category %></h1>
-<!-- <h3>You will only be given 7 seconds to answer each question before it moves on to the next question.</h3> -->
-<div class = "questions-carousel">
-
-<% @categories.each_with_index do |question, index| %>
-  <div class="single-item">
-    <p><%== question["question"] %></p>
-    <div class="<%= index %> chicken">
-    <% question["incorrect_answers"].push(question["correct_answer"]).shuffle.each do |answer| %>
-      <%= radio_button_tag(index, answer ) %>
-      <%== label_tag answer %>
-      <% end %>
-      <%= hidden_field_tag "ultra_secret_answer_that_only_true_devs_can_see", question["correct_answer"] %>
-    </div>
+  <h1>Test your proficiency in <%= @category.first.category %></h1>
+  <div class = "questions-carousel">
+    <% @categories.each_with_index do |question, index| %>
+      <div class="single-item">
+        <p><%== question["question"] %></p>
+        <div class="<%= index %> chicken">
+          <% question["incorrect_answers"].push(question["correct_answer"]).shuffle.each do |answer| %>
+            <%= radio_button_tag(index, answer ) %>
+            <%== label_tag answer %>
+          <% end %>
+          <%= hidden_field_tag "ultra_secret_answer_that_only_true_devs_can_see", question["correct_answer"] %>
+        </div>
+      </div>
+    <%end %>
+    <a href ="/users/<%= @current_user.id %>"><button class= "quiz-button">Submit</button></a>
   </div>
-
-
-<%end %>
-
-
-<a href ="/users/<%= @current_user.id %>"><button class= "quiz-button">Submit</button></a>
-
-</div>
-<p class="note">You will only be given 7 seconds to answer each question before it moves on to the next question.</p>
-<!-- <p class= "note">(drag the slides to the left to move to the next slide)</p> -->
+  <p class="note">You will only be given 7 seconds to answer each question before it moves on to the next question.</p>
 </div>

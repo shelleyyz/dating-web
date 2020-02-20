@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    # @user = User.languages.keys this is for enum
   end
 
   def create

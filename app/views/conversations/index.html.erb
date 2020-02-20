@@ -1,38 +1,26 @@
 <div class="container-convo">
-<!-- <h1 class = "convo-header">Conversations</h1> -->
-<div class="conversations">
-<div class ="convo-list">
-<% @conversations.each_with_index do |conversation, index| %>
-<div class="convo-sender" id= "<%= index %>">
-  <% if conversation.sender_id != @current_user.id %>
-  <%= image_tag conversation.sender.image, :class => "pic" %>
-    <%= link_to conversation.sender.first_name, mailbox_path(conversation.id), :id => conversation.id, :class=> "msg"%>
-    <% else %>
-    <%= image_tag conversation.receiver.image, :class => "pic" %>
-     <%= link_to "#{conversation.receiver.first_name}", mailbox_path(conversation.id),:id => conversation.id, :class=> "msg" %>
-  <% end %>
-  <!-- <%= button_to 'Delete conversation', conversation_path(conversation.id), :method => 'delete' %> -->
-</div>
-
-<% end %>
-
-</div>
-
-<div class="message-box">
-<div class = "messages"></div>
-
-
-</div>
-
-<div class = "send-box">
-  <%= form_tag "/mailboxes/mail/#{params[:id]}" do %>
-  <%= image_tag "user-solid-apricot.png", :class => 'user' %>
-    <%= text_field_tag :content, "", :placeholder => "Enter message here"%>
-
-    <button> <%= image_tag "share-square-solid-apricot.png"%>
-</button>
-  <% end %>
-
-</div>
-</div>
+  <div class="conversations">
+    <div class ="convo-list">
+      <% @conversations.each_with_index do |conversation, index| %>
+        <div class="convo-sender" id= "<%= index %>">
+          <% if conversation.sender_id != @current_user.id %>
+            <%= link_to conversation.sender.first_name, mailbox_path(conversation.id), :id => conversation.id, :class=> "msg"%>
+          <% else %>
+            <%= link_to "#{conversation.receiver.first_name}", mailbox_path(conversation.id),:id => conversation.id, :class=> "msg" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="message-box">
+      <div class = "messages"></div>
+    </div>
+    <div class = "send-box">
+      <%= form_tag "/mailboxes/mail/#{params[:id]}" do %>
+        <%= image_tag "user-solid-apricot.png", :class => 'user' %>
+        <%= text_field_tag :content, "", :placeholder => "Enter message here"%>
+        <button> <%= image_tag "share-square-solid-apricot.png"%>
+        </button>
+      <% end %>
+    </div>
+  </div>
 </div>

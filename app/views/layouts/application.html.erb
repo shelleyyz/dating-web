@@ -8,48 +8,35 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= cloudinary_js_config %>
   </head>
-
   <body class="<%= params[:controller] %>-<%= params[:action] %>">
     <div id="nav_bar_id" >
       <nav class= "pullUp" >
-
         <ul class="nav_bar">
-
           <% if @current_user.present? %>
-
-          <li class="nav-item">
-            <%= image_tag 'todo_logo_grey_background.png', :alt => "Logo", :class => 'home_logo' %>
-          </li>
-
+            <li class="nav-item">
+              <%= image_tag 'todo_logo_grey_background.png', :alt => "Logo", :class => 'home_logo' %>
+            </li>
             <li class="nav-item">
               <%= link_to "#{@current_user.first_name}", user_path(@current_user), :class => "nav-link" %>
             </li>
-
             <li class="nav-item">
               <%= link_to "Find Matches", users_path, :class => "nav-link" %>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href='/users/matches'>My Matches</a>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link" href="/conversations">Chatroom</a>
+              <a class="nav-link" href="/conversations">Chatroom</a>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link" href="/categories">Interests Quiz</a>
+              <a class="nav-link" href="/categories">Interests Quiz</a>
             </li>
-
             <li class="nav-item">
               <%= link_to "Sign Out", login_path, :method => 'delete', :class => "nav-link" %>
             </li>
-
           <% end %>
         </ul>
-
       </nav>
-
       <%= yield %>
     </div>
   </body>

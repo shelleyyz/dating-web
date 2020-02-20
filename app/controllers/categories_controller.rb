@@ -30,7 +30,6 @@ class CategoriesController < ApplicationController
     score = params[:score]
     @category.update :score => score
     @current_user.categories << @category
-    # raise "hell"
   end
 
   def results
